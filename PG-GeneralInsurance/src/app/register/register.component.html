@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<br><br>
+<div class="container">
+<h4 class="card-header bg-info " style="width: 800px;">Register As A New User</h4>
+<div class="card-body " style=" width: 800px ;">
+  
+    <form (submit)="InsertUser()"  >
+        <div class="form-group">
+            <label class="fieldlabels">Mobile Number: </label>
+            <input type="text" class="form-control" name="Mobile_Number" placeholder="Mobile Number"
+                [(ngModel)]="register.Mobile_Number" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Password: </label>
+            <input type="password" class="form-control" name="Password"  placeholder="Password"
+                [(ngModel)]="register.Password" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Name: </label>
+            <input type="text" class="form-control" name="Name"
+                placeholder="Name" [(ngModel)]="register.Name" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Email Id : </label>
+            <input type="text" class="form-control" name="Email_Id" placeholder="Email Id"
+                [(ngModel)]="register.Email_Id" />
+        </div>
+        <div class="form-group"> 
+        <label class="fieldlabels">Gender: </label><br>
+     
+            <input  type="radio" name="Gender" value="Male" [(ngModel)]="register.Gender" >Male <br>
+            <input type="radio" name="Gender"  value="Female" [(ngModel)]="register.Gender" >Female 
+        
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Door Number </label>
+            <input type="text" class="form-control" name="Door_Number" placeholder="Door Number"
+                [(ngModel)]="register.Door_Number" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Street </label>
+            <input type="text" class="form-control" name="Street"  placeholder="Street"
+                [(ngModel)]="register.Street" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">City </label>
+            <input type="text" class="form-control"  name="City" placeholder="City"
+                [(ngModel)]="register.City" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">District</label>
+            <input type="text" class="form-control" name="District" placeholder="District"
+                [(ngModel)]="register.District" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">State </label>
+            <input type="text" class="form-control" name="State" placeholder="State"
+                [(ngModel)]="register.State" />
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Pincode </label>
+            <input type="text" class="form-control" name="Pincode"  placeholder="Pincode"
+                [(ngModel)]="register.Pincode" />
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button> 
+    </form>
+
+</div>
+</div><br><br>
+
