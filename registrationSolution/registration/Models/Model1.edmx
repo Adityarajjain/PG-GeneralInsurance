@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GeneralInsuranceFinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminDetailsTable">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="MotorClaimDetailsTable">
+          <Key>
+            <PropertyRef Name="Claim_Id" />
+          </Key>
+          <Property Name="Claim_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Policy_Id" Type="bigint" />
+          <Property Name="Name" Type="varchar" MaxLength="30" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="12" />
+          <Property Name="Reason" Type="varchar" MaxLength="15" />
+          <Property Name="Date_Of_Applying" Type="date" />
+          <Property Name="Insurance_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="License_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="RC_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="Authenticated_Letter_from_RTO" Type="varchar" MaxLength="200" />
+          <Property Name="Estimated_Amount_For_Repair" Type="float" />
+          <Property Name="Bill_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="Amount_Sanctioned" Type="float" />
+          <Property Name="Claim_Status" Type="varchar" MaxLength="20" />
+          <Property Name="Approver_Username" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="MotorInsuranceTable">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+          </Key>
+          <Property Name="Policy_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number_Of_Wheels" Type="int" />
+          <Property Name="Manufacturer" Type="varchar" MaxLength="20" />
+          <Property Name="Model_Name" Type="varchar" MaxLength="40" />
+          <Property Name="Registration_Number" Type="varchar" MaxLength="12" />
+          <Property Name="RTA_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Engine_Number" Type="varchar" MaxLength="40" />
+          <Property Name="Chassis_Number" Type="varchar" MaxLength="40" />
+          <Property Name="Year_Of_Manufacture" Type="int" />
+          <Property Name="Purchase_Date" Type="date" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="12" />
+          <Property Name="Insurance_Plan" Type="varchar" MaxLength="15" />
+          <Property Name="Time_Period" Type="int" />
+          <Property Name="Policy_Start_Date" Type="date" />
+          <Property Name="Policy_End_Date" Type="date" />
+          <Property Name="Insurer_Username" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TransactionTable">
+          <Key>
+            <PropertyRef Name="Transaction_Id" />
+          </Key>
+          <Property Name="Transaction_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Motor_Policy_Id" Type="bigint" />
+          <Property Name="Travel_Policy_Id" Type="bigint" />
+          <Property Name="Premium_Amount" Type="float" />
+          <Property Name="Payment_Date" Type="date" />
+          <Property Name="Transaction_Status" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TravelClaimDetailsTable">
+          <Key>
+            <PropertyRef Name="Travel_Claim_Id" />
+          </Key>
+          <Property Name="Travel_Claim_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Travel_Policy_Id" Type="bigint" />
+          <Property Name="Ticket_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="Reason_for_Claim" Type="varchar" MaxLength="30" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="12" />
+          <Property Name="Amount_Sanctioned" Type="float" />
+          <Property Name="Claim_Status" Type="varchar" MaxLength="20" />
+          <Property Name="Complaint_Copy" Type="varchar" MaxLength="200" />
+          <Property Name="Approver_Username" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TravelInsuranceTable">
+          <Key>
+            <PropertyRef Name="Policy_id" />
+          </Key>
+          <Property Name="Policy_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type_Of_Travel" Type="varchar" MaxLength="20" />
+          <Property Name="Source" Type="varchar" MaxLength="20" />
+          <Property Name="Destination" Type="varchar" MaxLength="20" />
+          <Property Name="Mode_Of_Transport" Type="varchar" MaxLength="20" />
+          <Property Name="Age_Of_traveller" Type="int" />
+          <Property Name="Travel_Start_Date" Type="date" />
+          <Property Name="Travel_End_Date" Type="date" />
+          <Property Name="Any_Medical_Condition" Type="varchar" MaxLength="4" />
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="12" />
+          <Property Name="Insurance_Plan" Type="varchar" MaxLength="10" />
+          <Property Name="Insurer_Username" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="UserDetailsTable">
+          <Key>
+            <PropertyRef Name="Mobile_Number" />
+          </Key>
+          <Property Name="Mobile_Number" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="15" />
+          <Property Name="Name" Type="varchar" MaxLength="30" />
+          <Property Name="Email_Id" Type="varchar" MaxLength="320" />
+          <Property Name="Gender" Type="varchar" MaxLength="6" />
+          <Property Name="Door_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+          <Property Name="District" Type="varchar" MaxLength="30" />
+          <Property Name="State" Type="varchar" MaxLength="30" />
+          <Property Name="Pincode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="VehicleListTable">
+          <Key>
+            <PropertyRef Name="Manufacturer" />
+            <PropertyRef Name="Model_Name" />
+          </Key>
+          <Property Name="Manufacturer" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Model_Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Cubic_Capacity" Type="int" />
+          <Property Name="Type_Of_Body" Type="varchar" MaxLength="20" />
+          <Property Name="Seating_Capacity" Type="int" />
+          <Property Name="Brand_New_Price" Type="float" />
+        </EntityType>
+        <Association Name="FK__MotorClai__Appro__239E4DCF">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="MotorClaimDetailsTable">
+              <PropertyRef Name="Approver_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorClai__Polic__22AA2996">
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="0..1" />
+          <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotorInsuranceTable">
+              <PropertyRef Name="Policy_Id" />
+            </Principal>
+            <Dependent Role="MotorClaimDetailsTable">
+              <PropertyRef Name="Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsu__Insur__173876EA">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Insurer_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsu__Mobil__164452B1">
+          <End Role="UserDetailsTable" Type="Self.UserDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetailsTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsuranceTa__182C9B23">
+          <End Role="VehicleListTable" Type="Self.VehicleListTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleListTable">
+              <PropertyRef Name="Manufacturer" />
+              <PropertyRef Name="Model_Name" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Manufacturer" />
+              <PropertyRef Name="Model_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Motor__1ED998B2">
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="0..1" />
+          <End Role="TransactionTable" Type="Self.TransactionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotorInsuranceTable">
+              <PropertyRef Name="Policy_Id" />
+            </Principal>
+            <Dependent Role="TransactionTable">
+              <PropertyRef Name="Motor_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Trave__1FCDBCEB">
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="0..1" />
+          <End Role="TransactionTable" Type="Self.TransactionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelInsuranceTable">
+              <PropertyRef Name="Policy_id" />
+            </Principal>
+            <Dependent Role="TransactionTable">
+              <PropertyRef Name="Travel_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelCla__Appro__276EDEB3">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TravelClaimDetailsTable">
+              <PropertyRef Name="Approver_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelCla__Trave__267ABA7A">
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="0..1" />
+          <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelInsuranceTable">
+              <PropertyRef Name="Policy_id" />
+            </Principal>
+            <Dependent Role="TravelClaimDetailsTable">
+              <PropertyRef Name="Travel_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Insur__1BFD2C07">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TravelInsuranceTable">
+              <PropertyRef Name="Insurer_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Mobil__1B0907CE">
+          <End Role="UserDetailsTable" Type="Self.UserDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetailsTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Principal>
+            <Dependent Role="TravelInsuranceTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="proc_AdminLoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uid" Type="varchar" Mode="In" />
+          <Parameter Name="pswd" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="GeneralInsuranceFinalModelStoreContainer">
+          <EntitySet Name="AdminDetailsTable" EntityType="Self.AdminDetailsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MotorClaimDetailsTable" EntityType="Self.MotorClaimDetailsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MotorInsuranceTable" EntityType="Self.MotorInsuranceTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionTable" EntityType="Self.TransactionTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TravelClaimDetailsTable" EntityType="Self.TravelClaimDetailsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TravelInsuranceTable" EntityType="Self.TravelInsuranceTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetailsTable" EntityType="Self.UserDetailsTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleListTable" EntityType="Self.VehicleListTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__MotorClai__Appro__239E4DCF" Association="Self.FK__MotorClai__Appro__239E4DCF">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTable" />
+            <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorClai__Polic__22AA2996" Association="Self.FK__MotorClai__Polic__22AA2996">
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTable" />
+            <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsu__Insur__173876EA" Association="Self.FK__MotorInsu__Insur__173876EA">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTable" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsu__Mobil__164452B1" Association="Self.FK__MotorInsu__Mobil__164452B1">
+            <End Role="UserDetailsTable" EntitySet="UserDetailsTable" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsuranceTa__182C9B23" Association="Self.FK__MotorInsuranceTa__182C9B23">
+            <End Role="VehicleListTable" EntitySet="VehicleListTable" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Motor__1ED998B2" Association="Self.FK__Transacti__Motor__1ED998B2">
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTable" />
+            <End Role="TransactionTable" EntitySet="TransactionTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Trave__1FCDBCEB" Association="Self.FK__Transacti__Trave__1FCDBCEB">
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTable" />
+            <End Role="TransactionTable" EntitySet="TransactionTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelCla__Appro__276EDEB3" Association="Self.FK__TravelCla__Appro__276EDEB3">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTable" />
+            <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelCla__Trave__267ABA7A" Association="Self.FK__TravelCla__Trave__267ABA7A">
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTable" />
+            <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Insur__1BFD2C07" Association="Self.FK__TravelIns__Insur__1BFD2C07">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTable" />
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Mobil__1B0907CE" Association="Self.FK__TravelIns__Mobil__1B0907CE">
+            <End Role="UserDetailsTable" EntitySet="UserDetailsTable" />
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTable" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GeneralInsuranceFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminDetailsTable">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Appro__239E4DCF" FromRole="AdminDetailsTable" ToRole="MotorClaimDetailsTable" />
+          <NavigationProperty Name="MotorInsuranceTables" Relationship="Self.FK__MotorInsu__Insur__173876EA" FromRole="AdminDetailsTable" ToRole="MotorInsuranceTable" />
+          <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Appro__276EDEB3" FromRole="AdminDetailsTable" ToRole="TravelClaimDetailsTable" />
+          <NavigationProperty Name="TravelInsuranceTables" Relationship="Self.FK__TravelIns__Insur__1BFD2C07" FromRole="AdminDetailsTable" ToRole="TravelInsuranceTable" />
+        </EntityType>
+        <EntityType Name="MotorClaimDetailsTable">
+          <Key>
+            <PropertyRef Name="Claim_Id" />
+          </Key>
+          <Property Name="Claim_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Policy_Id" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Applying" Type="DateTime" Precision="0" />
+          <Property Name="Insurance_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="License_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RC_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Authenticated_Letter_from_RTO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Estimated_Amount_For_Repair" Type="Double" />
+          <Property Name="Bill_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Amount_Sanctioned" Type="Double" />
+          <Property Name="Claim_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Approver_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__MotorClai__Appro__239E4DCF" FromRole="MotorClaimDetailsTable" ToRole="AdminDetailsTable" />
+          <NavigationProperty Name="MotorInsuranceTable" Relationship="Self.FK__MotorClai__Polic__22AA2996" FromRole="MotorClaimDetailsTable" ToRole="MotorInsuranceTable" />
+        </EntityType>
+        <EntityType Name="MotorInsuranceTable">
+          <Key>
+            <PropertyRef Name="Policy_Id" />
+          </Key>
+          <Property Name="Policy_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number_Of_Wheels" Type="Int32" />
+          <Property Name="Manufacturer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Model_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Registration_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="RTA_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Engine_Number" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Chassis_Number" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Year_Of_Manufacture" Type="Int32" />
+          <Property Name="Purchase_Date" Type="DateTime" Precision="0" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Insurance_Plan" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Time_Period" Type="Int32" />
+          <Property Name="Policy_Start_Date" Type="DateTime" Precision="0" />
+          <Property Name="Policy_End_Date" Type="DateTime" Precision="0" />
+          <Property Name="Insurer_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__MotorInsu__Insur__173876EA" FromRole="MotorInsuranceTable" ToRole="AdminDetailsTable" />
+          <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Polic__22AA2996" FromRole="MotorInsuranceTable" ToRole="MotorClaimDetailsTable" />
+          <NavigationProperty Name="UserDetailsTable" Relationship="Self.FK__MotorInsu__Mobil__164452B1" FromRole="MotorInsuranceTable" ToRole="UserDetailsTable" />
+          <NavigationProperty Name="VehicleListTable" Relationship="Self.FK__MotorInsuranceTa__182C9B23" FromRole="MotorInsuranceTable" ToRole="VehicleListTable" />
+          <NavigationProperty Name="TransactionTables" Relationship="Self.FK__Transacti__Motor__1ED998B2" FromRole="MotorInsuranceTable" ToRole="TransactionTable" />
+        </EntityType>
+        <EntityType Name="TransactionTable">
+          <Key>
+            <PropertyRef Name="Transaction_Id" />
+          </Key>
+          <Property Name="Transaction_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Motor_Policy_Id" Type="Int64" />
+          <Property Name="Travel_Policy_Id" Type="Int64" />
+          <Property Name="Premium_Amount" Type="Double" />
+          <Property Name="Payment_Date" Type="DateTime" Precision="0" />
+          <Property Name="Transaction_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MotorInsuranceTable" Relationship="Self.FK__Transacti__Motor__1ED998B2" FromRole="TransactionTable" ToRole="MotorInsuranceTable" />
+          <NavigationProperty Name="TravelInsuranceTable" Relationship="Self.FK__Transacti__Trave__1FCDBCEB" FromRole="TransactionTable" ToRole="TravelInsuranceTable" />
+        </EntityType>
+        <EntityType Name="TravelClaimDetailsTable">
+          <Key>
+            <PropertyRef Name="Travel_Claim_Id" />
+          </Key>
+          <Property Name="Travel_Claim_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Travel_Policy_Id" Type="Int64" />
+          <Property Name="Ticket_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Reason_for_Claim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Amount_Sanctioned" Type="Double" />
+          <Property Name="Claim_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Complaint_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Approver_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__TravelCla__Appro__276EDEB3" FromRole="TravelClaimDetailsTable" ToRole="AdminDetailsTable" />
+          <NavigationProperty Name="TravelInsuranceTable" Relationship="Self.FK__TravelCla__Trave__267ABA7A" FromRole="TravelClaimDetailsTable" ToRole="TravelInsuranceTable" />
+        </EntityType>
+        <EntityType Name="TravelInsuranceTable">
+          <Key>
+            <PropertyRef Name="Policy_id" />
+          </Key>
+          <Property Name="Policy_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_Of_Travel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Destination" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mode_Of_Transport" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Age_Of_traveller" Type="Int32" />
+          <Property Name="Travel_Start_Date" Type="DateTime" Precision="0" />
+          <Property Name="Travel_End_Date" Type="DateTime" Precision="0" />
+          <Property Name="Any_Medical_Condition" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Insurance_Plan" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Insurer_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__TravelIns__Insur__1BFD2C07" FromRole="TravelInsuranceTable" ToRole="AdminDetailsTable" />
+          <NavigationProperty Name="TransactionTables" Relationship="Self.FK__Transacti__Trave__1FCDBCEB" FromRole="TravelInsuranceTable" ToRole="TransactionTable" />
+          <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Trave__267ABA7A" FromRole="TravelInsuranceTable" ToRole="TravelClaimDetailsTable" />
+          <NavigationProperty Name="UserDetailsTable" Relationship="Self.FK__TravelIns__Mobil__1B0907CE" FromRole="TravelInsuranceTable" ToRole="UserDetailsTable" />
+        </EntityType>
+        <EntityType Name="UserDetailsTable">
+          <Key>
+            <PropertyRef Name="Mobile_Number" />
+          </Key>
+          <Property Name="Mobile_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Email_Id" Type="String" MaxLength="320" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Door_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MotorInsuranceTables" Relationship="Self.FK__MotorInsu__Mobil__164452B1" FromRole="UserDetailsTable" ToRole="MotorInsuranceTable" />
+          <NavigationProperty Name="TravelInsuranceTables" Relationship="Self.FK__TravelIns__Mobil__1B0907CE" FromRole="UserDetailsTable" ToRole="TravelInsuranceTable" />
+        </EntityType>
+        <EntityType Name="VehicleListTable">
+          <Key>
+            <PropertyRef Name="Manufacturer" />
+            <PropertyRef Name="Model_Name" />
+          </Key>
+          <Property Name="Manufacturer" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cubic_Capacity" Type="Int32" />
+          <Property Name="Type_Of_Body" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Seating_Capacity" Type="Int32" />
+          <Property Name="Brand_New_Price" Type="Double" />
+          <NavigationProperty Name="MotorInsuranceTables" Relationship="Self.FK__MotorInsuranceTa__182C9B23" FromRole="VehicleListTable" ToRole="MotorInsuranceTable" />
+        </EntityType>
+        <Association Name="FK__MotorClai__Appro__239E4DCF">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="MotorClaimDetailsTable">
+              <PropertyRef Name="Approver_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsu__Insur__173876EA">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Insurer_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelCla__Appro__276EDEB3">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TravelClaimDetailsTable">
+              <PropertyRef Name="Approver_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Insur__1BFD2C07">
+          <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminDetailsTable">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="TravelInsuranceTable">
+              <PropertyRef Name="Insurer_Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorClai__Polic__22AA2996">
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="0..1" />
+          <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotorInsuranceTable">
+              <PropertyRef Name="Policy_Id" />
+            </Principal>
+            <Dependent Role="MotorClaimDetailsTable">
+              <PropertyRef Name="Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsu__Mobil__164452B1">
+          <End Role="UserDetailsTable" Type="Self.UserDetailsTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetailsTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MotorInsuranceTa__182C9B23">
+          <End Role="VehicleListTable" Type="Self.VehicleListTable" Multiplicity="0..1" />
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleListTable">
+              <PropertyRef Name="Manufacturer" />
+              <PropertyRef Name="Model_Name" />
+            </Principal>
+            <Dependent Role="MotorInsuranceTable">
+              <PropertyRef Name="Manufacturer" />
+              <PropertyRef Name="Model_Name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Motor__1ED998B2">
+          <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="0..1" />
+          <End Role="TransactionTable" Type="Self.TransactionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotorInsuranceTable">
+              <PropertyRef Name="Policy_Id" />
+            </Principal>
+            <Dependent Role="TransactionTable">
+              <PropertyRef Name="Motor_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Trave__1FCDBCEB">
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="0..1" />
+          <End Role="TransactionTable" Type="Self.TransactionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelInsuranceTable">
+              <PropertyRef Name="Policy_id" />
+            </Principal>
+            <Dependent Role="TransactionTable">
+              <PropertyRef Name="Travel_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelCla__Trave__267ABA7A">
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="0..1" />
+          <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelInsuranceTable">
+              <PropertyRef Name="Policy_id" />
+            </Principal>
+            <Dependent Role="TravelClaimDetailsTable">
+              <PropertyRef Name="Travel_Policy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TravelIns__Mobil__1B0907CE">
+          <End Role="UserDetailsTable" Type="Self.UserDetailsTable" Multiplicity="0..1" />
+          <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetailsTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Principal>
+            <Dependent Role="TravelInsuranceTable">
+              <PropertyRef Name="Mobile_Number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GeneralInsuranceFinalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminDetailsTables" EntityType="Self.AdminDetailsTable" />
+          <EntitySet Name="MotorClaimDetailsTables" EntityType="Self.MotorClaimDetailsTable" />
+          <EntitySet Name="MotorInsuranceTables" EntityType="Self.MotorInsuranceTable" />
+          <EntitySet Name="TransactionTables" EntityType="Self.TransactionTable" />
+          <EntitySet Name="TravelClaimDetailsTables" EntityType="Self.TravelClaimDetailsTable" />
+          <EntitySet Name="TravelInsuranceTables" EntityType="Self.TravelInsuranceTable" />
+          <EntitySet Name="UserDetailsTables" EntityType="Self.UserDetailsTable" />
+          <EntitySet Name="VehicleListTables" EntityType="Self.VehicleListTable" />
+          <AssociationSet Name="FK__MotorClai__Appro__239E4DCF" Association="Self.FK__MotorClai__Appro__239E4DCF">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
+            <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsu__Insur__173876EA" Association="Self.FK__MotorInsu__Insur__173876EA">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelCla__Appro__276EDEB3" Association="Self.FK__TravelCla__Appro__276EDEB3">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
+            <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Insur__1BFD2C07" Association="Self.FK__TravelIns__Insur__1BFD2C07">
+            <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorClai__Polic__22AA2996" Association="Self.FK__MotorClai__Polic__22AA2996">
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
+            <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsu__Mobil__164452B1" Association="Self.FK__MotorInsu__Mobil__164452B1">
+            <End Role="UserDetailsTable" EntitySet="UserDetailsTables" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MotorInsuranceTa__182C9B23" Association="Self.FK__MotorInsuranceTa__182C9B23">
+            <End Role="VehicleListTable" EntitySet="VehicleListTables" />
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Motor__1ED998B2" Association="Self.FK__Transacti__Motor__1ED998B2">
+            <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
+            <End Role="TransactionTable" EntitySet="TransactionTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Trave__1FCDBCEB" Association="Self.FK__Transacti__Trave__1FCDBCEB">
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
+            <End Role="TransactionTable" EntitySet="TransactionTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelCla__Trave__267ABA7A" Association="Self.FK__TravelCla__Trave__267ABA7A">
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
+            <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TravelIns__Mobil__1B0907CE" Association="Self.FK__TravelIns__Mobil__1B0907CE">
+            <End Role="UserDetailsTable" EntitySet="UserDetailsTables" />
+            <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
+          </AssociationSet>
+          <FunctionImport Name="proc_AdminLoginCheck" ReturnType="Collection(String)">
+            <Parameter Name="uid" Mode="In" Type="String" />
+            <Parameter Name="pswd" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GeneralInsuranceFinalModelStoreContainer" CdmEntityContainer="GeneralInsuranceFinalEntities">
+          <EntitySetMapping Name="AdminDetailsTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.AdminDetailsTable">
+              <MappingFragment StoreEntitySet="AdminDetailsTable">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MotorClaimDetailsTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.MotorClaimDetailsTable">
+              <MappingFragment StoreEntitySet="MotorClaimDetailsTable">
+                <ScalarProperty Name="Claim_Id" ColumnName="Claim_Id" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Date_Of_Applying" ColumnName="Date_Of_Applying" />
+                <ScalarProperty Name="Insurance_Copy" ColumnName="Insurance_Copy" />
+                <ScalarProperty Name="License_Copy" ColumnName="License_Copy" />
+                <ScalarProperty Name="RC_Copy" ColumnName="RC_Copy" />
+                <ScalarProperty Name="Authenticated_Letter_from_RTO" ColumnName="Authenticated_Letter_from_RTO" />
+                <ScalarProperty Name="Estimated_Amount_For_Repair" ColumnName="Estimated_Amount_For_Repair" />
+                <ScalarProperty Name="Bill_Copy" ColumnName="Bill_Copy" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MotorInsuranceTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.MotorInsuranceTable">
+              <MappingFragment StoreEntitySet="MotorInsuranceTable">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+                <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+                <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+                <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.TransactionTable">
+              <MappingFragment StoreEntitySet="TransactionTable">
+                <ScalarProperty Name="Transaction_Id" ColumnName="Transaction_Id" />
+                <ScalarProperty Name="Motor_Policy_Id" ColumnName="Motor_Policy_Id" />
+                <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+                <ScalarProperty Name="Premium_Amount" ColumnName="Premium_Amount" />
+                <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+                <ScalarProperty Name="Transaction_Status" ColumnName="Transaction_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TravelClaimDetailsTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.TravelClaimDetailsTable">
+              <MappingFragment StoreEntitySet="TravelClaimDetailsTable">
+                <ScalarProperty Name="Travel_Claim_Id" ColumnName="Travel_Claim_Id" />
+                <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+                <ScalarProperty Name="Ticket_Copy" ColumnName="Ticket_Copy" />
+                <ScalarProperty Name="Reason_for_Claim" ColumnName="Reason_for_Claim" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Complaint_Copy" ColumnName="Complaint_Copy" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TravelInsuranceTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.TravelInsuranceTable">
+              <MappingFragment StoreEntitySet="TravelInsuranceTable">
+                <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
+                <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+                <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+                <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+                <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+                <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetailsTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.UserDetailsTable">
+              <MappingFragment StoreEntitySet="UserDetailsTable">
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleListTables">
+            <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.VehicleListTable">
+              <MappingFragment StoreEntitySet="VehicleListTable">
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Cubic_Capacity" ColumnName="Cubic_Capacity" />
+                <ScalarProperty Name="Type_Of_Body" ColumnName="Type_Of_Body" />
+                <ScalarProperty Name="Seating_Capacity" ColumnName="Seating_Capacity" />
+                <ScalarProperty Name="Brand_New_Price" ColumnName="Brand_New_Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="GeneralInsuranceFinalModel.Store.proc_AdminLoginCheck" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

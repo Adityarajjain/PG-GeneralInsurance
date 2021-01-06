@@ -1,0 +1,148 @@
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\registration.dll.config
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\registration.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\registration.pdb
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csc.exe
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csc.exe.config
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csc.rsp
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csi.exe
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csi.exe.config
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\csi.rsp
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.AppContext.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Console.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.IO.Compression.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Net.Http.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.ValueTuple.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\vbc.exe
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\vbc.exe.config
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\vbc.rsp
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\VBCSCompiler.exe
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\EntityFramework.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\Newtonsoft.Json.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Net.Http.Formatting.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.WebHost.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\EntityFramework.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\Newtonsoft.Json.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Net.Http.Formatting.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.WebHost.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Lenovo\source\repos\registrationSolution\registration\obj\Debug\registration.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\registrationSolution\registration\obj\Debug\registration.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\registrationSolution\registration\obj\Debug\registration.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\registrationSolution\registration\obj\Debug\registration.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\obj\Debug\registration.pdb
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Cors.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.Cors.dll
+C:\Users\Lenovo\source\repos\registrationSolution\registration\bin\System.Web.Http.Cors.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\registration.dll.config
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\registration.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\registration.pdb
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csc.exe
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csc.exe.config
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csc.rsp
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csi.exe
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csi.exe.config
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\csi.rsp
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.Managed.Core.targets
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\Microsoft.Win32.Primitives.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.AppContext.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Collections.Immutable.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Console.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Globalization.Calendars.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.IO.Compression.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.IO.Compression.ZipFile.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.IO.FileSystem.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Net.Http.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Net.Sockets.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Reflection.Metadata.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Threading.Tasks.Extensions.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.ValueTuple.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Xml.XmlDocument.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Xml.XPath.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\vbc.exe
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\vbc.exe.config
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\vbc.rsp
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\VBCSCompiler.exe
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\roslyn\VBCSCompiler.exe.config
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\EntityFramework.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\EntityFramework.SqlServer.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\Newtonsoft.Json.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Net.Http.Formatting.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Cors.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.Cors.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.WebHost.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\EntityFramework.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\EntityFramework.SqlServer.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.Cors.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\Newtonsoft.Json.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Net.Http.Formatting.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\System.Web.Http.WebHost.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\obj\Debug\registration.csprojAssemblyReference.cache
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\obj\Debug\registration.csproj.CoreCompileInputs.cache
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\obj\Debug\registration.csproj.CopyComplete
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\obj\Debug\registration.dll
+H:\LTI Training\Project Gladiator\Project (06-01-2021)\registrationSolution\registration\obj\Debug\registration.pdb
