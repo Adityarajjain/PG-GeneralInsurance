@@ -10,11 +10,19 @@ import { MotorInsuranceComponent } from './motor-insurance/motor-insurance.compo
 import { TravelInsuranceComponent } from './travel-insurance/travel-insurance.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './service/login.service';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterService } from './service/register.service';
 import { RegisterComponent } from './register/register.component';
+import { VehiclelistService } from './service/vehiclelist.service';
+import { MotorInsuranceDetailsService } from './service/motorInsuranceDetails.service';
+import { PolicyPreviewComponent } from './policy-preview/policy-preview.component';
+import { PaymentComponent } from './payment/payment.component';
+import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
+import { TravelInsuranceDetailsService } from './service/travelInsuranceDetails.service';
+import { UserService } from './service/user.service';
 
 
 const routes:Routes=[
@@ -25,7 +33,9 @@ const routes:Routes=[
   {path:"travel-insurance", component:TravelInsuranceComponent},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},
-  {path:"dashboard", component:DashboardComponent}
+  {path:"dashboard", component:DashboardComponent},
+  {path:"policy-preview", component:PolicyPreviewComponent},
+  {path:"estimate-insurance", component:EstimateInsuranceComponent}
 ]
 
 @NgModule({
@@ -37,16 +47,20 @@ const routes:Routes=[
     MotorInsuranceComponent,
     TravelInsuranceComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PolicyPreviewComponent,
+    PaymentComponent,
+    EstimateInsuranceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService,RegisterService],
+  providers: [LoginService,RegisterService,VehiclelistService,MotorInsuranceDetailsService, TravelInsuranceDetailsService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

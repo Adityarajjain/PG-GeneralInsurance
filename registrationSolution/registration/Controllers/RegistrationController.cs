@@ -12,7 +12,7 @@ namespace registration.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class RegistrationController : ApiController
     {
-        GeneralInsuranceFinalEntities entities = new GeneralInsuranceFinalEntities();
+        GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
 
         public IEnumerable<UserDetailsTable> Get()
         {

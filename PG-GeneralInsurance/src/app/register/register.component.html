@@ -1,4 +1,109 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<br><br>
+<div class="container">
+<h4 class="card-header bg-info " style="width: 800px;">Register As A New User</h4>
+<div class="card-body " style=" width: 800px ;">
+  
+    <form [formGroup]="registerForm" (ngSubmit)="InsertUser()">
+        <div class="form-group">
+            <label for="Mobile_Number">Mobile Number: </label>
+            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number"   />
+            <div *ngIf="f.Mobile_Number.touched && f.Mobile_Number.invalid" class="alert alert-danger">Mobile Number required</div>
+            
+             
+        </div>
+        <div class="form-group">
+            <label>Password: </label>
+            <input type="password" class="form-control"  formControlName="Password" placeholder="Password"
+              />
+            <div *ngIf="f.Password.touched && f.Password.invalid" class="alert alert-danger"><strong>Password is invalid.</strong></div> 
+
+                
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Name: </label>
+            <input type="text" class="form-control" formControlName="Name" placeholder="Enter Name"/>
+            <div *ngIf="f.Name.touched && f.Name.invalid" class="alert alert-danger"><strong>Name is invalid.</strong> </div>
+               
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Email Id : </label>
+            <input type="text" class="form-control" formControlName="Email_Id" placeholder="Enter E-mail Id"/>
+            <div *ngIf="f.Email_Id.touched && f.Email_Id.invalid" class="alert alert-danger"><strong>Email_Id is invalid.</strong></div> 
+
+        </div>
+        <div class="form-group"> 
+        <label class="fieldlabels">Gender: </label><br>
+     
+            <input  type="radio" formControlName="Gender" value="Male"  >&nbsp;Male <br>
+            <input type="radio" formControlName="Gender"  value="Female" >&nbsp;Female 
+            <div *ngIf="f.Gender.touched && f.Gender.invalid" class="alert alert-danger"><strong>Gender is invalid.</strong></div>
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Door Number </label>
+            <input type="text" class="form-control" formControlName="Door_Number" placeholder="Door Number"
+                 />
+            <div *ngIf="f.Door_Number.touched && f.Door_Number.invalid" class="alert alert-danger"><strong>Door Number is invalid.</strong></div>
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Street </label>
+            <input type="text" class="form-control" formControlName="Street"  placeholder="Street"
+                />
+            <div *ngIf="f.Street.touched && f.Street.invalid" class="alert alert-danger"><strong>Street is invalid.</strong></div>
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">City </label>
+            <input type="text" class="form-control"  formControlName="City" placeholder="City"
+                 />
+            <div *ngIf="f.City.touched && f.City.invalid" class="alert alert-danger"><strong>City is invalid.</strong></div>
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">District</label>
+            <input type="text" class="form-control" formControlName="District" placeholder="District"
+                 />
+            <div *ngIf="f.District.touched && f.District.invalid" class="alert alert-danger"><strong>District is invalid.</strong></div>
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">State </label>
+            <input type="text" class="form-control" formControlName="State" placeholder="State"
+                 />
+            <div *ngIf="f.State.touched && f.State.invalid" class="alert alert-danger"><strong>State is invalid.</strong></div>
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Pincode </label>
+            <input type="text" class="form-control" formControlName="Pincode"  placeholder="Pincode"
+                 />
+            <div *ngIf="f.Pincode.touched && f.Pincode.invalid" class="alert alert-danger"><strong>Pincode is invalid.</strong></div>
+
+        </div>
+        <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Submit</button> 
+    </form>
+
+</div>
+</div><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -70,4 +175,4 @@
 
 </div>
 </div><br><br>
-
+ -->

@@ -4,25 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9c852c7ff964417dbfee4bb0e6393184" Name="Diagram1">
+      <Diagram DiagramId="c390c36ab26f4557a3a14cc01c97b23c" Name="Diagram1">
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.AdminDetailsTable" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.MotorClaimDetailsTable" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.MotorInsuranceTable" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GeneralInsuranceFinalModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.TransactionTable" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.TravelClaimDetailsTable" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.TravelInsuranceTable" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.UserDetailsTable" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="GeneralInsuranceFinalModel.VehicleListTable" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorClai__Appro__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorClai__Appro__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorInsu__Insur__173876EA" ManuallyRouted="false" />
-        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelCla__Appro__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelCla__Appro__33D4B598" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelIns__Insur__1BFD2C07" ManuallyRouted="false" />
-        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorClai__Polic__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorClai__Polic__36B12243" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorInsu__Mobil__164452B1" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__MotorInsuranceTa__182C9B23" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__Transacti__Motor__1ED998B2" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__Transacti__Trave__1FCDBCEB" ManuallyRouted="false" />
-        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelCla__Trave__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelCla__Trave__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="GeneralInsuranceFinalModel.FK__TravelIns__Mobil__1B0907CE" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

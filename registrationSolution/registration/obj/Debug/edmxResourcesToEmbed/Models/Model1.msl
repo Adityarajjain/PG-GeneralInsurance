@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GeneralInsuranceFinalModelStoreContainer" CdmEntityContainer="GeneralInsuranceFinalEntities">
+  <EntityContainerMapping StorageEntityContainer="GeneralInsuranceFinalModelStoreContainer" CdmEntityContainer="GeneralInsuranceFinalEntities_">
     <EntitySetMapping Name="AdminDetailsTables">
       <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.AdminDetailsTable">
         <MappingFragment StoreEntitySet="AdminDetailsTable">
@@ -33,6 +33,8 @@
     <EntitySetMapping Name="MotorInsuranceTables">
       <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.MotorInsuranceTable">
         <MappingFragment StoreEntitySet="MotorInsuranceTable">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Driving_License_Number" ColumnName="Driving_License_Number" />
           <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
           <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
           <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
@@ -49,6 +51,17 @@
           <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
           <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
           <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -82,6 +95,7 @@
     <EntitySetMapping Name="TravelInsuranceTables">
       <EntityTypeMapping TypeName="GeneralInsuranceFinalModel.TravelInsuranceTable">
         <MappingFragment StoreEntitySet="TravelInsuranceTable">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
           <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
           <ScalarProperty Name="Source" ColumnName="Source" />
@@ -127,5 +141,33 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="GeneralInsuranceFinalModel.Store.proc_AdminLoginCheck" />
+    <FunctionImportMapping FunctionImportName="proc_GetCarsOfManufacturer" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetCarsOfManufacturer" />
+    <FunctionImportMapping FunctionImportName="proc_GetManufacturers" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetManufacturers" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GeneralInsuranceFinalModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GeneralInsuranceFinalModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GeneralInsuranceFinalModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GeneralInsuranceFinalModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GeneralInsuranceFinalModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GeneralInsuranceFinalModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GeneralInsuranceFinalModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="proc_GetBrandNewPrice" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetBrandNewPrice" />
+    <FunctionImportMapping FunctionImportName="proc_GetLatestId" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetLatestId" />
   </EntityContainerMapping>
 </Mapping>

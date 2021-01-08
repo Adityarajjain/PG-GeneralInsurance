@@ -1,1 +1,87 @@
-<p>motor-insurance works!</p>
+<div class="container" *ngIf="!submitted">
+    <h4 class="card-header bg-info " style="width: 800px;">Enter Details for Buying Motor Insurance</h4>
+    <div class="card-body " style=" width: 800px ;">
+      
+        <form  (submit)="applyMotorInsurance()" >
+            <div id="page1" *ngIf="!changePage">
+                    <div class="form-group">                 
+                    <label class="fieldlabels">Type of Vehicle: </label><br>
+                
+                        <input  type="radio" name="Vehicle_type" value="2" [(ngModel)]="motorInsurance.Number_Of_Wheels">&nbsp;Two Wheeler &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="Vehicle_type"  value="4" [(ngModel)]="motorInsurance.Number_Of_Wheels">&nbsp;Four Wheeler
+                    
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Manufacturer: </label>
+                        <select class="form-control" name="Manufacturer" [(ngModel)]="manufacturer" (change)="getCars(manufacturer)">
+                            <option disabled selected>Select Manufacturer</option>
+                            <option *ngFor="let manu of manufacturers[0]" >{{manu}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Models: </label>
+                        <select class="form-control"  name="Model" [(ngModel)]="model" >
+                            <option disabled selected>Select Model</option>
+                            <option *ngFor="let model of models[0]">{{model}}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="fieldlabels">Purchase Date: </label>
+                        <input type="date" class="form-control" name="Purchase_Date"  placeholder="Enter Pusrchase Date"
+                        [(ngModel)]="motorInsurance.Purchase_Date"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">RTA Name: </label>
+                        <input type="text" class="form-control" name="RTA_Name" placeholder="Enter RTA Name (Like: MP-04 Bhopal)"
+                        [(ngModel)]="motorInsurance.RTA_Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Registration Number: </label>
+                        <input type="text" class="form-control" name="Registration_Number"
+                            placeholder="Enter Registration Number" [(ngModel)]="motorInsurance.Registration_Number"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Engine Number: </label>
+                        <input type="text" class="form-control" name="Engine_Number" placeholder="Enter Engine Number"
+                            [(ngModel)]="motorInsurance.Engine_Number" />
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Chassis Number: </label>
+                        <input type="text" class="form-control" name="Chassis Number" placeholder="Enter Chassis Number"
+                            [(ngModel)]="motorInsurance.Chassis_Number" />
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Driving License Number: </label>
+                        <input type="text" class="form-control" name="Driving_License" placeholder="Enter Driving License Number"
+                        [(ngModel)]="motorInsurance.Driving_License_Number"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="fieldlabels">Mobile Number: </label>
+                        <input type="text" class="form-control" name="Mobile_Number" placeholder="Enter Mobile Number"
+                        [(ngModel)]="motorInsurance.Mobile_Number" />
+                    </div>
+                    <button (click)="pageChange()" class="btn btn-info">Next</button> 
+                </div>
+                <div id="page2" *ngIf="changePage">
+                    <div class="form-group"> 
+                    <label class="fieldlabels">Insurance Plan: </label><br>                
+                    <input  type="radio" name="Insurance_Plan" value="Third_Party" [(ngModel)]="motorInsurance.Insurance_Plan" >&nbsp;Third Party &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="Insurance_Plan"  value="Comprehensive" [(ngModel)]="motorInsurance.Insurance_Plan">&nbsp;Comprehensive                
+                    </div>
+                    <div class="form-group"> 
+                        <label class="fieldlabels">Time Period: </label><br>                    
+                        <input  type="radio" name="Time_Period" value="1" [(ngModel)]="motorInsurance.Time_Period">&nbsp;One Year <br>
+                        <input type="radio" name="Time_Period"  value="2" [(ngModel)]="motorInsurance.Time_Period">&nbsp;Two Year <br>
+                        <input type="radio" name="Time_Period"  value="3" [(ngModel)]="motorInsurance.Time_Period">&nbsp;Three Year <br>                
+                        </div>
+                        <button (click)="pageChange()" class="btn btn-info">Back</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-info">Submit</button> 
+                </div>
+        </form> 
+    
+    </div>
+    </div>
+<div *ngIf="submitted">
+    <app-payment [motorInsObj]="motorInsurance" ></app-payment>
+</div>

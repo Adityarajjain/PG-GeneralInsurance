@@ -6,9 +6,9 @@
     </Key>
     <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Appro__239E4DCF" FromRole="AdminDetailsTable" ToRole="MotorClaimDetailsTable" />
+    <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Appro__37A5467C" FromRole="AdminDetailsTable" ToRole="MotorClaimDetailsTable" />
     <NavigationProperty Name="MotorInsuranceTables" Relationship="Self.FK__MotorInsu__Insur__173876EA" FromRole="AdminDetailsTable" ToRole="MotorInsuranceTable" />
-    <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Appro__276EDEB3" FromRole="AdminDetailsTable" ToRole="TravelClaimDetailsTable" />
+    <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Appro__33D4B598" FromRole="AdminDetailsTable" ToRole="TravelClaimDetailsTable" />
     <NavigationProperty Name="TravelInsuranceTables" Relationship="Self.FK__TravelIns__Insur__1BFD2C07" FromRole="AdminDetailsTable" ToRole="TravelInsuranceTable" />
   </EntityType>
   <EntityType Name="MotorClaimDetailsTable">
@@ -30,8 +30,8 @@
     <Property Name="Amount_Sanctioned" Type="Double" />
     <Property Name="Claim_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Approver_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__MotorClai__Appro__239E4DCF" FromRole="MotorClaimDetailsTable" ToRole="AdminDetailsTable" />
-    <NavigationProperty Name="MotorInsuranceTable" Relationship="Self.FK__MotorClai__Polic__22AA2996" FromRole="MotorClaimDetailsTable" ToRole="MotorInsuranceTable" />
+    <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__MotorClai__Appro__37A5467C" FromRole="MotorClaimDetailsTable" ToRole="AdminDetailsTable" />
+    <NavigationProperty Name="MotorInsuranceTable" Relationship="Self.FK__MotorClai__Polic__36B12243" FromRole="MotorClaimDetailsTable" ToRole="MotorInsuranceTable" />
   </EntityType>
   <EntityType Name="MotorInsuranceTable">
     <Key>
@@ -54,10 +54,22 @@
     <Property Name="Policy_End_Date" Type="DateTime" Precision="0" />
     <Property Name="Insurer_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__MotorInsu__Insur__173876EA" FromRole="MotorInsuranceTable" ToRole="AdminDetailsTable" />
-    <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Polic__22AA2996" FromRole="MotorInsuranceTable" ToRole="MotorClaimDetailsTable" />
+    <NavigationProperty Name="MotorClaimDetailsTables" Relationship="Self.FK__MotorClai__Polic__36B12243" FromRole="MotorInsuranceTable" ToRole="MotorClaimDetailsTable" />
     <NavigationProperty Name="UserDetailsTable" Relationship="Self.FK__MotorInsu__Mobil__164452B1" FromRole="MotorInsuranceTable" ToRole="UserDetailsTable" />
     <NavigationProperty Name="VehicleListTable" Relationship="Self.FK__MotorInsuranceTa__182C9B23" FromRole="MotorInsuranceTable" ToRole="VehicleListTable" />
     <NavigationProperty Name="TransactionTables" Relationship="Self.FK__Transacti__Motor__1ED998B2" FromRole="MotorInsuranceTable" ToRole="TransactionTable" />
+    <Property Name="Driving_License_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TransactionTable">
     <Key>
@@ -85,8 +97,8 @@
     <Property Name="Claim_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Complaint_Copy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Approver_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__TravelCla__Appro__276EDEB3" FromRole="TravelClaimDetailsTable" ToRole="AdminDetailsTable" />
-    <NavigationProperty Name="TravelInsuranceTable" Relationship="Self.FK__TravelCla__Trave__267ABA7A" FromRole="TravelClaimDetailsTable" ToRole="TravelInsuranceTable" />
+    <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__TravelCla__Appro__33D4B598" FromRole="TravelClaimDetailsTable" ToRole="AdminDetailsTable" />
+    <NavigationProperty Name="TravelInsuranceTable" Relationship="Self.FK__TravelCla__Trave__32E0915F" FromRole="TravelClaimDetailsTable" ToRole="TravelInsuranceTable" />
   </EntityType>
   <EntityType Name="TravelInsuranceTable">
     <Key>
@@ -106,8 +118,9 @@
     <Property Name="Insurer_Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="AdminDetailsTable" Relationship="Self.FK__TravelIns__Insur__1BFD2C07" FromRole="TravelInsuranceTable" ToRole="AdminDetailsTable" />
     <NavigationProperty Name="TransactionTables" Relationship="Self.FK__Transacti__Trave__1FCDBCEB" FromRole="TravelInsuranceTable" ToRole="TransactionTable" />
-    <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Trave__267ABA7A" FromRole="TravelInsuranceTable" ToRole="TravelClaimDetailsTable" />
+    <NavigationProperty Name="TravelClaimDetailsTables" Relationship="Self.FK__TravelCla__Trave__32E0915F" FromRole="TravelInsuranceTable" ToRole="TravelClaimDetailsTable" />
     <NavigationProperty Name="UserDetailsTable" Relationship="Self.FK__TravelIns__Mobil__1B0907CE" FromRole="TravelInsuranceTable" ToRole="UserDetailsTable" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="UserDetailsTable">
     <Key>
@@ -140,7 +153,7 @@
     <Property Name="Brand_New_Price" Type="Double" />
     <NavigationProperty Name="MotorInsuranceTables" Relationship="Self.FK__MotorInsuranceTa__182C9B23" FromRole="VehicleListTable" ToRole="MotorInsuranceTable" />
   </EntityType>
-  <Association Name="FK__MotorClai__Appro__239E4DCF">
+  <Association Name="FK__MotorClai__Appro__37A5467C">
     <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
     <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
     <ReferentialConstraint>
@@ -164,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TravelCla__Appro__276EDEB3">
+  <Association Name="FK__TravelCla__Appro__33D4B598">
     <End Role="AdminDetailsTable" Type="Self.AdminDetailsTable" Multiplicity="0..1" />
     <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
     <ReferentialConstraint>
@@ -188,7 +201,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MotorClai__Polic__22AA2996">
+  <Association Name="FK__MotorClai__Polic__36B12243">
     <End Role="MotorInsuranceTable" Type="Self.MotorInsuranceTable" Multiplicity="0..1" />
     <End Role="MotorClaimDetailsTable" Type="Self.MotorClaimDetailsTable" Multiplicity="*" />
     <ReferentialConstraint>
@@ -250,7 +263,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TravelCla__Trave__267ABA7A">
+  <Association Name="FK__TravelCla__Trave__32E0915F">
     <End Role="TravelInsuranceTable" Type="Self.TravelInsuranceTable" Multiplicity="0..1" />
     <End Role="TravelClaimDetailsTable" Type="Self.TravelClaimDetailsTable" Multiplicity="*" />
     <ReferentialConstraint>
@@ -274,16 +287,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="GeneralInsuranceFinalEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="GeneralInsuranceFinalEntities_" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AdminDetailsTables" EntityType="Self.AdminDetailsTable" />
     <EntitySet Name="MotorClaimDetailsTables" EntityType="Self.MotorClaimDetailsTable" />
     <EntitySet Name="MotorInsuranceTables" EntityType="Self.MotorInsuranceTable" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TransactionTables" EntityType="Self.TransactionTable" />
     <EntitySet Name="TravelClaimDetailsTables" EntityType="Self.TravelClaimDetailsTable" />
     <EntitySet Name="TravelInsuranceTables" EntityType="Self.TravelInsuranceTable" />
     <EntitySet Name="UserDetailsTables" EntityType="Self.UserDetailsTable" />
     <EntitySet Name="VehicleListTables" EntityType="Self.VehicleListTable" />
-    <AssociationSet Name="FK__MotorClai__Appro__239E4DCF" Association="Self.FK__MotorClai__Appro__239E4DCF">
+    <AssociationSet Name="FK__MotorClai__Appro__37A5467C" Association="Self.FK__MotorClai__Appro__37A5467C">
       <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
       <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTables" />
     </AssociationSet>
@@ -291,7 +305,7 @@
       <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
       <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
     </AssociationSet>
-    <AssociationSet Name="FK__TravelCla__Appro__276EDEB3" Association="Self.FK__TravelCla__Appro__276EDEB3">
+    <AssociationSet Name="FK__TravelCla__Appro__33D4B598" Association="Self.FK__TravelCla__Appro__33D4B598">
       <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
       <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTables" />
     </AssociationSet>
@@ -299,7 +313,7 @@
       <End Role="AdminDetailsTable" EntitySet="AdminDetailsTables" />
       <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
     </AssociationSet>
-    <AssociationSet Name="FK__MotorClai__Polic__22AA2996" Association="Self.FK__MotorClai__Polic__22AA2996">
+    <AssociationSet Name="FK__MotorClai__Polic__36B12243" Association="Self.FK__MotorClai__Polic__36B12243">
       <End Role="MotorInsuranceTable" EntitySet="MotorInsuranceTables" />
       <End Role="MotorClaimDetailsTable" EntitySet="MotorClaimDetailsTables" />
     </AssociationSet>
@@ -319,7 +333,7 @@
       <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
       <End Role="TransactionTable" EntitySet="TransactionTables" />
     </AssociationSet>
-    <AssociationSet Name="FK__TravelCla__Trave__267ABA7A" Association="Self.FK__TravelCla__Trave__267ABA7A">
+    <AssociationSet Name="FK__TravelCla__Trave__32E0915F" Association="Self.FK__TravelCla__Trave__32E0915F">
       <End Role="TravelInsuranceTable" EntitySet="TravelInsuranceTables" />
       <End Role="TravelClaimDetailsTable" EntitySet="TravelClaimDetailsTables" />
     </AssociationSet>
@@ -331,5 +345,55 @@
       <Parameter Name="uid" Mode="In" Type="String" />
       <Parameter Name="pswd" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="proc_GetCarsOfManufacturer" ReturnType="Collection(String)">
+      <Parameter Name="manu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetManufacturers" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GeneralInsuranceFinalModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GeneralInsuranceFinalModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="proc_GetBrandNewPrice" ReturnType="Collection(Double)">
+      <Parameter Name="manu" Mode="In" Type="String" />
+      <Parameter Name="model" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetLatestId" ReturnType="Collection(Int64)" />
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

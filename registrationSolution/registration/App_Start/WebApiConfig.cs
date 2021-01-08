@@ -13,6 +13,10 @@ namespace registration
 
             // Web API routes
             config.EnableCors();
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

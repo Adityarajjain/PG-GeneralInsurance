@@ -33,6 +33,7 @@ namespace registration.Models
         public string Mobile_Number { get; set; }
         public string Insurance_Plan { get; set; }
         public string Insurer_Username { get; set; }
+        public string Status { get; set; }
     
         public virtual AdminDetailsTable AdminDetailsTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

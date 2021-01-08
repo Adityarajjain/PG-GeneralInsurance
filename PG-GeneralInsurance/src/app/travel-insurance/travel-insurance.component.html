@@ -1,1 +1,70 @@
-<p>travel-insurance works!</p>
+
+<br><br>
+<div class="container">
+<h4 class="card-header bg-info " style="width: 800px;">Enter Details for Buying Travel Insurance</h4>
+<div class="card-body " style=" width: 800px ;">
+  
+    <form [formGroup]="registerForm" (ngSubmit)="InsertUser()">
+        <div class="form-group">
+            <label for="Source">Source: </label>
+            <input type="text" class="form-control" formControlName="Source"  placeholder="Source"   />
+            <div *ngIf="f.Source.touched && f.Source.invalid" class="alert alert-danger">Source required</div>
+            
+             
+        </div>
+        <div class="form-group">
+            <label>Destination: </label>
+            <input type="text" class="form-control"  formControlName="Destination" placeholder="Destination"
+              />
+            <div *ngIf="f.Destination.touched && f.Destination.invalid" class="alert alert-danger"><strong>Destination required.</strong></div> 
+
+                
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Mode Of Transport: </label>
+            <input type="text" class="form-control" formControlName="Mode_Of_Transport" placeholder="Enter Airplane or Train"/>
+            <div *ngIf="f.Mode_Of_Transport.touched && f.Mode_Of_Transport.invalid" class="alert alert-danger"><strong>Mode Of Transport required.</strong> </div>
+               
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Age Of traveller : </label>
+            <input type="text" class="form-control" formControlName="Age_Of_traveller" placeholder="Enter Age"/>
+            <div *ngIf="f.Age_Of_traveller.touched && f.Age_Of_traveller.invalid" class="alert alert-danger"><strong>Age of traveller is invalid.</strong></div> 
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Travel Start Date : </label>
+            <input type="date" class="form-control" formControlName="Travel_Start_Date" placeholder="Enter Start Date"/>
+            <div *ngIf="f.Travel_Start_Date.touched && f.Travel_Start_Date.invalid" class="alert alert-danger"><strong>Start Date required</strong></div> 
+
+        </div>
+        <div class="form-group">
+            <label class="fieldlabels">Travel End Date : </label>
+            <input type="date" class="form-control" formControlName="Travel_End_Date" placeholder="Enter End Date"/>
+            <div *ngIf="f.Travel_End_Date.touched && f.Travel_End_Date.invalid" class="alert alert-danger"><strong>End Date required</strong></div> 
+
+        </div>
+        <div class="form-group"> 
+        <label class="fieldlabels">Any Medical Condition: </label><br>
+     
+            <input  type="radio" formControlName="Any_Medical_Condition" value="Yes"  >&nbsp;Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" formControlName="Any_Medical_Condition"  value="No" >&nbsp;No 
+            <div *ngIf="f.Any_Medical_Condition.touched && f.Any_Medical_Condition.invalid" class="alert alert-danger"><strong>Field required.</strong></div>
+        </div>
+        <div class="form-group">
+            <label for="Mobile_Number">Mobile Number: </label>
+            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number"   />
+            <div *ngIf="f.Mobile_Number.touched && f.Mobile_Number.invalid" class="alert alert-danger">Mobile Number required</div>                         
+        </div>
+        <div class="form-group"> 
+        <label class="fieldlabels">Insurance Plan: </label><br>
+     
+            <input  type="radio" formControlName="Insurance_Plan" value="Standard"  >&nbsp;Standard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" formControlName="Insurance_Plan"  value="Gold" >&nbsp;Gold
+            <div *ngIf="f.Insurance_Plan.touched && f.Insurance_Plan.invalid" class="alert alert-danger"><strong>Field required.</strong></div>
+        </div>
+        <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Submit</button> 
+    </form>
+
+</div>
+</div><br><br>

@@ -12,7 +12,7 @@ namespace registration.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class AdminController : ApiController
     {
-        GeneralInsuranceFinalEntities entities = new GeneralInsuranceFinalEntities();
+        GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
         [HttpPost]
         public HttpResponseMessage UserLogin(AdminDetailsTable user)
         {
