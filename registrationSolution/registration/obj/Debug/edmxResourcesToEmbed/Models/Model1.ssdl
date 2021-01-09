@@ -275,6 +275,23 @@
     <Parameter Name="uid" Type="varchar" Mode="In" />
     <Parameter Name="pswd" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="proc_ApproveMotorClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyid" Type="bigint" Mode="In" />
+    <Parameter Name="amt" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_GetAllClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_GetAllPoliciesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_GetAllTravelClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_GetAllTravelPoliciesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mobile" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="proc_GetBrandNewPrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manu" Type="varchar" Mode="In" />
     <Parameter Name="model" Type="varchar" Mode="In" />
@@ -285,6 +302,15 @@
   <Function Name="proc_GetLatestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="proc_GetLatestTravelId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="proc_GetManufacturers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetMotorPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policy_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="proc_GetTransactionDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policy_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="proc_GetTravelPolicy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policy_id" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="Proc_MakeRenewalOfPolicy3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyid" Type="bigint" Mode="In" />
     <Parameter Name="amount" Type="float" Mode="In" />

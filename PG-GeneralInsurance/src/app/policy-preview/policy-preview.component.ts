@@ -1,6 +1,8 @@
-import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';  
+import { Component, OnInit, ElementRef ,ViewChild, Inject} from '@angular/core';  
 import jspdf from 'jspdf';  
 import html2canvas from 'html2canvas';  
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MotorPolicyService } from '../service/motorPolicy.service';
   
 @Component({  
   selector: 'app-policy-preview',  
@@ -8,6 +10,14 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./policy-preview.component.css']  
 })  
 export class PolicyPreviewComponent{  
+
+  policy:any;
+  premium:any;
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any, private motorPolicy:MotorPolicyService){
+    this.motorPolicy.getMotorPolicy(data).subscribe((d:any)=>{this.policy=d});
+    this.motorPolicy.getTransaction(data).subscribe((p:any)=>{this.premium=p});
+  }
+
   public PrintPolicy()  
   {  
     var data = document.getElementById('contentToConvert')!;  

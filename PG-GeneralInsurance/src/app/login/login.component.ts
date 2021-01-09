@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       data => {    
             
         if(data.Message=="Welcome")    
-        { this.router.navigateByUrl('/dashboard');
+        { this.router.navigateByUrl('/user-dashboard');
           //this.router.navigate(['/Dasboard']);  
           console.log(data.Message);  
           sessionStorage.setItem("userMobile",this.model.Mobile_Number);

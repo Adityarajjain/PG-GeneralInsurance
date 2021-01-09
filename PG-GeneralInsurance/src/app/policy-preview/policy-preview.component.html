@@ -1,7 +1,7 @@
 <br>
-<div id="content" #content>  
+<div id="content" #content style="align-self: center; ">  
         
-      <div style="margin-left: 37%; ">  
+      <div >  
         <input type="button" value="Download Policy" (click)="PrintPolicy()"/>  
       </div>  
   </div>  
@@ -23,39 +23,39 @@
     
         <tr>
             <td>Policy Number :</td>
-            <td></td>
-            <td>Policy Start Date :</td>
-            <td></td>
+            <td>{{data}}</td>
+            <td>Policy Start Date : </td>
+            <td>{{policy.Policy_Start_Date}}</td>
         </tr>
 
         <tr>
             <td>Insured Name :</td>
-            <td></td>
+            <td>{{policy.Name}}</td>
             <td>Policy End Date :</td>
-            <td></td>
+            <td>{{policy.Policy_End_Date}}</td>
         </tr>
         
         <tr>
             <td>Insured Address :</td>
         </tr>
             <tr>
-                <td>Address Line 1</td>
+                <td>{{policy.Door_Number}}, {{policy.Street}}</td>
             </tr>
             <tr>
                 <td>City :</td>
-                <td></td>
+                <td>{{policy.City}}</td>
                 <td>District :</td>
-                <td></td>
+                <td>{{policy.District}}</td>
             </tr>
             <tr>
                 <td>State :</td>
-                <td></td>
+                <td>{{policy.State}}</td>
                 <td>Pincode :</td>
-                <td></td>
+                <td>{{policy.Pincode}}</td>
             </tr>
             <tr>
                 <td>Mobile Number :</td>
-                <td></td>                
+                <td>{{policy.Mobile_Number}}</td>                
             </tr>
         <!-- </tr> -->
 
@@ -64,25 +64,25 @@
         </tr>
             <tr>
                 <td>Registration Number :</td>
-                <td></td>
+                <td>{{policy.Registration_Number}}</td>
                 <td>Engine Number :</td>
-                <td></td>
+                <td>{{policy.Engine_Number}}</td>
             </tr>
             <tr>
                 <td>RTA Name :</td>
-                <td></td>
+                <td>{{policy.RTA_Name}}</td>
                 <td>Chassis Number :</td>
-                <td></td>
+                <td>{{policy.Chassis_Number}}</td>
             </tr>
             <tr>
                 <td>Purchase Date :</td>
-                <td></td>        
+                <td>{{policy.Purchase_Date}}</td>        
                 <td>Vehicle Manufacturer:</td>
-                <td></td>                
+                <td>{{policy.Manufacturer}}</td>                
             </tr>
             <tr>
                 <td>Vehicle Model :</td>
-                <td></td>        
+                <td>{{policy.Model_Name}}</td>        
                 <td>Cubic Capacity :</td>
                 <td></td>                
             </tr>
@@ -100,15 +100,14 @@
         </tr>
         <tr>
             <td>Premium :</td>
-            <td></td>
+            <td>{{premium}}</td>
         </tr>
         <tr>
-            <td>GST (18%) :</td>
-            <td></td>
+           
         </tr>
         <tr>
             <td>Total Amount :</td>
-            <td></td>
+            <td>{{premium}}</td>
         </tr>
     </tbody>
   </table>

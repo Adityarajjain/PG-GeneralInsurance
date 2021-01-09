@@ -232,5 +232,85 @@ namespace registration.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proj_Proc_UserPolicyDetailsDisplay2_Result>("Proj_Proc_UserPolicyDetailsDisplay2", idParameter);
         }
+    
+        public virtual ObjectResult<proc_GetAllClaimsOfUser_Result> proc_GetAllClaimsOfUser(string mobile)
+        {
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAllClaimsOfUser_Result>("proc_GetAllClaimsOfUser", mobileParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetAllPoliciesOfUser_Result> proc_GetAllPoliciesOfUser(string mobile)
+        {
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAllPoliciesOfUser_Result>("proc_GetAllPoliciesOfUser", mobileParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetAllTravelClaimsOfUser_Result> proc_GetAllTravelClaimsOfUser(string mobile)
+        {
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAllTravelClaimsOfUser_Result>("proc_GetAllTravelClaimsOfUser", mobileParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetAllTravelPoliciesOfUser_Result> proc_GetAllTravelPoliciesOfUser(string mobile)
+        {
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAllTravelPoliciesOfUser_Result>("proc_GetAllTravelPoliciesOfUser", mobileParameter);
+        }
+    
+        public virtual int proc_ApproveMotorClaim(Nullable<long> policyid, Nullable<int> amt, string admin)
+        {
+            var policyidParameter = policyid.HasValue ?
+                new ObjectParameter("policyid", policyid) :
+                new ObjectParameter("policyid", typeof(long));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(int));
+    
+            var adminParameter = admin != null ?
+                new ObjectParameter("admin", admin) :
+                new ObjectParameter("admin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_ApproveMotorClaim", policyidParameter, amtParameter, adminParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetMotorPolicy_Result> proc_GetMotorPolicy(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetMotorPolicy_Result>("proc_GetMotorPolicy", policy_idParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetTravelPolicy_Result> proc_GetTravelPolicy(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetTravelPolicy_Result>("proc_GetTravelPolicy", policy_idParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<double>> proc_GetTransactionDetails(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<double>>("proc_GetTransactionDetails", policy_idParameter);
+        }
     }
 }

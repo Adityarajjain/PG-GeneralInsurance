@@ -1,0 +1,101 @@
+<div>
+    <h3 align="center">Motor Insurances</h3> 
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+                <th class="tb12">Policy Id</th>
+                <th class="tbl2">Number Of Wheels</th>  
+                <th class="tbl2">Manufacturer</th>  
+                <th class="tbl2">Model Name</th> 
+                <th class="tbl2">Registration Number</th>  
+                <th class="tbl2">Insurance Plan</th>  
+                <th class="tbl2"> Time Period</th> 
+                <th class="tbl2"> Policy Start Date </th>  
+                <th class="tbl2">Policy End Date</th>  
+                <th class="tbl2">View Policy</th>  
+            </tr>  
+            
+            <tbody>
+                <tr *ngFor="let motorinsurance of motorinsurances">  
+                    <td class="tb12">{{motorinsurance.Policy_Id}}</td>
+                    <td class="tbl2">{{motorinsurance.Number_Of_Wheels}}</td>  
+                    <td class="tbl2">{{motorinsurance.Manufacturer}}</td>  
+                    <td class="tbl2">{{motorinsurance.Model_Name}}</td>  
+                    <td class="tbl2">{{motorinsurance.Registration_Number}}</td>  
+                    <td class="tbl2">{{motorinsurance.Insurance_Plan}}</td>  
+                    <td class="tbl2">{{motorinsurance.Time_Period }} year(s)</td> 
+                    <td class="tbl2">{{motorinsurance.Policy_Start_Date }}</td>  
+                    <td class="tbl2">{{motorinsurance.Policy_End_Date }}</td>  
+                    <td class="tbl2">  
+                    <button type="button" class="btn btn-info" #pid value="{{motorinsurance.Policy_Id}}" (click)="showPolicy(pid)">View Policy</button>  
+                    </td>  
+                </tr>  
+            </tbody>      
+        </table>
+    
+    <h3 align="center">Travel Insurances</h3> 
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+                <th class="tbl2">Policy Id </th>  
+                <th class="tbl2">Source</th>  
+                <th class="tbl2">Destination</th>  
+                <th class="tbl2">Mode Of Transport </th>                                  
+                <th class="tbl2">Travel Start Date</th>  
+                <th class="tbl2">Travel End Date</th>  
+                <th class="tbl2"> Insurance Plan</th> 
+                <th class="tbl2">Status</th>
+                <th class="tb12">View Policy</th>
+            </tr>  
+            <tbody>
+            <tr *ngFor="let travelinsurance of travelinsurances">            
+                <td class="tbl2">{{travelinsurance.Policy_id}}</td>  
+                <td class="tbl2">{{travelinsurance.Source}}</td>  
+                <td class="tbl2">{{travelinsurance.Destination}}</td>  
+                <td class="tbl2">{{travelinsurance. Mode_Of_Transport}}</td>  
+                <td class="tbl2">{{travelinsurance. Travel_Start_Date  }}</td>  
+                <td class="tbl2">{{travelinsurance. Travel_End_Date}}</td>
+                <td class="tbl2">{{travelinsurance.Insurance_Plan }}</td>  
+                <td class="tbl2">{{travelinsurance.status}}</td>  
+                <td align='center'><button type="button" class="btn btn-info" #pid value="{{travelinsurance.Policy_Id}}" (click)="showPolicy(pid)">View Policy</button>  </td>
+            </tr>  
+            </tbody>
+        </table> 
+
+    <h3 align="center">Motor Claim</h3> 
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+                <th class="tbl2"> Claim Id </th>  
+                <th class="tbl2">Policy Id</th>  
+                <!-- <th class="tbl2">Date Of Applying </th>   -->
+                <th class="tbl2">Amount Sanctioned </th>  
+                <th class="tbl2">Claim Status</th>  
+            </tr>  
+            <tr *ngFor="let motorclaim of motorclaims">  
+                <td class="tbl2">{{motorclaim.Claim_Id}}</td>  
+                <td class="tbl2" #pid value="motorclaim.Policy_Id">{{motorclaim.Policy_Id}}</td>  
+                <!-- <td class="tbl2">{{motorclaim.Date_Of_Applying | date }}</td> -->
+                <td class="tbl2">{{motorclaim. Amount_Sanctioned}}</td>  
+                <!-- <td><input type="text"  [(ngModel)]="amt"></td> -->
+                <td class="tbl2">{{motorclaim. Claim_Status}}</td>  
+                <!-- <td align='center'><input type="button" value="Approve" (click)="approve()" style="width:100%"></td> -->
+            </tr>  
+        </table>
+
+    <h3 align="center">Travel Claim</h3> 
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+                <th class="tbl2">  Travel_Claim_Id</th>  
+                <th class="tbl2">Travel_Policy_Id</th>  
+                <th class="tbl2">Reason_for_Claim</th>  
+                <th class="tbl2">Claim_Status</th>  
+                <th class="tbl2">Amount_Sanctioned </th>  
+            </tr>  
+            <tr *ngFor="let travelclaim of travelclaims">            
+                <td class="tbl2">{{travelclaim.Travel_Claim_Id}}</td>  
+                <td class="tbl2">{{travelclaim.Travel_Policy_Id }}</td>  
+                <td class="tbl2">{{travelclaim.Reason_for_Claim }}</td>  
+                <td class="tbl2">{{travelclaim.Claim_Status}}</td> 
+                <td class="tbl2">{{travelclaim.Amount_Sanctioned}}</td>  
+            </tr>  
+        </table> 
+
+</div>

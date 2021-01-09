@@ -1,0 +1,46 @@
+export class MotorClaimTable{
+    Claim_Id:number;
+    Policy_Id:any;
+    Name:string;
+    Mobile_Number:string;
+    Reason:string;
+    Date_Of_Applying:string;
+    Insurance_Copy:string;
+    License_Copy:string;
+    RC_Copy:string;
+    Authenticated_Letter_from_RTO:string;
+    Estimated_Amount_For_Repair:number;
+    Bill_Copy:string;
+    Amount_Sanctioned:number;
+    Claim_Status:string='pending';
+    Approver_Username:any;
+
+    constructor(
+        Claim_Id:number=NaN,        
+        Name:string='',
+        Mobile_Number:string='',
+        Reason:string='',
+        Date_Of_Applying:string='',
+        Insurance_Copy:string='',
+        License_Copy:string='',
+        RC_Copy:string='',
+        Authenticated_Letter_from_RTO:string='',
+        Estimated_Amount_For_Repair:number=NaN,
+        Bill_Copy:string='',
+        Amount_Sanctioned:number=NaN,
+    )
+    {
+        this.Claim_Id=Claim_Id;
+        this.Name=Name;
+        this.Mobile_Number=Mobile_Number;
+        this.Reason=Reason;
+        this.Date_Of_Applying=Date_Of_Applying;
+        this.Insurance_Copy=Insurance_Copy;
+        this.License_Copy=License_Copy;
+        this.RC_Copy=RC_Copy;
+        this.Authenticated_Letter_from_RTO=Authenticated_Letter_from_RTO;
+        this.Estimated_Amount_For_Repair=Estimated_Amount_For_Repair;
+        this.Bill_Copy=Bill_Copy;
+        this.Amount_Sanctioned=Amount_Sanctioned;
+    }
+}

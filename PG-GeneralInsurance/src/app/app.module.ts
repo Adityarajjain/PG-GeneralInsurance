@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,13 @@ import { TransactionService } from './service/transaction.service';
 import { DisplaydetailsComponent } from './displaydetails/displaydetails.component';
 import { RenewalDisplayService } from './service/renewaldisp.service';
 import { SelectyearComponent } from './selectyear/selectyear.component';
+import { DashboardService } from './service/dashboard.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { DummyComponent } from './dummy/dummy.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from "@angular/material/dialog";
+
 
 
 const routes:Routes=[
@@ -42,7 +49,9 @@ const routes:Routes=[
   {path:"policy-preview", component:PolicyPreviewComponent},
   {path:"estimate-insurance", component:EstimateInsuranceComponent},
   {path:"Renew-insurance", component:DisplaydetailsComponent},
-  {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent}
+  {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent},
+  {path:"user-dashboard",component:UserDashboardComponent},
+  {path:'dummy', component:DummyComponent}
 ]
 
 @NgModule({
@@ -60,17 +69,32 @@ const routes:Routes=[
     EstimateInsuranceComponent,
     TravelPaymentComponent,
     DisplaydetailsComponent,
-    SelectyearComponent
+    SelectyearComponent,
+    DummyComponent,
+    UserDashboardComponent
+   
   ],
-  imports: [
+  entryComponents:[PolicyPreviewComponent],
+  imports: [    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [LoginService,RegisterService,VehiclelistService,MotorInsuranceDetailsService, TravelInsuranceDetailsService,UserService,TransactionService, RenewalDisplayService],
+  providers: [LoginService,
+    RegisterService,
+    VehiclelistService,
+    MotorInsuranceDetailsService,
+    TravelInsuranceDetailsService,
+    UserService,
+    TransactionService, 
+    RenewalDisplayService, 
+    DashboardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
