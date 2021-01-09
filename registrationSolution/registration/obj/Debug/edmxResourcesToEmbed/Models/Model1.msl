@@ -169,5 +169,53 @@
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GeneralInsuranceFinalModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="proc_GetBrandNewPrice" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetBrandNewPrice" />
     <FunctionImportMapping FunctionImportName="proc_GetLatestId" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetLatestId" />
+    <FunctionImportMapping FunctionImportName="proc_GetLatestTravelId" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetLatestTravelId" />
+    <FunctionImportMapping FunctionImportName="GetBrandNewPrice_Proc1" FunctionName="GeneralInsuranceFinalModel.Store.GetBrandNewPrice_Proc1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.GetBrandNewPrice_Proc1_Result">
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Brand_New_Price" ColumnName="Brand_New_Price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proc_MakeRenewalOfPolicy3" FunctionName="GeneralInsuranceFinalModel.Store.Proc_MakeRenewalOfPolicy3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.Proc_MakeRenewalOfPolicy3_Result">
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Policy_Start_date" ColumnName="Policy_Start_date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Proj_Proc_UserPolicyDetailsDisplay2" FunctionName="GeneralInsuranceFinalModel.Store.Proj_Proc_UserPolicyDetailsDisplay2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.Proj_Proc_UserPolicyDetailsDisplay2_Result">
+          <ScalarProperty Name="Mobile_number" ColumnName="Mobile_number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+          <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+          <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+          <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+          <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

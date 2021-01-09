@@ -271,6 +271,11 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="GetBrandNewPrice_Proc1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="manu" Type="varchar" Mode="In" />
+          <Parameter Name="model" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="proc_AdminLoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="uid" Type="varchar" Mode="In" />
           <Parameter Name="pswd" Type="varchar" Mode="In" />
@@ -283,7 +288,16 @@
           <Parameter Name="manu" Type="varchar" Mode="In" />
         </Function>
         <Function Name="proc_GetLatestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetLatestTravelId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="proc_GetManufacturers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Proc_MakeRenewalOfPolicy3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="amount" Type="float" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Proj_Proc_UserPolicyDetailsDisplay2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -757,6 +771,20 @@
             <Parameter Name="model" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="proc_GetLatestId" ReturnType="Collection(Int64)" />
+          <FunctionImport Name="proc_GetLatestTravelId" ReturnType="Collection(Int64)" />
+          <FunctionImport Name="GetBrandNewPrice_Proc1" ReturnType="Collection(GeneralInsuranceFinalModel.GetBrandNewPrice_Proc1_Result)">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="manu" Mode="In" Type="String" />
+            <Parameter Name="model" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Proc_MakeRenewalOfPolicy3" ReturnType="Collection(GeneralInsuranceFinalModel.Proc_MakeRenewalOfPolicy3_Result)">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="amount" Mode="In" Type="Double" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Proj_Proc_UserPolicyDetailsDisplay2" ReturnType="Collection(GeneralInsuranceFinalModel.Proj_Proc_UserPolicyDetailsDisplay2_Result)">
+            <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -768,6 +796,41 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetBrandNewPrice_Proc1_Result">
+          <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+          <Property Type="Double" Name="Brand_New_Price" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Proc_MakeRenewalOfPolicy3_Result">
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="DateTime" Name="Policy_Start_date" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Proj_Proc_UserPolicyDetailsDisplay2_Result">
+          <Property Type="String" Name="Mobile_number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Email_Id" Nullable="true" MaxLength="320" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Door_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Street" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Pincode" Nullable="true" MaxLength="10" />
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int32" Name="Number_Of_Wheels" Nullable="true" />
+          <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Year_Of_Manufacture" Nullable="true" />
+          <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="Time_Period" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -943,6 +1006,54 @@
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GeneralInsuranceFinalModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="proc_GetBrandNewPrice" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetBrandNewPrice" />
           <FunctionImportMapping FunctionImportName="proc_GetLatestId" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetLatestId" />
+          <FunctionImportMapping FunctionImportName="proc_GetLatestTravelId" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetLatestTravelId" />
+          <FunctionImportMapping FunctionImportName="GetBrandNewPrice_Proc1" FunctionName="GeneralInsuranceFinalModel.Store.GetBrandNewPrice_Proc1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.GetBrandNewPrice_Proc1_Result">
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Brand_New_Price" ColumnName="Brand_New_Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Proc_MakeRenewalOfPolicy3" FunctionName="GeneralInsuranceFinalModel.Store.Proc_MakeRenewalOfPolicy3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.Proc_MakeRenewalOfPolicy3_Result">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Policy_Start_date" ColumnName="Policy_Start_date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Proj_Proc_UserPolicyDetailsDisplay2" FunctionName="GeneralInsuranceFinalModel.Store.Proj_Proc_UserPolicyDetailsDisplay2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.Proj_Proc_UserPolicyDetailsDisplay2_Result">
+                <ScalarProperty Name="Mobile_number" ColumnName="Mobile_number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+                <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+                <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+                <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

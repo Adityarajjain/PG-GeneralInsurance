@@ -26,14 +26,15 @@ export class LoginComponent implements OnInit {
         { this.router.navigateByUrl('/dashboard');
           //this.router.navigate(['/Dasboard']);  
           console.log(data.Message);  
+          sessionStorage.setItem("userMobile",this.model.Mobile_Number);
              
         }    
         else{    
-          this.errorMessage ="Invalid Username or Password";  
+          this.errorMessage ="Invalid Mobile number or Password";  
         }    
       },    
       error => {    
-        this.errorMessage ="Invalid Username or Password";     
+        this.errorMessage ="Invalid Mobile number or Password";     
       });  
        
   };    

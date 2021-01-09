@@ -1,0 +1,39 @@
+<br>
+<br>
+
+Amount payable for this policy is 
+<br>
+<br> 
+{{userins}}
+
+<br>
+<br>
+Enter Card Number:<input type="text" placeholder="Enter Card Number" required>
+
+
+<br>
+<br>
+            
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Name of card holder" required>
+            <br>
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+            <br>
+            
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352" required>
+              </div>
+             <button (click)="payclick(userins)">Pay Amount</button>
+             
+
+
+  

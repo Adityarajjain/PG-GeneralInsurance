@@ -184,5 +184,53 @@ namespace registration.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<long>>("proc_GetLatestId");
         }
+    
+        public virtual ObjectResult<Nullable<long>> proc_GetLatestTravelId()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<long>>("proc_GetLatestTravelId");
+        }
+    
+        public virtual ObjectResult<GetBrandNewPrice_Proc1_Result> GetBrandNewPrice_Proc1(Nullable<long> policyid, string manu, string model)
+        {
+            var policyidParameter = policyid.HasValue ?
+                new ObjectParameter("policyid", policyid) :
+                new ObjectParameter("policyid", typeof(long));
+    
+            var manuParameter = manu != null ?
+                new ObjectParameter("manu", manu) :
+                new ObjectParameter("manu", typeof(string));
+    
+            var modelParameter = model != null ?
+                new ObjectParameter("model", model) :
+                new ObjectParameter("model", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBrandNewPrice_Proc1_Result>("GetBrandNewPrice_Proc1", policyidParameter, manuParameter, modelParameter);
+        }
+    
+        public virtual ObjectResult<Proc_MakeRenewalOfPolicy3_Result> Proc_MakeRenewalOfPolicy3(Nullable<long> policyid, Nullable<double> amount, Nullable<int> year)
+        {
+            var policyidParameter = policyid.HasValue ?
+                new ObjectParameter("policyid", policyid) :
+                new ObjectParameter("policyid", typeof(long));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proc_MakeRenewalOfPolicy3_Result>("Proc_MakeRenewalOfPolicy3", policyidParameter, amountParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Proj_Proc_UserPolicyDetailsDisplay2_Result> Proj_Proc_UserPolicyDetailsDisplay2(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proj_Proc_UserPolicyDetailsDisplay2_Result>("Proj_Proc_UserPolicyDetailsDisplay2", idParameter);
+        }
     }
 }

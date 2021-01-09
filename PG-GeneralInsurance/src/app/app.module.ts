@@ -23,6 +23,11 @@ import { PaymentComponent } from './payment/payment.component';
 import { EstimateInsuranceComponent } from './estimate-insurance/estimate-insurance.component';
 import { TravelInsuranceDetailsService } from './service/travelInsuranceDetails.service';
 import { UserService } from './service/user.service';
+import { TravelPaymentComponent } from './travel-payment/travel-payment.component';
+import { TransactionService } from './service/transaction.service';
+import { DisplaydetailsComponent } from './displaydetails/displaydetails.component';
+import { RenewalDisplayService } from './service/renewaldisp.service';
+import { SelectyearComponent } from './selectyear/selectyear.component';
 
 
 const routes:Routes=[
@@ -35,7 +40,9 @@ const routes:Routes=[
   {path:"login", component:LoginComponent},
   {path:"dashboard", component:DashboardComponent},
   {path:"policy-preview", component:PolicyPreviewComponent},
-  {path:"estimate-insurance", component:EstimateInsuranceComponent}
+  {path:"estimate-insurance", component:EstimateInsuranceComponent},
+  {path:"Renew-insurance", component:DisplaydetailsComponent},
+  {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent}
 ]
 
 @NgModule({
@@ -50,7 +57,10 @@ const routes:Routes=[
     RegisterComponent,
     PolicyPreviewComponent,
     PaymentComponent,
-    EstimateInsuranceComponent
+    EstimateInsuranceComponent,
+    TravelPaymentComponent,
+    DisplaydetailsComponent,
+    SelectyearComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +70,7 @@ const routes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [LoginService,RegisterService,VehiclelistService,MotorInsuranceDetailsService, TravelInsuranceDetailsService,UserService],
+  providers: [LoginService,RegisterService,VehiclelistService,MotorInsuranceDetailsService, TravelInsuranceDetailsService,UserService,TransactionService, RenewalDisplayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

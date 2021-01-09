@@ -1,0 +1,48 @@
+<div class="container">
+<p>Enter Policy Number for Renewal</p>
+<input type="number" [(ngModel)]="Policy_id">
+<br>
+<br>
+<button (click)="onSubmitById()" class="btn btn-default">Submit</button>
+<!-- <div *ngFor="let ta of userins"> -->
+<div *ngIf="userins">
+   
+    Name:  {{userins.Name}}
+    <br><br>
+    <p>Insurance Details</p>
+    Policy Number: {{userins.Policy_Id}}
+    <br>    
+    Manufacturer:{{userins.Manufacturer}}
+    <br>
+    Model Name:{{userins.Model_Name}}
+    <br>
+    Registration Number:  {{userins.Registration_Number}}
+    <br>    
+    Insurance Plan: {{userins.Insurance_Plan}}
+    <br>
+    Time Period:{{userins.Time_Period}}
+    <br>
+    Policy Start Date:  {{userins.Policy_Start_Date}}
+    <br>
+    Policy End Date:  {{userins.Policy_End_Date}}
+    <br>
+    <br>
+    <br>
+    <a class="card" [routerLink]="['/yearrenewal',userins.Policy_Id,userins.Model_Name,userins.Manufacturer,1]">Renew my {{userins.Policy_Id}}  policy for 1 year</a>
+    <br>
+    <a class="card" [routerLink]="['/yearrenewal',userins.Policy_Id,userins.Model_Name,userins.Manufacturer,2]">Renew my {{userins.Policy_Id}}  policy for 2 year</a>
+    <br>
+    <a class="card" [routerLink]="['/yearrenewal',userins.Policy_Id,userins.Model_Name,userins.Manufacturer,3]">Renew my {{userins.Policy_Id}}  policy for 3 year</a>
+    <br>
+    <button (click)="Gobacktorenewal()">Go Back</button>
+</div>
+
+<br>
+<div *ngIf="msg">
+    {{msg}}
+    <button (click)="CheckAgain()">Check Again</button>
+</div>
+
+
+
+</div>

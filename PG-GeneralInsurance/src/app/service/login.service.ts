@@ -10,7 +10,7 @@ Url :string;
 header : any;
   constructor(private http : HttpClient) 
   { 
-    this.Url = 'http://localhost:53421/api/Admin/';
+    this.Url = 'http://localhost:53421/api/UserLogin/';
     const headerSettings: {[name: string]: string | string[]; } = {};  
         this.header = new HttpHeaders(headerSettings); 
   }

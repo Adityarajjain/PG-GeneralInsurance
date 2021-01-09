@@ -13,11 +13,14 @@ namespace registration.Controllers
     public class TravelInsuranceController : ApiController
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
-        public IEnumerable<TravelInsuranceTable> Get()
+        //public IEnumerable<TravelInsuranceTable> Get()
+        //{
+        //    return entities.TravelInsuranceTables.ToList();
+        //}
+        public long Get()
         {
-            return entities.TravelInsuranceTables.ToList();
+            return entities.proc_GetLatestTravelId().SingleOrDefault().Value;
         }
-
         [HttpPost]
         public void AddInsurance(TravelInsuranceTable travelInsuranceTable)
         {

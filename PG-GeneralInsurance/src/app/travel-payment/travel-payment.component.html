@@ -1,0 +1,61 @@
+<div class="container" style="margin-left: 34%;">
+    <table style="padding: 15px;">
+        <thead>
+            <tr>
+                <td colspan="4" style="text-align: center;"><h2>Payment Gateway</h2></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Name :</td>
+                <td>{{user.Name}}</td>            
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td>{{user.Mobile_Number}}</td>
+            </tr>
+            <tr>
+                <td>Email Id :</td>
+                <td>{{user.Email_Id}}</td>            
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td colspan="3">{{user.Door_Number}}, {{user.Street}}, {{user.City}}, {{user.State}}, {{user.Pincode}}</td>            
+            </tr>
+            <tr>
+                <td>Source :</td>
+                <td>{{travelInsObj.Source}}</td>
+            </tr>
+            <tr>
+                <td>Destination :</td>
+                <td>{{travelInsObj.Destination}}</td>
+            </tr>
+            <tr>
+                <td>Travel Start Date :</td>
+                <td>{{travelInsObj.Travel_Start_Date}}</td>
+            </tr>
+            <tr>
+                <td>Travel End Date :</td>
+                <td>{{travelInsObj.Travel_End_Date}}</td>                
+            </tr>
+            <tr>
+                <td>Insurance Plan :</td>
+                <td>{{travelInsObj.Insurance_Plan}}</td>            
+            </tr>
+            
+            <tr><td></td></tr>
+            
+            <tr>
+                <td colspan="4" style="text-align: center;">Premium Amount(in Rs) :{{premium_amt}}</td>            
+            </tr>
+            <tr>
+                <td colspan="4">
+                   Enter Card Number : &nbsp; <input type="text"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"  ><button style="text-align: center;width: 100%;" class="btn btn-success" (click)="doTransaction()" routerLink="/home">Pay</button></td>            
+            </tr>
+        </tbody>
+    </table>
+    </div>

@@ -13,7 +13,8 @@ export class TravelInsuranceComponent implements OnInit {
 
   registerForm: FormGroup = new FormGroup({});
   register:TravelInsuranceTable;
- 
+  travelInsurance:any;
+  submitted:boolean;
   
   constructor(private registerService:TravelInsuranceDetailsService,private route:Router,private fb:FormBuilder) {
     this.register=new TravelInsuranceTable();
@@ -28,7 +29,7 @@ export class TravelInsuranceComponent implements OnInit {
       Mobile_Number:['', [Validators.required,Validators.minLength(10),Validators.pattern("[0-9]*")]],
       Insurance_Plan:['',[Validators.required]],
    });
-   
+   this.submitted=false;
   }
  
   ngOnInit(): void {
@@ -43,10 +44,11 @@ export class TravelInsuranceComponent implements OnInit {
  
   InsertUser()
   {
-   
-    this.registerService.fillTravelInsurance(this.registerForm.value).subscribe(data=>console.log(data))
+    this.travelInsurance=this.registerForm.value;
+    this.registerService.fillTravelInsurance(this.registerForm.value).subscribe()
     alert("User registered");
-    console.log(this.registerForm.value);
+    // console.log("Mobile : "+this.registerForm.value.Mobile_Number);
+    this.submitted=true;
     
   }
  
