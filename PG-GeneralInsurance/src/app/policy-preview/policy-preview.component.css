@@ -1,7 +1,10 @@
-/* td{
+td{
+    /* border:1px solid black; */
+    padding-right: 20px;
+}
+#trb{
     border:1px solid black;
-} */
-
+}
 .md-dialog-container {
     background-color: #000;
     width: 70%;

@@ -312,5 +312,54 @@ namespace registration.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<double>>("proc_GetTransactionDetails", policy_idParameter);
         }
+    
+        public virtual ObjectResult<proc_GetMotor_Policy_Result> proc_GetMotor_Policy(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetMotor_Policy_Result>("proc_GetMotor_Policy", policy_idParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetTravel_Policy_Result> proc_GetTravel_Policy(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetTravel_Policy_Result>("proc_GetTravel_Policy", policy_idParameter);
+        }
+    
+        public virtual ObjectResult<proc_Get_Policy_Motor_Result> proc_Get_Policy_Motor(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Get_Policy_Motor_Result>("proc_Get_Policy_Motor", policy_idParameter);
+        }
+    
+        public virtual ObjectResult<Proc_ValidateExistingAuthGuard3_Result> Proc_ValidateExistingAuthGuard3(string mob, string pass)
+        {
+            var mobParameter = mob != null ?
+                new ObjectParameter("mob", mob) :
+                new ObjectParameter("mob", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proc_ValidateExistingAuthGuard3_Result>("Proc_ValidateExistingAuthGuard3", mobParameter, passParameter);
+        }
+    
+        public virtual ObjectResult<proc_Get_Policy_Travel_Result> proc_Get_Policy_Travel(Nullable<long> policy_id)
+        {
+            var policy_idParameter = policy_id.HasValue ?
+                new ObjectParameter("policy_id", policy_id) :
+                new ObjectParameter("policy_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Get_Policy_Travel_Result>("proc_Get_Policy_Travel", policy_idParameter);
+        }
     }
 }

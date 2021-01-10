@@ -3,19 +3,19 @@ import jspdf from 'jspdf';
 import html2canvas from 'html2canvas';  
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MotorPolicyService } from '../service/motorPolicy.service';
-  
-@Component({  
-  selector: 'app-policy-preview',  
-  templateUrl: './policy-preview.component.html',  
-  styleUrls: ['./policy-preview.component.css']  
-})  
-export class PolicyPreviewComponent{  
+
+@Component({
+  selector: 'app-travel-policy',
+  templateUrl: './travel-policy.component.html',
+  styleUrls: ['./travel-policy.component.css']
+})
+export class TravelPolicyComponent  {
 
   policy:any;
   premium:number=NaN;
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private motorPolicy:MotorPolicyService){
-    this.motorPolicy.getMotorPolicy(data).subscribe((d:any)=>{this.policy=d});
-    this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;console.log('premium inside: '+p);})! ;
+    this.motorPolicy.getTravelPolicy(data).subscribe((d:any)=>{this.policy=d});
+    this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;})! ;
   }
 
   public PrintPolicy()  
@@ -32,7 +32,8 @@ export class PolicyPreviewComponent{
       let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF  
       var position = 0;  
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)  
-      pdf.save(this.data+'_MotorPolicy.pdf'); // Generated PDF   
+      pdf.save(this.data+'_TravelPolicy.pdf'); // Generated PDF   
     });  
   }  
-}  
+
+}

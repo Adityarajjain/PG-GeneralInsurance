@@ -1,113 +1,116 @@
 <br>
-<div id="content" #content style="align-self: center; ">  
+<div id="content" #content  >  
         
-      <div >  
-        <input type="button" value="Download Policy" (click)="PrintPolicy()"/>  
-      </div>  
+     
   </div>  
   <br><br>
-  <table id="contentToConvert" style="margin-left: 30%; ">
+  <table id="contentToConvert" style="margin-left: 22%; ">
     <tbody>
         <tr>
-            <td colspan="4" style="text-align: center;">The General Insurance - V</td>  
+            <td colspan="4" style="text-align: center;"><strong> General Insurance - V</strong></td>  
                       
         </tr>
         <tr></tr>
         <tr>
             <td colspan="4" style="text-align: center;">
-                Motor Insurance
+                <strong>Motor Insurance</strong>
             </td>
                 
         </tr>
     
     
         <tr>
-            <td>Policy Number :</td>
-            <td>{{data}}</td>
-            <td>Policy Start Date : </td>
-            <td>{{policy.Policy_Start_Date}}</td>
+            <td>Policy Number</td>
+            <td>:<strong>{{data}}</strong></td>
+            <td>Policy Start Date </td>
+            <td>:{{policy.Policy_Start_Date | date }}</td>
         </tr>
 
         <tr>
-            <td>Insured Name :</td>
-            <td>{{policy.Name}}</td>
-            <td>Policy End Date :</td>
-            <td>{{policy.Policy_End_Date}}</td>
+            <td>Insured Name</td>
+            <td>:<strong>{{policy.Name}}</strong></td>
+            <td>Policy End Date</td>
+            <td>:{{policy.Policy_End_Date | date}}</td>
         </tr>
         
         <tr>
-            <td>Insured Address :</td>
+            <td><strong>Insured Address</strong></td>
         </tr>
             <tr>
-                <td>{{policy.Door_Number}}, {{policy.Street}}</td>
+                <td>:{{policy.Door_Number}}, {{policy.Street}}</td>
             </tr>
             <tr>
-                <td>City :</td>
-                <td>{{policy.City}}</td>
-                <td>District :</td>
-                <td>{{policy.District}}</td>
+                <td>City</td>
+                <td>:{{policy.City}}</td>
+                <td>District</td>
+                <td>:{{policy.District}}</td>
             </tr>
             <tr>
-                <td>State :</td>
-                <td>{{policy.State}}</td>
-                <td>Pincode :</td>
-                <td>{{policy.Pincode}}</td>
+                <td>State</td>
+                <td>:{{policy.State}}</td>
+                <td>Pincode</td>
+                <td>:{{policy.Pincode}}</td>
             </tr>
             <tr>
-                <td>Mobile Number :</td>
-                <td>{{policy.Mobile_Number}}</td>                
+                <td>Mobile Number</td>
+                <td>:{{policy.Mobile_Number}}</td>                
             </tr>
         <!-- </tr> -->
-
+            
+              
         <tr>
-            <td>Vehicle Details :</td>
+            <td><strong>Vehicle Details</strong></td>
         </tr>
-            <tr>
-                <td>Registration Number :</td>
-                <td>{{policy.Registration_Number}}</td>
-                <td>Engine Number :</td>
-                <td>{{policy.Engine_Number}}</td>
+            <tr >
+                <td>Registration Number</td>
+                <td>:{{policy.Registration_Number}}</td>
+                <td>Engine Number</td>
+                <td>:{{policy.Engine_Number}}</td>
             </tr>
             <tr>
-                <td>RTA Name :</td>
-                <td>{{policy.RTA_Name}}</td>
-                <td>Chassis Number :</td>
-                <td>{{policy.Chassis_Number}}</td>
+                <td>RTA Name</td>
+                <td>:{{policy.RTA_Name}}</td>
+                <td>Chassis Number</td>
+                <td>:{{policy.Chassis_Number}}</td>
             </tr>
             <tr>
-                <td>Purchase Date :</td>
-                <td>{{policy.Purchase_Date}}</td>        
+                <td>Purchase Date</td>
+                <td>:{{policy.Purchase_Date | date}}</td>        
                 <td>Vehicle Manufacturer:</td>
-                <td>{{policy.Manufacturer}}</td>                
+                <td>:{{policy.Manufacturer}}</td>                
             </tr>
             <tr>
-                <td>Vehicle Model :</td>
-                <td>{{policy.Model_Name}}</td>        
-                <td>Cubic Capacity :</td>
-                <td></td>                
+                <td>Vehicle Model</td>
+                <td>:{{policy.Model_Name}}</td>        
+                <td>Cubic Capacity</td>
+                <td>:{{policy.Cubic_Capacity}}</td>                
             </tr>
             <tr>
-                <td>Type of Body :</td>
-                <td></td>        
-                <td>Seating Capacity :</td>
-                <td></td>                
+                <td>Type of Body</td>
+                <td>:{{policy.Type_Of_Body}}</td>        
+                <td>Seating Capacity</td>
+                <td>:{{policy.Seating_Capacity}}</td>                
             </tr>
+       
         <!-- </tr> -->
-        <tr> </tr>
+        <tr id="trb"> </tr>
         <tr> </tr>
         <tr>
-            <td>Own Damage Premium</td>
+            <td><strong>Own Damage Premium</strong></td>
         </tr>
         <tr>
-            <td>Premium :</td>
-            <td>{{premium}}</td>
+            <td>Premium</td>
+            <td>:{{premium}}</td>
         </tr>
         <tr>
            
         </tr>
         <tr>
-            <td>Total Amount :</td>
-            <td>{{premium}}</td>
+            <td>Total Amount</td>
+            <td>:{{premium | json}}</td>
         </tr>
     </tbody>
   </table>
+  <div style="margin-left: 40%;">  
+    <input type="button" class="btn btn-info" value="Download Policy" (click)="PrintPolicy()"/>  
+  </div>  

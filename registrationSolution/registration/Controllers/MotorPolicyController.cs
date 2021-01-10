@@ -13,10 +13,10 @@ namespace registration.Controllers
     public class MotorPolicyController : ApiController
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
-        public proc_GetMotorPolicy_Result GetMotorPolicy(long Policy_Id)
+        public proc_Get_Policy_Motor_Result GetMotorPolicy(long Policy_Id)
         {
-            proc_GetMotorPolicy_Result policy = new proc_GetMotorPolicy_Result();
-            policy = entities.proc_GetMotorPolicy(Policy_Id).FirstOrDefault();
+            proc_Get_Policy_Motor_Result policy = new proc_Get_Policy_Motor_Result();
+            policy = entities.proc_Get_Policy_Motor(Policy_Id).FirstOrDefault();
             return policy;
         }
     }

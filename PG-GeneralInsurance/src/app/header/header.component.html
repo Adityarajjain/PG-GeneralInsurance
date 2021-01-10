@@ -24,8 +24,11 @@
 
               <a class="nav-link" routerLink="/register">Register</a>
 
-              <a class="nav-link" routerLink="/login">Login</a>
-            
+              <a class="nav-link" routerLink="/login" (click)="loginClicked()" *ngIf="!isUserLoggedIn">Login</a>
+
+              <a class="nav-link" routerLink="/user-dashboard" *ngIf="isUserLoggedIn">My Account</a>
+
+              <a class="nav-link" routerLink="/home" (click)="logoutClicked()" *ngIf="isUserLoggedIn">Logout</a>
           </div>
         </div>
       </nav>

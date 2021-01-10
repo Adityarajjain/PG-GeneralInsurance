@@ -6,6 +6,8 @@ import { DashboardService } from '../service/dashboard.service';
 import { UserService } from '../service/user.service';
 import {MatDialog} from '@angular/material/dialog';
 import { PolicyPreviewComponent } from '../policy-preview/policy-preview.component';
+import { Router } from '@angular/router';
+import { TravelPolicyComponent } from '../travel-policy/travel-policy.component';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -23,7 +25,8 @@ export class UserDashboardComponent implements OnInit {
   policy_id:any;
   amt:any;
  
-  constructor(private userService:UserService, private dashboardService:DashboardService, private approveMotorClaim:ApproveMotorClaimService, private dialog:MatDialog) { 
+  constructor(private userService:UserService, private router:Router,
+    private dashboardService:DashboardService, private approveMotorClaim:ApproveMotorClaimService, private dialog:MatDialog) { 
     this.user=new UserDetails();
     // this.motorinsurances=new MotorInsuranceTable();
     // this.travelinsurances= new TravelInsuranceTable();
@@ -42,5 +45,13 @@ export class UserDashboardComponent implements OnInit {
   showPolicy(pid:any){
     // console.log('pid: '+(pid as HTMLButtonElement).value);
     let dialofRef=this.dialog.open(PolicyPreviewComponent,{data:(pid as HTMLButtonElement).value, height:'580px', width:'75%'})
+  }
+  showTravelPolicy(pid:any){
+    console.log('pid: '+(pid as HTMLButtonElement).value);
+    let dialofRef=this.dialog.open(TravelPolicyComponent,{data:(pid as HTMLButtonElement).value, height:'580px', width:'75%'})
+  }
+
+  function(amt:any){
+    console.log('amt: '+amt);
   }
 }

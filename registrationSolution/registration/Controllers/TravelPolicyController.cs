@@ -13,10 +13,10 @@ namespace registration.Controllers
     public class TravelPolicyController : ApiController
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
-        public proc_GetTravelPolicy_Result GetMotorPolicy(long Policy_Id)
+        public proc_Get_Policy_Travel_Result GetTravelPolicy(long Policy_Id)
         {
-            proc_GetTravelPolicy_Result policy = new proc_GetTravelPolicy_Result();
-            policy = entities.proc_GetTravelPolicy(Policy_Id).FirstOrDefault();
+            proc_Get_Policy_Travel_Result policy = new proc_Get_Policy_Travel_Result();
+            policy = entities.proc_Get_Policy_Travel(Policy_Id).FirstOrDefault();
             return policy;
         }
     }

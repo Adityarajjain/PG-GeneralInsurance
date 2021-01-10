@@ -1,4 +1,19 @@
 <div>
+<app-header title="Momentz-4-ever" ></app-header>
+</div>
+<div>
+       
+    <div class="row"> 
+    <div class="col-sm-12 btn btn-primary"> 
+            Welcome {{user.Name}}
+            <!-- <button class="btn btn-danger" (click)="logout()" style="margin-right: 1px; margin-left: 80%; border-radius: 50px;">Logout></button> -->
+    </div>  
+    
+    </div>  
+    </div>  
+
+
+<div>
     <h3 align="center">Motor Insurances</h3> 
         <table class="table" >  
             <tr ngclass="btn-primary">  
@@ -23,8 +38,9 @@
                     <td class="tbl2">{{motorinsurance.Registration_Number}}</td>  
                     <td class="tbl2">{{motorinsurance.Insurance_Plan}}</td>  
                     <td class="tbl2">{{motorinsurance.Time_Period }} year(s)</td> 
-                    <td class="tbl2">{{motorinsurance.Policy_Start_Date }}</td>  
-                    <td class="tbl2">{{motorinsurance.Policy_End_Date }}</td>  
+                    <td class="tbl2">{{motorinsurance.Policy_Start_Date | date }}</td>  
+                    <td class="tbl2">{{motorinsurance.Policy_End_Date | date }}</td> 
+                    <!-- <input type="text" #amt (change)="function(amt.value)">  -->
                     <td class="tbl2">  
                     <button type="button" class="btn btn-info" #pid value="{{motorinsurance.Policy_Id}}" (click)="showPolicy(pid)">View Policy</button>  
                     </td>  
@@ -51,11 +67,11 @@
                 <td class="tbl2">{{travelinsurance.Source}}</td>  
                 <td class="tbl2">{{travelinsurance.Destination}}</td>  
                 <td class="tbl2">{{travelinsurance. Mode_Of_Transport}}</td>  
-                <td class="tbl2">{{travelinsurance. Travel_Start_Date  }}</td>  
-                <td class="tbl2">{{travelinsurance. Travel_End_Date}}</td>
+                <td class="tbl2">{{travelinsurance. Travel_Start_Date | date }}</td>  
+                <td class="tbl2">{{travelinsurance. Travel_End_Date | date}}</td>
                 <td class="tbl2">{{travelinsurance.Insurance_Plan }}</td>  
                 <td class="tbl2">{{travelinsurance.status}}</td>  
-                <td align='center'><button type="button" class="btn btn-info" #pid value="{{travelinsurance.Policy_Id}}" (click)="showPolicy(pid)">View Policy</button>  </td>
+                <td class="tbl2"><button type="button" class="btn btn-info" #tpid value="{{travelinsurance.Policy_id}}" (click)="showTravelPolicy(tpid)">View Policy</button>  </td>
             </tr>  
             </tbody>
         </table> 

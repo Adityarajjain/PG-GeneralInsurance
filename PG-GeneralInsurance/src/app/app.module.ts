@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './service/login.service';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterService } from './service/register.service';
 import { RegisterComponent } from './register/register.component';
 import { VehiclelistService } from './service/vehiclelist.service';
@@ -34,23 +33,24 @@ import { DummyComponent } from './dummy/dummy.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from "@angular/material/dialog";
+import { AuthguardGuard } from './authguard.guard';
+import { TravelPolicyComponent } from './travel-policy/travel-policy.component';
 
 
 
 const routes:Routes=[
   {path:"", pathMatch:"full", redirectTo:"/home"},
   {path:"register",component:RegisterComponent},
-  {path:"buy-insurance", component:BuyInsuranceComponent},
-  {path:"motor-insurance", component:MotorInsuranceComponent},
-  {path:"travel-insurance", component:TravelInsuranceComponent},
+  {path:"buy-insurance", component:BuyInsuranceComponent, canActivate:[AuthguardGuard]},
+  {path:"motor-insurance", component:MotorInsuranceComponent, canActivate:[AuthguardGuard]},
+  {path:"travel-insurance", component:TravelInsuranceComponent, canActivate:[AuthguardGuard]},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},
-  {path:"dashboard", component:DashboardComponent},
-  {path:"policy-preview", component:PolicyPreviewComponent},
+  {path:"policy-preview", component:PolicyPreviewComponent, canActivate:[AuthguardGuard]},
   {path:"estimate-insurance", component:EstimateInsuranceComponent},
-  {path:"Renew-insurance", component:DisplaydetailsComponent},
+  {path:"Renew-insurance", component:DisplaydetailsComponent, canActivate:[AuthguardGuard]},
   {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent},
-  {path:"user-dashboard",component:UserDashboardComponent},
+  {path:"user-dashboard",component:UserDashboardComponent, canActivate:[AuthguardGuard]},
   {path:'dummy', component:DummyComponent}
 ]
 
@@ -71,10 +71,11 @@ const routes:Routes=[
     DisplaydetailsComponent,
     SelectyearComponent,
     DummyComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    TravelPolicyComponent
    
   ],
-  entryComponents:[PolicyPreviewComponent],
+  entryComponents:[PolicyPreviewComponent,TravelPolicyComponent],
   imports: [    
     BrowserModule,
     AppRoutingModule,

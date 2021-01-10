@@ -1,0 +1,103 @@
+<br>
+<div id="content" #content style="align-self: center; ">  
+        
+     
+  </div>  
+  <br><br>
+  <table id="contentToConvert" style="margin-left: 22%; ">
+    <tbody>
+        <tr>
+            <td colspan="4" style="text-align: center;"><strong>The General Insurance - V</strong></td>  
+                      
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="4" style="text-align: center;">
+                <strong>Travel Insurance</strong>
+            </td>
+                
+        </tr>
+    
+    
+        <tr>
+            <td>Policy Number :</td>
+            <td><strong>{{data}}</strong></td>
+            <td>Policy Start Date : </td>
+            <td>{{policy.Travel_Start_Date | date }}</td>
+        </tr>
+
+        <tr>
+            <td>Insured Name :</td>
+            <td>{{policy.Name}}</td>
+            <td>Policy End Date :</td>
+            <td>{{policy.Travel_End_Date | date}}</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Insured Address</strong> :</td>
+        </tr>
+            <tr>
+                <td>{{policy.Door_Number}}, {{policy.Street}}</td>
+            </tr>
+            <tr>
+                <td>City :</td>
+                <td>{{policy.City}}</td>
+                <td>District :</td>
+                <td>{{policy.District}}</td>
+            </tr>
+            <tr>
+                <td>State :</td>
+                <td>{{policy.State}}</td>
+                <td>Pincode :</td>
+                <td>{{policy.Pincode}}</td>
+            </tr>
+            <tr>
+                <td>Mobile Number :</td>
+                <td>{{policy.Mobile_Number}}</td>                
+            </tr>
+        <!-- </tr> -->
+
+        <tr>
+            <td><strong>Travel Details</strong> :</td>
+        </tr>
+            <tr>
+                <td>Source :</td>
+                <td>{{policy.Source}}</td>
+                <td>Destination :</td>
+                <td>{{policy.Destination}}</td>
+            </tr>
+            <tr>
+                <td>Mode of Transport :</td>
+                <td>{{policy.Mode_Of_Transport}}</td>
+                <td>Age of traveller :</td>
+                <td>{{policy.Age_Of_traveller}}</td>
+            </tr>
+            <tr>
+                <td>Insurance Plan :</td>
+                <td>{{policy.Insurance_Plan}}</td>        
+                <td>Any Medical Condition :</td>
+                <td>{{policy.Any_Medical_Condition}}</td>                
+            </tr>
+           
+        <!-- </tr> -->
+        <tr> </tr>
+        <tr> </tr>
+        <tr>
+            <td><strong>Travel Policy Premium</strong></td>
+        </tr>
+        <tr>
+            <td>Premium :</td>
+            <td>{{premium}}</td>
+        </tr>
+        <tr>
+           
+        </tr>
+        <tr>
+            <td>Total Amount :</td>
+            <td>{{premium | json}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <div style="margin-left: 40%;">  
+    <input type="button" class="btn btn-info" value="Download Policy" (click)="PrintPolicy()"/>  
+  </div>  
