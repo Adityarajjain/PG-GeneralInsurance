@@ -1,24 +1,31 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';  
-// import {HttpHeaders} from '@angular/common/http'; 
+import {HttpHeaders} from '@angular/common/http'; 
 import {​​​​map}​​​​ from "rxjs/operators";
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-// Url :string;   
+Url :string;   
 header : any;
-  constructor(private userHttp : HttpClient) 
+  constructor(private userHttp : HttpClient, private http : HttpClient) 
   { 
-    // this.Url = 'http://localhost:53421/api/UserLogin/';
-    // const headerSettings: {[name: string]: string | string[]; } = {};  
-    //     this.header = new HttpHeaders(headerSettings); 
+    this.Url = 'http://localhost:53421/api/Admin/';
+    const headerSettings: {[name: string]: string | string[]; } = {};  
+        this.header = new HttpHeaders(headerSettings); 
   }
-  // Login(model : any){  
+  Login(model : any){  
       
-  //    var a =this.Url;  
-  //    return this.http.post<any>(this.Url,model,{ headers: this.header}); 
-  // }  
+     var a =this.Url;  
+     return this.http.post<any>(this.Url,model,{ headers: this.header}).pipe(
+
+      map(user=>{​​​​
+
+          localStorage.setItem("admin",JSON.stringify(user))
+          return user;
+
+      }​​​​)); 
+  }  
 
   public UserLoginValid(mobile:string,passw:string){​​​​
 

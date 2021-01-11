@@ -1,0 +1,51 @@
+<h3 align="center">Approval Page for Pending Motor Insurance</h3>
+<table class="table">
+    <tr ngclass="btn-primary">
+        <th class="tb12">Policy Id</th>
+        <th class="tbl2">Number Of Wheels</th>
+        <th class="tbl2">Manufacturer</th>
+        <th class="tbl2">Model Name</th>
+        <th class="tbl2">Registration Number</th>
+        <th class="tbl2">RTA Name </th>
+        <th class="tbl2">Engine Number</th>
+        <th class="tbl2">Chassis Number</th>
+        <th class="tbl2">Year Of Manufacture</th>
+        <th class="tbl2">Purchase Date </th>
+        <th class="tbl2"> Mobile Number </th>
+        <th class="tbl2">Insurance Plan</th>
+        <th class="tbl2"> Time Period</th>
+        <th class="tbl2"> Policy Start Date </th>
+        <th class="tbl2">Policy End Date</th>
+        <th class="tbl2">Approve</th>
+
+
+    </tr>
+
+    <tr *ngFor="let motorinsurance of motorinsurances">
+        <td class="tb12" #pid value="motorinsurance.Policy_Id">{{motorinsurance.Policy_Id}}</td>
+        <td class="tbl2">{{motorinsurance.Number_Of_Wheels}}</td>
+        <td class="tbl2">{{motorinsurance.Manufacturer}}</td>
+        <td class="tbl2">{{motorinsurance.Model_Name}}</td>
+        <td class="tbl2">{{motorinsurance.Registration_Number}}</td>
+        <td class="tbl2">{{motorinsurance. RTA_Name}}</td>
+        <td class="tbl2">{{motorinsurance.Engine_Number }}</td>
+        <td class="tbl2">{{motorinsurance.Chassis_Number}}</td>
+        <td class="tbl2">{{motorinsurance. Year_Of_Manufacture }}</td>
+        <td class="tbl2">{{motorinsurance. Purchase_Date | date }}</td>
+        <td class="tbl2">{{motorinsurance. Mobile_Number}}</td>
+        <td class="tbl2">{{motorinsurance.Insurance_Plan}}</td>
+        <td class="tbl2">{{motorinsurance.Time_Period }}</td>
+        <td class="tbl2">{{motorinsurance. Policy_Start_Date| date }}</td>
+        <td class="tbl2">{{motorinsurance. Policy_End_Date| date }}</td>
+
+        <td class="tbl2">
+            <button type="button" class="btn btn-info" (click)="onSubmit(motorinsurance.Policy_Id)">Approve</button>
+        </td>
+        
+        <td class="tbl2">
+            <button type="button" class="btn btn-info" (click)="onReject(motorinsurance.Policy_Id)">Reject</button>
+        </td>
+
+    </tr>
+
+</table>

@@ -1,7 +1,7 @@
 <div><app-header></app-header></div>
 <br>
 <br>
-
+<div class="container" style="margin-left: 30%;">
 Amount payable for this policy is 
 <br>
 <br> 
@@ -33,8 +33,9 @@ Enter Card Number:<input type="text" placeholder="Enter Card Number" required>
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352" required>
               </div>
-             <button (click)="payclick(userins)">Pay Amount</button>
+             <button (click)="payclick(userins)" routerLink="/home">Pay Amount</button>
              
 
 
   
+            </div>

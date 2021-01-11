@@ -285,21 +285,53 @@
           <Parameter Name="amt" Type="int" Mode="In" />
           <Parameter Name="admin" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="proc_ApproveMotorClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="amt" Type="int" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_ApproveMotorInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_ApproveTravelClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="amt" Type="int" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_ApproveTravelInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="proc_Get_Policy_Motor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policy_id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="proc_Get_Policy_Motor_Approved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="policy_id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="proc_Get_Policy_Travel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="policy_id" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="proc_Get_Policy_Travel_Approved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policy_id" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="proc_GetAllClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mobile" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="proc_GetAllMotorClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetAllMotorClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetAllMotorInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetAllMotorInsurance_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="proc_GetAllPoliciesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mobile" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="proc_GetAllTravelClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetAllTravelClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="proc_GetAllTravelClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mobile" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="proc_GetAllTravelInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="proc_GetAllTravelInsurance_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="proc_GetAllTravelPoliciesOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mobile" Type="varchar" Mode="In" />
         </Function>
@@ -326,6 +358,24 @@
           <Parameter Name="policyid" Type="bigint" Mode="In" />
           <Parameter Name="amount" Type="float" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_RejectMotorClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="amt" Type="int" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_RejectMotorInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_RejectTravelClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="amt" Type="int" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_RejectTravelInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="policyid" Type="bigint" Mode="In" />
+          <Parameter Name="admin" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Proc_ValidateExistingAuthGuard3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mob" Type="varchar" Mode="In" />
@@ -357,6 +407,28 @@
         <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_insertMotorClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Policy_Id" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Mobile_Number" Type="varchar" Mode="In" />
+          <Parameter Name="Reason" Type="varchar" Mode="In" />
+          <Parameter Name="Date_Of_Applying" Type="date" Mode="In" />
+          <Parameter Name="Estimated_Amount_For_Repair" Type="float" Mode="In" />
+          <Parameter Name="License_Copy" Type="varchar" Mode="In" />
+          <Parameter Name="RC_Copy" Type="varchar" Mode="In" />
+          <Parameter Name="Insurance_Copy" Type="varchar" Mode="In" />
+          <Parameter Name="Bill_Copy" Type="varchar" Mode="In" />
+          <Parameter Name="Authenticated_Letter_from_RTO" Type="varchar" Mode="In" />
+          <Parameter Name="Claim_Status" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_insertTravelClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Travel_Policy_Id" Type="bigint" Mode="In" />
+          <Parameter Name="Ticket_Copy" Type="varchar" Mode="In" />
+          <Parameter Name="Reason_for_Claim" Type="varchar" Mode="In" />
+          <Parameter Name="Mobile_Number" Type="varchar" Mode="In" />
+          <Parameter Name="Claim_Status" Type="varchar" Mode="In" />
+          <Parameter Name="Complaint_Copy" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -861,6 +933,78 @@
             <Parameter Name="pass" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="proc_Get_Policy_Travel" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Result)">
+          <Parameter Name="policy_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insertMotorClaim">
+            <Parameter Name="Policy_Id" Mode="In" Type="Int64" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Mobile_Number" Mode="In" Type="String" />
+            <Parameter Name="Reason" Mode="In" Type="String" />
+            <Parameter Name="Date_Of_Applying" Mode="In" Type="DateTime" />
+            <Parameter Name="Estimated_Amount_For_Repair" Mode="In" Type="Double" />
+            <Parameter Name="License_Copy" Mode="In" Type="String" />
+            <Parameter Name="RC_Copy" Mode="In" Type="String" />
+            <Parameter Name="Insurance_Copy" Mode="In" Type="String" />
+            <Parameter Name="Bill_Copy" Mode="In" Type="String" />
+            <Parameter Name="Authenticated_Letter_from_RTO" Mode="In" Type="String" />
+            <Parameter Name="Claim_Status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insertTravelClaim">
+            <Parameter Name="Travel_Policy_Id" Mode="In" Type="Int64" />
+            <Parameter Name="Ticket_Copy" Mode="In" Type="String" />
+            <Parameter Name="Reason_for_Claim" Mode="In" Type="String" />
+            <Parameter Name="Mobile_Number" Mode="In" Type="String" />
+            <Parameter Name="Claim_Status" Mode="In" Type="String" />
+            <Parameter Name="Complaint_Copy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ApproveMotorClaim_Admin">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="amt" Mode="In" Type="Int32" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ApproveMotorInsurance">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ApproveTravelClaim_Admin">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="amt" Mode="In" Type="Int32" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ApproveTravelInsurance">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_GetAllMotorClaim" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Result)" />
+          <FunctionImport Name="proc_GetAllMotorInsurance" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Result)" />
+          <FunctionImport Name="proc_GetAllTravelClaim" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Result)" />
+          <FunctionImport Name="proc_GetAllTravelInsurance" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Result)" />
+          <FunctionImport Name="proc_RejectMotorClaim">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="amt" Mode="In" Type="Int32" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_RejectMotorInsurance">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_RejectTravelClaim">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="amt" Mode="In" Type="Int32" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_RejectTravelInsurance">
+            <Parameter Name="policyid" Mode="In" Type="Int64" />
+            <Parameter Name="admin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_GetAllMotorClaim_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Admin_Result)" />
+          <FunctionImport Name="proc_GetAllMotorInsurance_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Admin_Result)" />
+          <FunctionImport Name="proc_GetAllTravelClaim_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Admin_Result)" />
+          <FunctionImport Name="proc_GetAllTravelInsurance_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Admin_Result)" />
+          <FunctionImport Name="proc_Get_Policy_Motor_Approved" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Motor_Approved_Result)">
+            <Parameter Name="policy_id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="proc_Get_Policy_Travel_Approved" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Approved_Result)">
             <Parameter Name="policy_id" Mode="In" Type="Int64" />
           </FunctionImport>
         </EntityContainer>
@@ -1101,6 +1245,178 @@
           <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
         </ComplexType>
         <ComplexType Name="proc_Get_Policy_Travel_Result">
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+          <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Email_Id" Nullable="true" MaxLength="320" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Door_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Street" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Pincode" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllMotorClaim_Result">
+          <Property Type="Int64" Name="Claim_Id" Nullable="false" />
+          <Property Type="Int64" Name="Policy_Id" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Reason" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="Date_Of_Applying" Nullable="true" />
+          <Property Type="String" Name="Insurance_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="License_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="RC_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Authenticated_Letter_from_RTO" Nullable="true" MaxLength="200" />
+          <Property Type="Double" Name="Estimated_Amount_For_Repair" Nullable="true" />
+          <Property Type="String" Name="Bill_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+          <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllMotorInsurance_Result">
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int32" Name="Number_Of_Wheels" Nullable="true" />
+          <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Year_Of_Manufacture" Nullable="true" />
+          <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="Time_Period" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+          <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Driving_License_Number" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllTravelClaim_Result">
+          <Property Type="Int64" Name="Travel_Claim_Id" Nullable="false" />
+          <Property Type="Int64" Name="Travel_Policy_Id" Nullable="true" />
+          <Property Type="String" Name="Ticket_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Reason_for_Claim" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+          <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Complaint_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllTravelInsurance_Result">
+          <Property Type="Int64" Name="Policy_id" Nullable="false" />
+          <Property Type="String" Name="Type_Of_Travel" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+          <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllMotorClaim_Admin_Result">
+          <Property Type="Int64" Name="Claim_Id" Nullable="false" />
+          <Property Type="Int64" Name="Policy_Id" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Reason" Nullable="true" MaxLength="15" />
+          <Property Type="DateTime" Name="Date_Of_Applying" Nullable="true" />
+          <Property Type="String" Name="Insurance_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="License_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="RC_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Authenticated_Letter_from_RTO" Nullable="true" MaxLength="200" />
+          <Property Type="Double" Name="Estimated_Amount_For_Repair" Nullable="true" />
+          <Property Type="String" Name="Bill_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+          <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllMotorInsurance_Admin_Result">
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="Int32" Name="Number_Of_Wheels" Nullable="true" />
+          <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="Year_Of_Manufacture" Nullable="true" />
+          <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="Time_Period" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+          <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Driving_License_Number" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllTravelClaim_Admin_Result">
+          <Property Type="Int64" Name="Travel_Claim_Id" Nullable="false" />
+          <Property Type="Int64" Name="Travel_Policy_Id" Nullable="true" />
+          <Property Type="String" Name="Ticket_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Reason_for_Claim" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+          <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Complaint_Copy" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="proc_GetAllTravelInsurance_Admin_Result">
+          <Property Type="Int64" Name="Policy_id" Nullable="false" />
+          <Property Type="String" Name="Type_Of_Travel" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+          <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="proc_Get_Policy_Motor_Approved_Result">
+          <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+          <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+          <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+          <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Door_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="Street" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="District" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Pincode" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Cubic_Capacity" Nullable="true" />
+          <Property Type="Int32" Name="Seating_Capacity" Nullable="true" />
+          <Property Type="String" Name="Type_Of_Body" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="proc_Get_Policy_Travel_Approved_Result">
           <Property Type="Int64" Name="Policy_Id" Nullable="false" />
           <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
@@ -1535,6 +1851,228 @@
           <FunctionImportMapping FunctionImportName="proc_Get_Policy_Travel" FunctionName="GeneralInsuranceFinalModel.Store.proc_Get_Policy_Travel">
             <ResultMapping>
               <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Result">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+                <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+                <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+                <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+                <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_insertMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.sp_insertMotorClaim" />
+          <FunctionImportMapping FunctionImportName="sp_insertTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.sp_insertTravelClaim" />
+          <FunctionImportMapping FunctionImportName="proc_ApproveMotorClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveMotorClaim_Admin" />
+          <FunctionImportMapping FunctionImportName="proc_ApproveMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveMotorInsurance" />
+          <FunctionImportMapping FunctionImportName="proc_ApproveTravelClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveTravelClaim_Admin" />
+          <FunctionImportMapping FunctionImportName="proc_ApproveTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveTravelInsurance" />
+          <FunctionImportMapping FunctionImportName="proc_GetAllMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorClaim">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Result">
+                <ScalarProperty Name="Claim_Id" ColumnName="Claim_Id" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Date_Of_Applying" ColumnName="Date_Of_Applying" />
+                <ScalarProperty Name="Insurance_Copy" ColumnName="Insurance_Copy" />
+                <ScalarProperty Name="License_Copy" ColumnName="License_Copy" />
+                <ScalarProperty Name="RC_Copy" ColumnName="RC_Copy" />
+                <ScalarProperty Name="Authenticated_Letter_from_RTO" ColumnName="Authenticated_Letter_from_RTO" />
+                <ScalarProperty Name="Estimated_Amount_For_Repair" ColumnName="Estimated_Amount_For_Repair" />
+                <ScalarProperty Name="Bill_Copy" ColumnName="Bill_Copy" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorInsurance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Result">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+                <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+                <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+                <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+                <ScalarProperty Name="Driving_License_Number" ColumnName="Driving_License_Number" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelClaim">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Result">
+                <ScalarProperty Name="Travel_Claim_Id" ColumnName="Travel_Claim_Id" />
+                <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+                <ScalarProperty Name="Ticket_Copy" ColumnName="Ticket_Copy" />
+                <ScalarProperty Name="Reason_for_Claim" ColumnName="Reason_for_Claim" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Complaint_Copy" ColumnName="Complaint_Copy" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelInsurance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Result">
+                <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
+                <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+                <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+                <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+                <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+                <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_RejectMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectMotorClaim" />
+          <FunctionImportMapping FunctionImportName="proc_RejectMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectMotorInsurance" />
+          <FunctionImportMapping FunctionImportName="proc_RejectTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectTravelClaim" />
+          <FunctionImportMapping FunctionImportName="proc_RejectTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectTravelInsurance" />
+          <FunctionImportMapping FunctionImportName="proc_GetAllMotorClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorClaim_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Admin_Result">
+                <ScalarProperty Name="Claim_Id" ColumnName="Claim_Id" />
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Date_Of_Applying" ColumnName="Date_Of_Applying" />
+                <ScalarProperty Name="Insurance_Copy" ColumnName="Insurance_Copy" />
+                <ScalarProperty Name="License_Copy" ColumnName="License_Copy" />
+                <ScalarProperty Name="RC_Copy" ColumnName="RC_Copy" />
+                <ScalarProperty Name="Authenticated_Letter_from_RTO" ColumnName="Authenticated_Letter_from_RTO" />
+                <ScalarProperty Name="Estimated_Amount_For_Repair" ColumnName="Estimated_Amount_For_Repair" />
+                <ScalarProperty Name="Bill_Copy" ColumnName="Bill_Copy" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllMotorInsurance_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorInsurance_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Admin_Result">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+                <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+                <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+                <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+                <ScalarProperty Name="Driving_License_Number" ColumnName="Driving_License_Number" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllTravelClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelClaim_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Admin_Result">
+                <ScalarProperty Name="Travel_Claim_Id" ColumnName="Travel_Claim_Id" />
+                <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+                <ScalarProperty Name="Ticket_Copy" ColumnName="Ticket_Copy" />
+                <ScalarProperty Name="Reason_for_Claim" ColumnName="Reason_for_Claim" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+                <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+                <ScalarProperty Name="Complaint_Copy" ColumnName="Complaint_Copy" />
+                <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_GetAllTravelInsurance_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelInsurance_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Admin_Result">
+                <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
+                <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+                <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+                <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+                <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+                <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_Get_Policy_Motor_Approved" FunctionName="GeneralInsuranceFinalModel.Store.proc_Get_Policy_Motor_Approved">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_Get_Policy_Motor_Approved_Result">
+                <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+                <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+                <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+                <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+                <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+                <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+                <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Cubic_Capacity" ColumnName="Cubic_Capacity" />
+                <ScalarProperty Name="Seating_Capacity" ColumnName="Seating_Capacity" />
+                <ScalarProperty Name="Type_Of_Body" ColumnName="Type_Of_Body" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_Get_Policy_Travel_Approved" FunctionName="GeneralInsuranceFinalModel.Store.proc_Get_Policy_Travel_Approved">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Approved_Result">
                 <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
                 <ScalarProperty Name="Source" ColumnName="Source" />
                 <ScalarProperty Name="Destination" ColumnName="Destination" />

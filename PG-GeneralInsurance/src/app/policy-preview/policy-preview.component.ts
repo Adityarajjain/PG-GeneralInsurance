@@ -13,11 +13,24 @@ export class PolicyPreviewComponent{
 
   policy:any;
   premium:number=NaN;
+  Pending:boolean;
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private motorPolicy:MotorPolicyService){
-    this.motorPolicy.getMotorPolicy(data).subscribe((d:any)=>{this.policy=d});
-    this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;console.log('premium inside: '+p);})! ;
+    this.Pending=false;
+    this.motorPolicy.getMotorPolicy(data).subscribe((d:any)=>{this.policy=d;
+      if(d!=null)
+       this.Pending = false;
+    else
+     this.Pending = true;});
+    this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;})! ;
+    
   }
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    // console.log('Policy : '+this.policy);
+    
+  }
   public PrintPolicy()  
   {  
     var data = document.getElementById('contentToConvert')!;  

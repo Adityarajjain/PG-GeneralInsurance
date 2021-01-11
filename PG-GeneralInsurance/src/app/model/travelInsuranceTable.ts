@@ -11,7 +11,7 @@ export class TravelInsuranceTable{
     Any_Medical_Condition:string;
     Mobile_Number:string;
     Insurance_Plan:string;
-    Insurer_Username:string;
+    Insurer_Username:any;
     Status:string;
 
     constructor(
@@ -26,7 +26,7 @@ export class TravelInsuranceTable{
         Any_Medical_Condition:string='',
         Mobile_Number:string='',
         Insurance_Plan:string='',
-        Insurer_Username:string='',
+        // Insurer_Username:string='',
         Status:string='pending',    
     ){
         this.Policy_id=Policy_id;
@@ -40,7 +40,7 @@ export class TravelInsuranceTable{
         this.Any_Medical_Condition=Any_Medical_Condition;
         this.Mobile_Number=Mobile_Number;
         this.Insurance_Plan=Insurance_Plan;
-        this.Insurer_Username=Insurer_Username;
+        // this.Insurer_Username=Insurer_Username;
         this.Status=Status;
     
     }

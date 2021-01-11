@@ -35,6 +35,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from "@angular/material/dialog";
 import { AuthguardGuard } from './authguard.guard';
 import { TravelPolicyComponent } from './travel-policy/travel-policy.component';
+import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.component';
+import { MotorInsuranceAdminComponent } from './motor-insurance-admin/motor-insurance-admin.component';
+import { MotorClaimAdminComponent } from './motor-claim-admin/motor-claim-admin.component';
+import { TravelinsuranceclaimComponent } from './travelinsuranceclaim/travelinsuranceclaim.component';
+import { TravelinsuranceAdminComponent } from './travelinsurance-admin/travelinsurance-admin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ApproveMotorClaimService } from './service/approveMotorClaim.service';
+import { ClaimService } from './service/claim.service';
+import { MotorclaimService } from './service/motorclaim.service';
+import { TravelService } from './service/travel.service';
+import { TravelclaimService } from './service/travelclaim.service';
+import { MotorInsuranceAdminService } from './service/MotorInsuranceAdmin.service';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 
@@ -51,7 +64,15 @@ const routes:Routes=[
   {path:"Renew-insurance", component:DisplaydetailsComponent, canActivate:[AuthguardGuard]},
   {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent},
   {path:"user-dashboard",component:UserDashboardComponent, canActivate:[AuthguardGuard]},
-  {path:'dummy', component:DummyComponent}
+  {path:'dummy', component:DummyComponent},
+  {path:"claim-insurance", component:ClaiminsuranceComponent},
+  {path:"admin", component:AdminLoginComponent},
+  {path:"travelinsuranceclaim", component:TravelinsuranceclaimComponent},
+  {path:"travelinsuranceadmin", component:TravelinsuranceAdminComponent},
+  {path:"motorinsuranceadmin", component:MotorInsuranceAdminComponent},
+  {path:"motorinsuranceclaim", component:MotorClaimAdminComponent},
+  {path:"dashboard", component:DashboardComponent, canActivate:[AuthguardGuard]}
+  
 ]
 
 @NgModule({
@@ -72,7 +93,14 @@ const routes:Routes=[
     SelectyearComponent,
     DummyComponent,
     UserDashboardComponent,
-    TravelPolicyComponent
+    TravelPolicyComponent,
+    ClaiminsuranceComponent,
+    MotorInsuranceAdminComponent,
+    MotorClaimAdminComponent,
+    TravelinsuranceclaimComponent,
+    TravelinsuranceAdminComponent,
+    DashboardComponent,
+    AdminLoginComponent
    
   ],
   entryComponents:[PolicyPreviewComponent,TravelPolicyComponent],
@@ -94,7 +122,13 @@ const routes:Routes=[
     UserService,
     TransactionService, 
     RenewalDisplayService, 
-    DashboardService
+    DashboardService,
+    ApproveMotorClaimService,
+    ClaimService,
+    MotorclaimService,
+    TravelService,
+    TravelclaimService,
+    MotorInsuranceAdminService
   ],
   bootstrap: [AppComponent]
 })

@@ -24,6 +24,7 @@ namespace registration.Controllers
         [HttpPost]
         public void AddInsurance(TravelInsuranceTable travelInsuranceTable)
         {
+            travelInsuranceTable.Status = "Pending";
             entities.TravelInsuranceTables.Add(travelInsuranceTable);
             entities.SaveChanges();
         }

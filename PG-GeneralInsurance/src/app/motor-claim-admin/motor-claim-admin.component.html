@@ -1,0 +1,39 @@
+<h3 align="center">Approval Page for Pending Motor Claim</h3> 
+<table class="table" >  
+    <tr ngclass="btn-primary">  
+      
+      <th class="tbl2"> Claim Id </th>  
+      <th class="tbl2">Policy Id</th>  
+      <th class="tbl2"> Name</th> 
+      <th class="tbl2">Mobile Number</th>  
+      <th class="tbl2">Reason </th>  
+      <th class="tbl2">Date Of Applying </th>  
+      <th class="tbl2">Insurance Copy</th>  
+      <th class="tbl2">License Copy</th>  
+      <th class="tbl2">RC Copy </th>  
+      <th class="tbl2"> Authenticated Letter from RTO </th>  
+      <th class="tbl2">Estimated Amount For Repair</th>  
+      <th class="tbl2"> Bill Copy </th> 
+      <th class="tbl2">Amount Sanctioned </th>   
+      <th class="tbl2">Approve</th>
+    </tr>  
+    <tr *ngFor="let motorclaim of motorclaims">  
+      
+      <td class="tbl2">{{motorclaim.Claim_Id}}</td>  
+      <td class="tbl2">{{motorclaim.Policy_Id}}</td>  
+      <td class="tbl2">{{motorclaim.Name }}</td>  
+      <td class="tbl2">{{motorclaim.Mobile_Number}}</td>  
+      <td class="tbl2">{{motorclaim. Reason}}</td>  
+      <td class="tbl2">{{motorclaim.Date_Of_Applying | date }}</td>
+      <td class="tbl2">{{motorclaim.Insurance_Copy}}</td>  
+      <td class="tbl2">{{motorclaim. License_Copy }}</td>  
+      <td class="tbl2">{{motorclaim. RC_Copy}}</td>  
+      <td class="tbl2">{{motorclaim.  Authenticated_Letter_from_RTO}}</td>
+      <td class="tbl2">{{motorclaim.Estimated_Amount_For_Repair}}</td>  
+      <td class="tbl2">{{motorclaim.Bill_Copy }}</td> 
+      <td class="tbl2"><input type="number" #amt ></td>    
+      <td align='center'><input type=submit value="Approve"(click)="onSubmit(motorclaim.Policy_Id,amt.value)" style="width:100%"></td>
+      <!-- <td align='center'><input type=submit value="Approve"(click)="onSubmit(motorclaim.Policy_Id,1234)" style="width:100%"></td> -->
+    </tr>  
+
+  </table>

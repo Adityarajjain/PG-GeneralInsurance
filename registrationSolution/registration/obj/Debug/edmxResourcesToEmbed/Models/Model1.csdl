@@ -440,6 +440,78 @@
     <FunctionImport Name="proc_Get_Policy_Travel" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Result)">
       <Parameter Name="policy_id" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="sp_insertMotorClaim">
+      <Parameter Name="Policy_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Mobile_Number" Mode="In" Type="String" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+      <Parameter Name="Date_Of_Applying" Mode="In" Type="DateTime" />
+      <Parameter Name="Estimated_Amount_For_Repair" Mode="In" Type="Double" />
+      <Parameter Name="License_Copy" Mode="In" Type="String" />
+      <Parameter Name="RC_Copy" Mode="In" Type="String" />
+      <Parameter Name="Insurance_Copy" Mode="In" Type="String" />
+      <Parameter Name="Bill_Copy" Mode="In" Type="String" />
+      <Parameter Name="Authenticated_Letter_from_RTO" Mode="In" Type="String" />
+      <Parameter Name="Claim_Status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insertTravelClaim">
+      <Parameter Name="Travel_Policy_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Ticket_Copy" Mode="In" Type="String" />
+      <Parameter Name="Reason_for_Claim" Mode="In" Type="String" />
+      <Parameter Name="Mobile_Number" Mode="In" Type="String" />
+      <Parameter Name="Claim_Status" Mode="In" Type="String" />
+      <Parameter Name="Complaint_Copy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ApproveMotorClaim_Admin">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="amt" Mode="In" Type="Int32" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ApproveMotorInsurance">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ApproveTravelClaim_Admin">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="amt" Mode="In" Type="Int32" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ApproveTravelInsurance">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllMotorClaim" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Result)" />
+    <FunctionImport Name="proc_GetAllMotorInsurance" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Result)" />
+    <FunctionImport Name="proc_GetAllTravelClaim" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Result)" />
+    <FunctionImport Name="proc_GetAllTravelInsurance" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Result)" />
+    <FunctionImport Name="proc_RejectMotorClaim">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="amt" Mode="In" Type="Int32" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_RejectMotorInsurance">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_RejectTravelClaim">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="amt" Mode="In" Type="Int32" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_RejectTravelInsurance">
+      <Parameter Name="policyid" Mode="In" Type="Int64" />
+      <Parameter Name="admin" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GetAllMotorClaim_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Admin_Result)" />
+    <FunctionImport Name="proc_GetAllMotorInsurance_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Admin_Result)" />
+    <FunctionImport Name="proc_GetAllTravelClaim_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Admin_Result)" />
+    <FunctionImport Name="proc_GetAllTravelInsurance_Admin" ReturnType="Collection(GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Admin_Result)" />
+    <FunctionImport Name="proc_Get_Policy_Motor_Approved" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Motor_Approved_Result)">
+      <Parameter Name="policy_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="proc_Get_Policy_Travel_Approved" ReturnType="Collection(GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Approved_Result)">
+      <Parameter Name="policy_id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -678,6 +750,178 @@
     <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
   </ComplexType>
   <ComplexType Name="proc_Get_Policy_Travel_Result">
+    <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+    <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Email_Id" Nullable="true" MaxLength="320" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Door_Number" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Pincode" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllMotorClaim_Result">
+    <Property Type="Int64" Name="Claim_Id" Nullable="false" />
+    <Property Type="Int64" Name="Policy_Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="Date_Of_Applying" Nullable="true" />
+    <Property Type="String" Name="Insurance_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="License_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RC_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Authenticated_Letter_from_RTO" Nullable="true" MaxLength="200" />
+    <Property Type="Double" Name="Estimated_Amount_For_Repair" Nullable="true" />
+    <Property Type="String" Name="Bill_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+    <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllMotorInsurance_Result">
+    <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+    <Property Type="Int32" Name="Number_Of_Wheels" Nullable="true" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="Year_Of_Manufacture" Nullable="true" />
+    <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Time_Period" Nullable="true" />
+    <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+    <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Driving_License_Number" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllTravelClaim_Result">
+    <Property Type="Int64" Name="Travel_Claim_Id" Nullable="false" />
+    <Property Type="Int64" Name="Travel_Policy_Id" Nullable="true" />
+    <Property Type="String" Name="Ticket_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Reason_for_Claim" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+    <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Complaint_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllTravelInsurance_Result">
+    <Property Type="Int64" Name="Policy_id" Nullable="false" />
+    <Property Type="String" Name="Type_Of_Travel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+    <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllMotorClaim_Admin_Result">
+    <Property Type="Int64" Name="Claim_Id" Nullable="false" />
+    <Property Type="Int64" Name="Policy_Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="Date_Of_Applying" Nullable="true" />
+    <Property Type="String" Name="Insurance_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="License_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RC_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Authenticated_Letter_from_RTO" Nullable="true" MaxLength="200" />
+    <Property Type="Double" Name="Estimated_Amount_For_Repair" Nullable="true" />
+    <Property Type="String" Name="Bill_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+    <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllMotorInsurance_Admin_Result">
+    <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+    <Property Type="Int32" Name="Number_Of_Wheels" Nullable="true" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+    <Property Type="Int32" Name="Year_Of_Manufacture" Nullable="true" />
+    <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="Time_Period" Nullable="true" />
+    <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+    <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Driving_License_Number" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllTravelClaim_Admin_Result">
+    <Property Type="Int64" Name="Travel_Claim_Id" Nullable="false" />
+    <Property Type="Int64" Name="Travel_Policy_Id" Nullable="true" />
+    <Property Type="String" Name="Ticket_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Reason_for_Claim" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="Double" Name="Amount_Sanctioned" Nullable="true" />
+    <Property Type="String" Name="Claim_Status" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Complaint_Copy" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Approver_Username" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="proc_GetAllTravelInsurance_Admin_Result">
+    <Property Type="Int64" Name="Policy_id" Nullable="false" />
+    <Property Type="String" Name="Type_Of_Travel" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Mode_Of_Transport" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Age_Of_traveller" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Travel_End_Date" Nullable="true" />
+    <Property Type="String" Name="Any_Medical_Condition" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Insurer_Username" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_Get_Policy_Motor_Approved_Result">
+    <Property Type="Int64" Name="Policy_Id" Nullable="false" />
+    <Property Type="DateTime" Name="Policy_Start_Date" Nullable="true" />
+    <Property Type="DateTime" Name="Policy_End_Date" Nullable="true" />
+    <Property Type="String" Name="Mobile_Number" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="Purchase_Date" Nullable="true" />
+    <Property Type="String" Name="Registration_Number" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="RTA_Name" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Model_Name" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Engine_Number" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Chassis_Number" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="Insurance_Plan" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Door_Number" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="District" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Pincode" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Cubic_Capacity" Nullable="true" />
+    <Property Type="Int32" Name="Seating_Capacity" Nullable="true" />
+    <Property Type="String" Name="Type_Of_Body" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="proc_Get_Policy_Travel_Approved_Result">
     <Property Type="Int64" Name="Policy_Id" Nullable="false" />
     <Property Type="String" Name="Source" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="Destination" Nullable="true" MaxLength="20" />

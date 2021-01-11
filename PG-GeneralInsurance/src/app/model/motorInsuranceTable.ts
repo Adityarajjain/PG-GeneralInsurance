@@ -15,7 +15,8 @@ export class MotorInsuranceTable{
     Time_Period:number;
     Policy_Start_Date:string;
     Policy_End_Date:string;
-    Insurer_Username:string;
+    Insurer_Username:any;
+    Status:string;
 
     constructor(Policy_Id:number=NaN,
         Number_Of_Wheels:number=NaN,
@@ -33,7 +34,9 @@ export class MotorInsuranceTable{
         Time_Period:number=NaN,
         Policy_Start_Date:string='',
         Policy_End_Date:string='',
-        Insurer_Username:string='Shalini')
+        // Insurer_Username:string='Shalini'
+        Status:string='Pending'
+        )
         {
             
             this.Policy_Id=Policy_Id;
@@ -52,6 +55,7 @@ export class MotorInsuranceTable{
             this.Time_Period=Time_Period;
             this.Policy_Start_Date=Policy_Start_Date;
             this.Policy_End_Date=Policy_End_Date;
-            this.Insurer_Username=Insurer_Username;
+            // this.Insurer_Username=Insurer_Username;
+            this.Status=Status;
     }
 }

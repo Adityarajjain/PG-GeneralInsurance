@@ -431,5 +431,227 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insertMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.sp_insertMotorClaim" />
+    <FunctionImportMapping FunctionImportName="sp_insertTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.sp_insertTravelClaim" />
+    <FunctionImportMapping FunctionImportName="proc_ApproveMotorClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveMotorClaim_Admin" />
+    <FunctionImportMapping FunctionImportName="proc_ApproveMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveMotorInsurance" />
+    <FunctionImportMapping FunctionImportName="proc_ApproveTravelClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveTravelClaim_Admin" />
+    <FunctionImportMapping FunctionImportName="proc_ApproveTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveTravelInsurance" />
+    <FunctionImportMapping FunctionImportName="proc_GetAllMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorClaim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Result">
+          <ScalarProperty Name="Claim_Id" ColumnName="Claim_Id" />
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Date_Of_Applying" ColumnName="Date_Of_Applying" />
+          <ScalarProperty Name="Insurance_Copy" ColumnName="Insurance_Copy" />
+          <ScalarProperty Name="License_Copy" ColumnName="License_Copy" />
+          <ScalarProperty Name="RC_Copy" ColumnName="RC_Copy" />
+          <ScalarProperty Name="Authenticated_Letter_from_RTO" ColumnName="Authenticated_Letter_from_RTO" />
+          <ScalarProperty Name="Estimated_Amount_For_Repair" ColumnName="Estimated_Amount_For_Repair" />
+          <ScalarProperty Name="Bill_Copy" ColumnName="Bill_Copy" />
+          <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+          <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+          <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorInsurance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Result">
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+          <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+          <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+          <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+          <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+          <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+          <ScalarProperty Name="Driving_License_Number" ColumnName="Driving_License_Number" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelClaim">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Result">
+          <ScalarProperty Name="Travel_Claim_Id" ColumnName="Travel_Claim_Id" />
+          <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+          <ScalarProperty Name="Ticket_Copy" ColumnName="Ticket_Copy" />
+          <ScalarProperty Name="Reason_for_Claim" ColumnName="Reason_for_Claim" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+          <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+          <ScalarProperty Name="Complaint_Copy" ColumnName="Complaint_Copy" />
+          <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelInsurance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Result">
+          <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
+          <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+          <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+          <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+          <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+          <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_RejectMotorClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectMotorClaim" />
+    <FunctionImportMapping FunctionImportName="proc_RejectMotorInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectMotorInsurance" />
+    <FunctionImportMapping FunctionImportName="proc_RejectTravelClaim" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectTravelClaim" />
+    <FunctionImportMapping FunctionImportName="proc_RejectTravelInsurance" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectTravelInsurance" />
+    <FunctionImportMapping FunctionImportName="proc_GetAllMotorClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorClaim_Admin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorClaim_Admin_Result">
+          <ScalarProperty Name="Claim_Id" ColumnName="Claim_Id" />
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Date_Of_Applying" ColumnName="Date_Of_Applying" />
+          <ScalarProperty Name="Insurance_Copy" ColumnName="Insurance_Copy" />
+          <ScalarProperty Name="License_Copy" ColumnName="License_Copy" />
+          <ScalarProperty Name="RC_Copy" ColumnName="RC_Copy" />
+          <ScalarProperty Name="Authenticated_Letter_from_RTO" ColumnName="Authenticated_Letter_from_RTO" />
+          <ScalarProperty Name="Estimated_Amount_For_Repair" ColumnName="Estimated_Amount_For_Repair" />
+          <ScalarProperty Name="Bill_Copy" ColumnName="Bill_Copy" />
+          <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+          <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+          <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllMotorInsurance_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllMotorInsurance_Admin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllMotorInsurance_Admin_Result">
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Number_Of_Wheels" ColumnName="Number_Of_Wheels" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+          <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+          <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+          <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Time_Period" ColumnName="Time_Period" />
+          <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+          <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+          <ScalarProperty Name="Driving_License_Number" ColumnName="Driving_License_Number" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllTravelClaim_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelClaim_Admin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelClaim_Admin_Result">
+          <ScalarProperty Name="Travel_Claim_Id" ColumnName="Travel_Claim_Id" />
+          <ScalarProperty Name="Travel_Policy_Id" ColumnName="Travel_Policy_Id" />
+          <ScalarProperty Name="Ticket_Copy" ColumnName="Ticket_Copy" />
+          <ScalarProperty Name="Reason_for_Claim" ColumnName="Reason_for_Claim" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Amount_Sanctioned" ColumnName="Amount_Sanctioned" />
+          <ScalarProperty Name="Claim_Status" ColumnName="Claim_Status" />
+          <ScalarProperty Name="Complaint_Copy" ColumnName="Complaint_Copy" />
+          <ScalarProperty Name="Approver_Username" ColumnName="Approver_Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_GetAllTravelInsurance_Admin" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetAllTravelInsurance_Admin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_GetAllTravelInsurance_Admin_Result">
+          <ScalarProperty Name="Policy_id" ColumnName="Policy_id" />
+          <ScalarProperty Name="Type_Of_Travel" ColumnName="Type_Of_Travel" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+          <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+          <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+          <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+          <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Insurer_Username" ColumnName="Insurer_Username" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Get_Policy_Motor_Approved" FunctionName="GeneralInsuranceFinalModel.Store.proc_Get_Policy_Motor_Approved">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_Get_Policy_Motor_Approved_Result">
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Purchase_Date" ColumnName="Purchase_Date" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="RTA_Name" ColumnName="RTA_Name" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+          <ScalarProperty Name="Engine_Number" ColumnName="Engine_Number" />
+          <ScalarProperty Name="Chassis_Number" ColumnName="Chassis_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Cubic_Capacity" ColumnName="Cubic_Capacity" />
+          <ScalarProperty Name="Seating_Capacity" ColumnName="Seating_Capacity" />
+          <ScalarProperty Name="Type_Of_Body" ColumnName="Type_Of_Body" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_Get_Policy_Travel_Approved" FunctionName="GeneralInsuranceFinalModel.Store.proc_Get_Policy_Travel_Approved">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GeneralInsuranceFinalModel.proc_Get_Policy_Travel_Approved_Result">
+          <ScalarProperty Name="Policy_Id" ColumnName="Policy_Id" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="Mode_Of_Transport" ColumnName="Mode_Of_Transport" />
+          <ScalarProperty Name="Age_Of_traveller" ColumnName="Age_Of_traveller" />
+          <ScalarProperty Name="Travel_Start_Date" ColumnName="Travel_Start_Date" />
+          <ScalarProperty Name="Travel_End_Date" ColumnName="Travel_End_Date" />
+          <ScalarProperty Name="Any_Medical_Condition" ColumnName="Any_Medical_Condition" />
+          <ScalarProperty Name="Mobile_Number" ColumnName="Mobile_Number" />
+          <ScalarProperty Name="Insurance_Plan" ColumnName="Insurance_Plan" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Door_Number" ColumnName="Door_Number" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
