@@ -1,89 +1,125 @@
-<div><app-header></app-header></div>
+<div>
+    <app-header></app-header>
+</div>
 <br><br>
 <div class="container" *ngIf="!submitted" style="margin-left: 18%;">
     <h4 class="card-header bg-info " style="width: 800px;">Enter Details for Buying Motor Insurance</h4>
     <div class="card-body " style=" width: 800px ;">
-      
-        <form  (submit)="applyMotorInsurance()" >
+        <!-- (submit)="applyMotorInsurance()" -->
+        <form #motorForm="ngForm" (ngSubmit)="applyMotorInsurance(motorForm.value)" novalidate>
             <div id="page1" *ngIf="!changePage">
-                    <div class="form-group">                 
+                <div class="form-group">
                     <label class="fieldlabels">Type of Vehicle: </label><br>
-                
-                        <input  type="radio" name="Vehicle_type" value="2" [(ngModel)]="motorInsurance.Number_Of_Wheels">&nbsp;Two Wheeler &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" name="Vehicle_type"  value="4" [(ngModel)]="motorInsurance.Number_Of_Wheels">&nbsp;Four Wheeler
-                    
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Manufacturer: </label>
-                        <select class="form-control" name="Manufacturer" [(ngModel)]="manufacturer" (change)="getCars(manufacturer)">
-                            <option disabled selected>Select Manufacturer</option>
-                            <option *ngFor="let manu of manufacturers[0]" >{{manu}}</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Models: </label>
-                        <select class="form-control"  name="Model" [(ngModel)]="model" >
-                            <option disabled selected>Select Model</option>
-                            <option *ngFor="let model of models[0]">{{model}}</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="fieldlabels">Purchase Date: </label>
-                        <input type="date" class="form-control" name="Purchase_Date"  placeholder="Enter Pusrchase Date"
-                        [(ngModel)]="motorInsurance.Purchase_Date"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">RTA Name: </label>
-                        <input type="text" class="form-control" name="RTA_Name" placeholder="Enter RTA Name (Like: MP-04 Bhopal)"
-                        [(ngModel)]="motorInsurance.RTA_Name"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Registration Number: </label>
-                        <input type="text" class="form-control" name="Registration_Number"
-                            placeholder="Enter Registration Number" [(ngModel)]="motorInsurance.Registration_Number"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Engine Number: </label>
-                        <input type="text" class="form-control" name="Engine_Number" placeholder="Enter Engine Number"
-                            [(ngModel)]="motorInsurance.Engine_Number" />
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Chassis Number: </label>
-                        <input type="text" class="form-control" name="Chassis Number" placeholder="Enter Chassis Number"
-                            [(ngModel)]="motorInsurance.Chassis_Number" />
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Driving License Number: </label>
-                        <input type="text" class="form-control" name="Driving_License" placeholder="Enter Driving License Number"
-                        [(ngModel)]="motorInsurance.Driving_License_Number"/>
-                    </div>
-                    <div class="form-group">
-                        <label class="fieldlabels">Mobile Number: </label>
-                        <input type="text" class="form-control" name="Mobile_Number" placeholder="Enter Mobile Number"
-                        [(ngModel)]="motorInsurance.Mobile_Number" />
-                    </div>
-                    <button (click)="pageChange()" class="btn btn-info">Next</button> 
+
+                    <input type="radio" name="Number_Of_Wheels" required  #wheels1 value="2" (change)="getManu(wheels1.value)"
+                        ngModel>&nbsp;Two Wheeler &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="Number_Of_Wheels" required  #wheels2 value="4" (change)="getManu(wheels2.value)"
+                        ngModel>&nbsp;Four Wheeler
+
                 </div>
-                <div id="page2" *ngIf="changePage">
-                    <div class="form-group"> 
-                    <label class="fieldlabels">Insurance Plan: </label><br>                
-                    <input  type="radio" name="Insurance_Plan" value="Third_Party" [(ngModel)]="motorInsurance.Insurance_Plan" >&nbsp;Third Party &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="Insurance_Plan"  value="Comprehensive" [(ngModel)]="motorInsurance.Insurance_Plan">&nbsp;Comprehensive                
-                    </div>
-                    <div class="form-group"> 
-                        <label class="fieldlabels">Time Period: </label><br>                    
-                        <input  type="radio" name="Time_Period" value="1" [(ngModel)]="motorInsurance.Time_Period">&nbsp;One Year <br>
-                        <input type="radio" name="Time_Period"  value="2" [(ngModel)]="motorInsurance.Time_Period">&nbsp;Two Year <br>
-                        <input type="radio" name="Time_Period"  value="3" [(ngModel)]="motorInsurance.Time_Period">&nbsp;Three Year <br>                
-                        </div>
-                        <button (click)="pageChange()" class="btn btn-info">Back</button> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <button type="submit" class="btn btn-info">Submit</button> 
+                <div class="form-group">
+                    <label class="fieldlabels">Manufacturer: </label>
+                    <select class="form-control" required  name="Manufacturer" [(ngModel)]="manufacturer"
+                        (change)="getCars(manufacturer)">
+                        <option disabled selected>Select Manufacturer</option>
+                        <option *ngFor="let manu of manufacturers[0]">{{manu}}</option>
+                    </select>
                 </div>
-        </form> 
-    
+                <div class="form-group">
+                    <label class="fieldlabels">Models: </label>
+                    <select class="form-control" required name="Model_Name" [(ngModel)]="model">
+                        <option disabled selected>Select Model</option>
+                        <option *ngFor="let model of models[0]">{{model}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="fieldlabels">Purchase Date: </label>
+                    <input type="date" #dateRef="ngModel" required class="form-control" name="Purchase_Date"
+                        placeholder="Enter Pusrchase Date" ngModel />
+                    <div *ngIf="dateRef.errors && (dateRef.dirty || dateRef.touched)" class="alert alert-danger">
+                        Purchase Date is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">RTA Name: </label>
+                    <input type="text" #rtaName="ngModel"  required class="form-control" name="RTA_Name"
+                        placeholder="Enter RTA Name (Like: MP-04 Bhopal)" ngModel />
+                    <div *ngIf="rtaName.errors && (rtaName.dirty || rtaName.touched)" class="alert alert-danger">
+                        RTA Name is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Registration Number: </label>
+                    <input type="text" class="form-control" name="Registration_Number" #regNo="ngModel" required
+                        placeholder="Enter Registration Number" ngModel />
+                    <div *ngIf="regNo.errors && (regNo.dirty || regNo.touched)" class="alert alert-danger">
+                        Registration number is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Engine Number: </label>
+                    <input type="text" class="form-control" name="Engine_Number" placeholder="Enter Engine Number"
+                      #engNo="ngModel" required  ngModel />
+                    <div *ngIf="engNo.errors && (engNo.dirty || engNo.touched)" class="alert alert-danger">
+                        Engine number is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Chassis Number: </label>
+                    <input type="text" class="form-control" name="Chassis_Number" placeholder="Enter Chassis Number"
+                    #chNo="ngModel" required   ngModel />
+                    <div *ngIf="chNo.errors && (chNo.dirty || chNo.touched)" class="alert alert-danger">
+                        Chassis number is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Driving License Number: </label>
+                    <input type="text" class="form-control" name="Driving_License_Number"
+                      #drLi="ngModel" required  placeholder="Enter Driving License Number" ngModel />
+                    <div *ngIf="drLi.errors && (drLi.dirty || drLi.touched)" class="alert alert-danger">
+                        Driving License number is Required
+                    </div>
+                </div>
+                <div class="form-group" hidden >
+                    <label class="fieldlabels">Mobile Number: </label>
+                    <input type="text"  class="form-control" name="Mobile_Number"
+                       #mobNo="ngModel" required placeholder="Enter Mobile Number" [ngModel]="userMobile" ngModel />
+                  
+                </div>
+                <!-- <button (click)="pageChange()" class="btn btn-info">Next</button> -->
+            <!-- </div> -->
+            <!-- <div id="page2" *ngIf="changePage"> -->
+                <div class="form-group">
+                    <label class="fieldlabels">Insurance Plan: </label><br>
+                    <input type="radio" name="Insurance_Plan" required value="Third_Party" ngModel>&nbsp;Third Party
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="Insurance_Plan" required value="Comprehensive" ngModel>&nbsp;Comprehensive
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Time Period: </label><br>
+                    <input type="radio" name="Time_Period" required #tp1 value="1" (change)="setTimePeriod(tp1.value)" ngModel>&nbsp;One Year <br>
+                    <input type="radio" name="Time_Period" required #tp2 value="2" (change)="setTimePeriod(tp2.value)" ngModel>&nbsp;Two Year <br>
+                    <input type="radio" name="Time_Period" required #tp3 value="3" (change)="setTimePeriod(tp3.value)" ngModel>&nbsp;Three Year <br>
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">Start Date: </label>
+                    <input type="date" class="form-control" name="Policy_Start_Date" hidden required  placeholder="Enter Pusrchase Date"
+                       [ngModel]="Policy_Start_Date" ngModel />
+                </div>
+                <div class="form-group">
+                    <label class="fieldlabels">End Date: </label>
+                    <input type="date" class="form-control" name="Policy_End_Date" hidden required  placeholder="Enter Pusrchase Date"
+                       [ngModel]="Policy_End_Date" ngModel />
+                </div>
+                <button (click)="pageChange()" class="btn btn-info">Back</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button [disabled]="!motorForm.form.valid" type="submit" class="btn btn-info">Submit</button>
+            </div>
+
+        </form>
+
     </div>
-    </div>
+</div>
 <div *ngIf="submitted">
-    <app-payment [motorInsObj]="motorInsurance" ></app-payment>
+    <app-payment [motorInsObj]="motorInsurance"></app-payment>
 </div>

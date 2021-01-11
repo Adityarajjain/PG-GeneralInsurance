@@ -54,8 +54,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 const routes:Routes=[
   {path:"", pathMatch:"full", redirectTo:"/home"},
   {path:"register",component:RegisterComponent},
-  {path:"buy-insurance", component:BuyInsuranceComponent, canActivate:[AuthguardGuard]},
-  {path:"motor-insurance", component:MotorInsuranceComponent, canActivate:[AuthguardGuard]},
+  {path:"buy-insurance", component:BuyInsuranceComponent},//, canActivate:[AuthguardGuard]},
+  {path:"motor-insurance", component:MotorInsuranceComponent},//, canActivate:[AuthguardGuard]},
   {path:"travel-insurance", component:TravelInsuranceComponent, canActivate:[AuthguardGuard]},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},

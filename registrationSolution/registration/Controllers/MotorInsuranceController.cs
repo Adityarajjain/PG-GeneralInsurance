@@ -26,6 +26,7 @@ namespace registration.Controllers
         [HttpPost]
         public void AddInsurance(MotorInsuranceTable motorInsuranceTable)
         {
+            motorInsuranceTable.Status = "Pending";
             entities.MotorInsuranceTables.Add(motorInsuranceTable);
             entities.SaveChanges();
         }
