@@ -15,12 +15,12 @@ export class TravelclaimService {
     console.log("Service");
     console.log(Policy_id);
     console.log(Insurer_Username);
-    return this.http.put("http://localhost:53421/api/TravelClaimAdmin?Policy_no="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
+    return this.http.put("http://localhost:53421/api/TravelClaimAdmin?Claim_id="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
   }
   public RejectTravelClaim(Policy_id:number,amt:any,Insurer_Username:string){
     console.log("Service");
     console.log(Policy_id);
     console.log(Insurer_Username);
-    return this.http.put("http://localhost:53421/api/RejectTravelClaim?Policy_no="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
+    return this.http.put("http://localhost:53421/api/TravelClaimAdmin/RejectTravelClaim?Claim_id="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
   }
 }

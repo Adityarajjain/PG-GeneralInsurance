@@ -34,13 +34,13 @@
         </div>
         <div class="form-group">
             <label class="fieldlabels">Travel Start Date : </label>
-            <input type="date" class="form-control" formControlName="Travel_Start_Date" placeholder="Enter Start Date"/>
+            <input type="date" class="form-control" formControlName="Travel_Start_Date" placeholder="Enter Start Date" [min]="getToday()"/>
             <div *ngIf="f.Travel_Start_Date.touched && f.Travel_Start_Date.invalid" class="alert alert-danger"><strong>Start Date required</strong></div> 
 
         </div>
         <div class="form-group">
             <label class="fieldlabels">Travel End Date : </label>
-            <input type="date" class="form-control" formControlName="Travel_End_Date" placeholder="Enter End Date"/>
+            <input type="date" class="form-control" formControlName="Travel_End_Date" placeholder="Enter End Date" [min]="getToday()"/>
             <div *ngIf="f.Travel_End_Date.touched && f.Travel_End_Date.invalid" class="alert alert-danger"><strong>End Date required</strong></div> 
 
         </div>
@@ -51,9 +51,9 @@
             <input type="radio" formControlName="Any_Medical_Condition"  value="No" >&nbsp;No 
             <div *ngIf="f.Any_Medical_Condition.touched && f.Any_Medical_Condition.invalid" class="alert alert-danger"><strong>Field required.</strong></div>
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden>
             <label for="Mobile_Number">Mobile Number: </label>
-            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number"   />
+            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number" [ngModel]="userMobile"   />
             <div *ngIf="f.Mobile_Number.touched && f.Mobile_Number.invalid" class="alert alert-danger">Mobile Number required</div>                         
         </div>
         <div class="form-group"> 

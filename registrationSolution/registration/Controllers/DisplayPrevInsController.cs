@@ -13,14 +13,18 @@ namespace registration.Controllers
     public class DisplayPrevInsController : ApiController
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
-        public HttpResponseMessage Get(long policyid)
+        //public HttpResponseMessage Get(long policyid)
+        //{
+        //    Proj_Proc_UserPolicyDetailsDisplay2_Result result = null;
+        //    result = entities.Proj_Proc_UserPolicyDetailsDisplay2(policyid).FirstOrDefault();
+        //    if (result == null)
+        //        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Policy Number");
+        //    else
+        //        return Request.CreateResponse<Proj_Proc_UserPolicyDetailsDisplay2_Result>(result);
+        //}
+        public IEnumerable<Proc_SelectExpiredPolicies5_Result> Get(string mobile)
         {
-            Proj_Proc_UserPolicyDetailsDisplay2_Result result = null;
-            result = entities.Proj_Proc_UserPolicyDetailsDisplay2(policyid).FirstOrDefault();
-            if (result == null)
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Policy Number");
-            else
-                return Request.CreateResponse<Proj_Proc_UserPolicyDetailsDisplay2_Result>(result);
+            return entities.Proc_SelectExpiredPolicies5(mobile).ToList();
         }
     }
 }

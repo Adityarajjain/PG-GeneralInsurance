@@ -1,0 +1,29 @@
+<div class="card-body"  class="center">
+    <br>
+    <h4>Reset Password</h4>
+    <form [formGroup]="resetForm" (ngSubmit)="onSubmit()" style="width: 400px;">
+        
+        <div class="form-row">
+            <div class="form-group col">
+                <label>New Password</label>
+                <input type="text" formControlName="newPass" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.newPass.errors }" />
+                <div *ngIf="submitted && f.newPass.errors" class="invalid-feedback">
+                    <div *ngIf="f.newPass.errors.required">Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confirmPass" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPass.errors }" />
+                <div *ngIf="submitted && f.confirmPass.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmPass.errors.required">Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary mr-1" id="resetButton">Reset</button>
+        </div>
+    </form>
+</div>
+<!-- <button [routerLink]="['/routePath']" routerLinkActive="router-link-active" ></button> -->>

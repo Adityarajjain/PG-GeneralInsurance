@@ -1,6 +1,6 @@
 <!-- <nav class="navbar navbar-dark bg-dark">   -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">The General Insurance</a>
+    <nav class="navbar navbar-expand-lg navbar-light nav-color">
+        <img src="../assets/General Insurance.png" class="navbar-brand" style="height: 70px;width:180px"/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,27 +8,27 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav my-2 my-lg-0" style="margin-left: 30%;">
             
-              <a class="nav-link" routerLink="/home">Home</a>
+              <a class="nav-link nav-font" routerLink="/home"><span class="nav-font">Home</span></a>
             
             
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link nav-font" href="#"><span class="nav-font">Contact</span></a>
             
             
-              <a class="nav-link" routerLink="/dummy">About Us</a>
+              <a class="nav-link nav-font" routerLink="/aboutus"><span class="nav-font">About Us</span></a>
             
             
-              <a class="nav-link" routerLink="policy-preview">Help</a>
+              <!-- <a class="nav-link nav-font" routerLink="policy-preview"><span class="nav-font">Help</a> -->
             
             
-              <a class="nav-link" href="#">FAQ</a>
+              <a class="nav-link nav-font" routerLink="/FAQ"><span class="nav-font">FAQ</span></a>
 
-              <a class="nav-link" routerLink="/register">Register</a>
+              <a class="nav-link nav-font" routerLink="/register"><span class="nav-font">Register</span></a>
 
-              <a class="nav-link" routerLink="/login" (click)="loginClicked()" *ngIf="!isUserLoggedIn">Login</a>
+              <a class="nav-link nav-font" routerLink="/login" (click)="loginClicked()" *ngIf="!isUserLoggedIn"><span class="nav-font">Login</span></a>
 
-              <a class="nav-link" routerLink="/user-dashboard" *ngIf="isUserLoggedIn">My Account</a>
+              <a class="nav-link nav-font" routerLink="/user-dashboard" *ngIf="isUserLoggedIn"><span class="nav-font">My Account</span></a>
 
-              <a class="nav-link" routerLink="/home" (click)="logoutClicked()" *ngIf="isUserLoggedIn">Logout</a>
+              <a class="nav-link nav-font" routerLink="/home" (click)="logoutClicked()" *ngIf="isUserLoggedIn"><span class="nav-font">Logout</span></a>
           </div>
         </div>
       </nav>

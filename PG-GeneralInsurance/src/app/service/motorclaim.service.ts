@@ -15,12 +15,12 @@ export class MotorclaimService {
     console.log("Service");
     console.log(Policy_id);
     console.log(Insurer_Username);
-    return this.http.put("http://localhost:53421/api/MotorClaimAdmin?Policy_no="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
+    return this.http.put("http://localhost:53421/api/MotorClaimAdmin?Claim_id="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
   }
   public RejectMotorClaim(Policy_id:number,amt:any,Insurer_Username:string){
     console.log("Service");
     console.log(Policy_id);
     console.log(Insurer_Username);
-    return this.http.put("http://localhost:53421/api/RejectMotorClaim?Policy_no="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
+    return this.http.put("http://localhost:53421/api/MotorClaimAdmin/RejectMotorClaim?Claim_id="+Policy_id+"&amt="+amt+"&admin="+Insurer_Username,'');
   }
 }

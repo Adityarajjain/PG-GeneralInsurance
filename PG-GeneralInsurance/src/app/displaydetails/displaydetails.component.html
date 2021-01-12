@@ -1,12 +1,42 @@
-<div><app-header></app-header></div>
-<div class="container">
+<div><app-header></app-header></div><br><br>
+<div *ngIf="userins">
+    <div *ngFor="let ua of userins">
+    
+        {{ua.Policy_Id}}
+        <select id="insuranceplan" [(ngModel)]="insuranceplan">
+            <option [ngValue]="undefined" disabled>Select plan</option>
+            <option value="Comprehensive">Comprehensive</option>
+            <option value="third-party">third-party</option>
+          </select>
+        <a [routerLink]="['/yearrenewal',ua.Policy_Id,ua.Model_Name,ua.Manufacturer,insuranceplan,1]" [skipLocationChange]="true">Renew my {{userins.Policy_Id}}  policy for 1 year</a>
+        <a [routerLink]="['/yearrenewal',ua.Policy_Id,ua.Model_Name,ua.Manufacturer,insuranceplan,2]" [skipLocationChange]="true">Renew my {{userins.Policy_Id}}  policy for 2 year</a>
+        <a [routerLink]="['/yearrenewal',ua.Policy_Id,ua.Model_Name,ua.Manufacturer,insuranceplan,3]" [skipLocationChange]="true">Renew my {{userins.Policy_Id}}  policy for 3 year</a>  
+        <!-- <button (click)="paymentclick(ua.Policy_Id,ua.Manufacturer,ua.Model_Name)">1</button> -->
+        
+        <br>
+       <br>
+    </div>
+    </div>
+    
+    <div *ngIf="userins==''" class="novalues">No expired policy.</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
 <p>Enter Policy Number for Renewal</p>
 <input type="number" [(ngModel)]="Policy_id">
 <br>
 <br>
 <button (click)="onSubmitById()" class="btn btn-default">Submit</button>
 <!-- <div *ngFor="let ta of userins"> -->
-<div *ngIf="userins">
+<!--
+    <div *ngIf="userins">
    
     Name:  {{userins.Name}}
     <br><br>
@@ -46,4 +76,4 @@
 
 
 
-</div>
+</div> -->

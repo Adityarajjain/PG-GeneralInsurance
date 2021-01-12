@@ -1,0 +1,34 @@
+<div><app-admin-header></app-admin-header></div><br>
+<h3 align="center">Motor Insurances</h3> 
+        <table class="table" >  
+            <tr ngclass="btn-primary">  
+                <th class="tb12">Policy Id</th>
+                <th class="tbl2">Number Of Wheels</th>  
+                <th class="tbl2">Manufacturer</th>  
+                <th class="tbl2">Model Name</th> 
+                <th class="tbl2">Registration Number</th>  
+                <th class="tbl2">Insurance Plan</th>  
+                <th class="tbl2"> Time Period</th> 
+                <th class="tbl2"> Policy Start Date </th>  
+                <th class="tbl2">Policy End Date</th>  
+                <th class="tbl2">View Policy</th>  
+            </tr>  
+            
+            <tbody>
+                <tr *ngFor="let motorinsurance of motorinsurances">  
+                    <td class="tb12">{{motorinsurance.Policy_Id}}</td>
+                    <td class="tbl2">{{motorinsurance.Number_Of_Wheels}}</td>  
+                    <td class="tbl2">{{motorinsurance.Manufacturer}}</td>  
+                    <td class="tbl2">{{motorinsurance.Model_Name}}</td>  
+                    <td class="tbl2">{{motorinsurance.Registration_Number}}</td>  
+                    <td class="tbl2">{{motorinsurance.Insurance_Plan}}</td>  
+                    <td class="tbl2">{{motorinsurance.Time_Period }} year(s)</td> 
+                    <td class="tbl2">{{motorinsurance.Policy_Start_Date | date }}</td>  
+                    <td class="tbl2">{{motorinsurance.Policy_End_Date | date }}</td> 
+                    <!-- <input type="text" #amt (change)="function(amt.value)">  -->
+                    <td class="tbl2">  
+                    <button type="button" class="btn btn-info" #pid value="{{motorinsurance.Policy_Id}}" (click)="showPolicy(pid)">View Policy</button>  
+                    </td>  
+                </tr>  
+            </tbody>      
+        </table>

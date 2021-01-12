@@ -19,10 +19,20 @@ namespace registration.Controllers
             return entities.UserDetailsTables.ToList();
         }
         [HttpPost]
-        public void Post(UserDetailsTable user)
+        public HttpResponseMessage Post(UserDetailsTable user)
         {
-            entities.UserDetailsTables.Add(user);
-            entities.SaveChanges();
+            try
+            {
+                entities.UserDetailsTables.Add(user);
+                entities.SaveChanges();
+                string status = "Welcome";
+                return Request.CreateErrorResponse(HttpStatusCode.Accepted, status);
+            }
+            catch(Exception e)
+            {
+                string status = "Mobile Number Already Exists";
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, status);
+            }
         }
 
     }

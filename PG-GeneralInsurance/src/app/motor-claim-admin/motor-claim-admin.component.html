@@ -1,3 +1,4 @@
+<div><app-admin-header></app-admin-header></div><br>
 <h3 align="center">Approval Page for Pending Motor Claim</h3> 
 <table class="table" >  
     <tr ngclass="btn-primary">  
@@ -32,7 +33,8 @@
       <td class="tbl2">{{motorclaim.Estimated_Amount_For_Repair}}</td>  
       <td class="tbl2">{{motorclaim.Bill_Copy }}</td> 
       <td class="tbl2"><input type="number" #amt ></td>    
-      <td align='center'><input type=submit value="Approve"(click)="onSubmit(motorclaim.Policy_Id,amt.value)" style="width:100%"></td>
+      <td align='center'><input type=submit value="Approve"(click)="onSubmit(motorclaim.Claim_Id,amt.value)" class="btn btn-success"></td>
+      <td class="tbl2"><input type=submit value="Reject" (click)="onReject(motorclaim.Claim_Id,amt.value)" class="btn btn-danger"></td>
       <!-- <td align='center'><input type=submit value="Approve"(click)="onSubmit(motorclaim.Policy_Id,1234)" style="width:100%"></td> -->
     </tr>  
 

@@ -13,9 +13,11 @@ namespace registration.Controllers
     public class RenewalTransactionController : ApiController
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
-        public IEnumerable<Proc_MakeRenewalOfPolicy3_Result> Get(long policyid, float amount, int year)
+        public IEnumerable<Proc_MakeRenewalOfPolicy4_Result> Get(long policyid, float amount, string insurance_plan, int year)
         {
-            return entities.Proc_MakeRenewalOfPolicy3(policyid, amount, year).ToList();
+            return entities.Proc_MakeRenewalOfPolicy4(policyid, amount, insurance_plan, year).ToList();
         }
+
+
     }
 }

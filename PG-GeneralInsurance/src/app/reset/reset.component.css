@@ -1,0 +1,18 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#resetButton{
+    float: left;
+    width: 125px;
+}
+.errorDivision{
+    font:bold;
+    color:red;
+}
+h4{
+    font-weight: bold;
+    color: rgb(3,63,112);
+}

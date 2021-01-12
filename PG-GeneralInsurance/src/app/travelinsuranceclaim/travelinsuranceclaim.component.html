@@ -1,3 +1,5 @@
+<div><app-admin-header></app-admin-header></div><br>
+
 <h3 align="center">Approval Page for Pending Travel Claim</h3> 
 <table class="table" >  
     <tr ngclass="btn-primary">  
@@ -18,7 +20,7 @@
       <td class="tbl2">{{travelclaim. Mobile_Number}}</td>  
       <td class="tbl2"><input type="number" #amt ></td>  
       <td class="tbl2">{{travelclaim.Complaint_Copy}}</td> 
-      <td class="tbl2"><input type=submit value="Approve" (click)="onSubmit(travelclaim.Travel_Policy_Id,amt.value)"style="width:100%"></td>
-      <td class="tbl2"><input type=submit value="Reject" (click)="onReject(travelclaim.Travel_Policy_Id,amt.value)"style="width:100%"></td>
+      <td class="tbl2"><input type=submit value="Approve" (click)="onSubmit(travelclaim.Travel_Claim_Id,amt.value)" class="btn btn-success"></td>
+      <td class="tbl2"><input type=submit value="Reject" (click)="onReject(travelclaim.Travel_Claim_Id,amt.value)" class="btn btn-danger"></td>
     </tr>  
 </table>

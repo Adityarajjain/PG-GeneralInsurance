@@ -1,0 +1,28 @@
+<div><app-admin-header></app-admin-header></div><br>
+<h3 align="center">Travel Insurances</h3> 
+<table class="table" >  
+    <tr ngclass="btn-primary">  
+        <th class="tbl2">Policy Id </th>  
+        <th class="tbl2">Source</th>  
+        <th class="tbl2">Destination</th>  
+        <th class="tbl2">Mode Of Transport </th>                                  
+        <th class="tbl2">Travel Start Date</th>  
+        <th class="tbl2">Travel End Date</th>  
+        <th class="tbl2"> Insurance Plan</th> 
+        <th class="tbl2">Status</th>
+        <th class="tb12">View Policy</th>
+    </tr>  
+    <tbody>
+    <tr *ngFor="let travelinsurance of travelinsurances">            
+        <td>{{travelinsurance.Policy_Id}}</td>       
+        <td class="tbl2">{{travelinsurance.Source}}</td>  
+        <td class="tbl2">{{travelinsurance.Destination}}</td>  
+        <td class="tbl2">{{travelinsurance. Mode_Of_Transport}}</td>  
+        <td class="tbl2">{{travelinsurance. Travel_Start_Date | date }}</td>  
+        <td class="tbl2">{{travelinsurance. Travel_End_Date | date}}</td>
+        <td class="tbl2">{{travelinsurance.Insurance_Plan }}</td>  
+        <td class="tbl2">{{travelinsurance.status}}</td>  
+        <td class="tbl2"><button type="button" class="btn btn-info" #tpid value="{{travelinsurance.Policy_Id}}" (click)="showTravelPolicy(tpid)">View Policy</button>  </td>
+    </tr>  
+    </tbody>
+</table> 

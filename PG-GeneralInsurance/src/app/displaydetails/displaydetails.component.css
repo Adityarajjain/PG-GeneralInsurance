@@ -1,0 +1,25 @@
+a{
+    
+    padding: 1em 1em;
+   
+    display: inline-block;
+    
+    border-radius: 5px;
+  
+    text-decoration: none;
+
+    color: white;
+    background-color: #4E9CAF;
+    margin-left: 2em;
+  }
+
+  select{
+    margin-left: 2em;
+    padding: 1em 1em;
+  }
+
+  .novalues{
+    margin:auto;
+    text-align: center;
+    font-size: 40px;
+  }

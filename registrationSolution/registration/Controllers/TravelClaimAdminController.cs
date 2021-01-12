@@ -21,21 +21,22 @@ namespace registration.Controllers
             return listtravelclaims;
         }
         [HttpPut]
-        public string ApproveTravelClaim(long Policy_no, int amt, string admin)
+        [Route("api/TravelClaimAdmin/RejectTravelClaim")]
+        public string RejectTravelClaim(long Claim_id, int amt, string admin)
         {
-            entities.proc_ApproveTravelClaim_Admin(Policy_no, amt, admin);
+            entities.proc_RejectTravelClaim_New(Claim_id, amt, admin);
+            entities.SaveChanges();
+            return "Claim Rejected";
+        }
+        [HttpPut]
+        public string ApproveTravelClaim(long Claim_id, int amt, string admin)
+        {
+            entities.proc_ApproveTravelClaim_Admin_New(Claim_id, amt, admin);
             entities.SaveChanges();
             return "Claim Approved";
         }
 
-        [HttpPut]
-        [Route("RejectTravelClaim")]
-        public string RejectTravelClaim(long Policy_no, int amt, string admin)
-        {
-            entities.proc_RejectTravelClaim(Policy_no, amt, admin);
-            entities.SaveChanges();
-            return "Claim Rejected";
-        }
+    
     }
 }
 

@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router:Router) { 
     this.loggedIn=false;
     this.isUserLoggedIn=JSON.parse(localStorage.getItem('LoggedIn')!);
-    console.log('isUser Logged IN: '+this.isUserLoggedIn)
+    // console.log('isUser Logged IN: '+this.isUserLoggedIn)
   }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     else
       this.loggedIn=true;
 
-      console.log("LOGGED IN: "+this.loggedIn);
+      // console.log("LOGGED IN: "+this.loggedIn);
   }
 
   logoutClicked(){

@@ -48,31 +48,47 @@ import { TravelService } from './service/travel.service';
 import { TravelclaimService } from './service/travelclaim.service';
 import { MotorInsuranceAdminService } from './service/MotorInsuranceAdmin.service';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ExpiredPolicyService } from './service/expiredPolicy.service';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { ApprovedPoliciesService } from './service/approvedPolicies.service';
+import { AllmotorapprovedComponent } from './allmotorapproved/allmotorapproved.component';
+import { AlltravelapprovedComponent } from './alltravelapproved/alltravelapproved.component';
+import { ResetComponent } from './reset/reset.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { ForgetPassword } from './service/forgetPassword.service';
+import { FaqComponent } from './faq/faq.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
 const routes:Routes=[
   {path:"", pathMatch:"full", redirectTo:"/home"},
   {path:"register",component:RegisterComponent},
-  {path:"buy-insurance", component:BuyInsuranceComponent},//, canActivate:[AuthguardGuard]},
-  {path:"motor-insurance", component:MotorInsuranceComponent},//, canActivate:[AuthguardGuard]},
+  {path:"buy-insurance", component:BuyInsuranceComponent, canActivate:[AuthguardGuard]},
+  {path:"motor-insurance", component:MotorInsuranceComponent, canActivate:[AuthguardGuard]},
   {path:"travel-insurance", component:TravelInsuranceComponent, canActivate:[AuthguardGuard]},
   {path:"home", component:HomeComponent},
   {path:"login", component:LoginComponent},
   {path:"policy-preview", component:PolicyPreviewComponent, canActivate:[AuthguardGuard]},
   {path:"estimate-insurance", component:EstimateInsuranceComponent},
   {path:"Renew-insurance", component:DisplaydetailsComponent, canActivate:[AuthguardGuard]},
-  {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:year',component:SelectyearComponent},
+  {path:'yearrenewal/:reg_number/:modelname/:manufacturer/:planofins/:year',component:SelectyearComponent},
   {path:"user-dashboard",component:UserDashboardComponent, canActivate:[AuthguardGuard]},
   {path:'dummy', component:DummyComponent},
-  {path:"claim-insurance", component:ClaiminsuranceComponent},
+  {path:"claim-insurance", component:ClaiminsuranceComponent, canActivate:[AuthguardGuard]},
   {path:"admin", component:AdminLoginComponent},
   {path:"travelinsuranceclaim", component:TravelinsuranceclaimComponent},
   {path:"travelinsuranceadmin", component:TravelinsuranceAdminComponent},
   {path:"motorinsuranceadmin", component:MotorInsuranceAdminComponent},
   {path:"motorinsuranceclaim", component:MotorClaimAdminComponent},
-  {path:"dashboard", component:DashboardComponent, canActivate:[AuthguardGuard]}
-  
+  {path:"admin/dashboard", component:DashboardComponent},
+  {path:"allmotor",component:AllmotorapprovedComponent},
+  {path:"alltravel",component:AlltravelapprovedComponent},
+  {path:"forgetpassword",component:ForgetpasswordComponent},
+  {path:"ResetPassword/:id/:token", component:ResetComponent},
+  {path:"FAQ",component:FaqComponent},
+  {path:"aboutus",component:AboutusComponent}
 ]
 
 @NgModule({
@@ -100,7 +116,15 @@ const routes:Routes=[
     TravelinsuranceclaimComponent,
     TravelinsuranceAdminComponent,
     DashboardComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminHeaderComponent,
+    AllmotorapprovedComponent,
+    AlltravelapprovedComponent,
+    ResetComponent,
+    ForgetpasswordComponent,
+    FaqComponent,
+    AboutusComponent,
+    ContactComponent
    
   ],
   entryComponents:[PolicyPreviewComponent,TravelPolicyComponent],
@@ -128,7 +152,10 @@ const routes:Routes=[
     MotorclaimService,
     TravelService,
     TravelclaimService,
-    MotorInsuranceAdminService
+    MotorInsuranceAdminService,
+    ExpiredPolicyService,
+    ApprovedPoliciesService,
+    ForgetPassword
   ],
   bootstrap: [AppComponent]
 })

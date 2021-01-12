@@ -17,8 +17,8 @@ export class RenewalDisplayService{
         return this.htClient.get("http://localhost:53421/api/CalcPremium?policyid="+policyid+"&manu="+manufacturer+"&model="+modelname);
     }
 
-    public MakePaymentOfDepreciatedValue(policy:number,amount:number,year:number){
-        return this.payHttp.get("http://localhost:53421/api/RenewalTransaction?policyid="+policy+"&amount="+amount+"&year="+year)
+    public MakePaymentOfDepreciatedValue(policy:number,amount:number,insurance_plan:string,year:number){
+        return this.payHttp.get("http://localhost:53421/api/RenewalTransaction?policyid="+policy+"&amount="+amount+"&insurance_plan="+insurance_plan+"&year="+year)
     }
     
 }

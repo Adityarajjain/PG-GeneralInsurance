@@ -21,21 +21,22 @@ namespace registration.Controllers
             return listmotorclaims;
         }
         [HttpPut]
-        public string ApproveMotorClaim(long Policy_no, int amt, string admin)
+        [Route("api/MotorClaimAdmin/RejectMotorClaim")]
+        public string RejectMotorClaim(long Claim_id, int amt, string admin)
         {
-            entities.proc_ApproveMotorClaim_Admin(Policy_no, amt, admin);
+            entities.proc_RejectMotorClaim_New(Claim_id, amt, admin);
+            entities.SaveChanges();
+            return "Claim Rejected";
+        }
+        [HttpPut]
+        public string ApproveMotorClaim(long Claim_id, int amt, string admin)
+        {
+            entities.proc_ApproveMotorClaim_Admin_New(Claim_id, amt, admin);
             entities.SaveChanges();
             return "Claim Approved";
         }
 
-        [HttpPut]
-        [Route("RejectMotorClaim")]
-        public string RejectMotorClaim(long Policy_no, int amt, string admin)
-        {
-            entities.proc_RejectMotorClaim(Policy_no, amt, admin);
-            entities.SaveChanges();
-            return "Claim Rejected";
-        }
+       
     }
 }
 

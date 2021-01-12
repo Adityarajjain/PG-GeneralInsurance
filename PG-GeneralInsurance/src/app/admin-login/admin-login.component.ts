@@ -23,11 +23,12 @@ export class AdminLoginComponent implements OnInit {
       data => {    
             
         if(data.Message=="Welcome")    
-        { this.router.navigateByUrl('/dashboard');
+        {
+           this.router.navigateByUrl('admin/dashboard',{skipLocationChange:true});
           //this.router.navigate(['/Dasboard']);  
           console.log(data.Message);  
           sessionStorage.setItem("adminUsername",this.model.Username);
-             
+          localStorage.setItem('AdminLoggedIn', 'true');
         }    
         else{    
           this.errorMessage ="Invalid Username or Password";  

@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label class="fieldlabels">Purchase Date: </label>
                     <input type="date" #dateRef="ngModel" required class="form-control" name="Purchase_Date"
-                        placeholder="Enter Pusrchase Date" ngModel />
+                        placeholder="Enter Pusrchase Date" ngModel [max]="getToday()"/>
                     <div *ngIf="dateRef.errors && (dateRef.dirty || dateRef.touched)" class="alert alert-danger">
                         Purchase Date is Required
                     </div>
@@ -103,12 +103,12 @@
                     <input type="radio" name="Time_Period" required #tp3 value="3" (change)="setTimePeriod(tp3.value)" ngModel>&nbsp;Three Year <br>
                 </div>
                 <div class="form-group">
-                    <label class="fieldlabels">Start Date: </label>
+                    <!-- <label class="fieldlabels">Start Date: </label> -->
                     <input type="date" class="form-control" name="Policy_Start_Date" hidden required  placeholder="Enter Pusrchase Date"
                        [ngModel]="Policy_Start_Date" ngModel />
                 </div>
                 <div class="form-group">
-                    <label class="fieldlabels">End Date: </label>
+                    <!-- <label class="fieldlabels">End Date: </label> -->
                     <input type="date" class="form-control" name="Policy_End_Date" hidden required  placeholder="Enter Pusrchase Date"
                        [ngModel]="Policy_End_Date" ngModel />
                 </div>

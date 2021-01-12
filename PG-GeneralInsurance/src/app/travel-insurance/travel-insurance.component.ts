@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { TravelInsuranceTable } from '../model/travelInsuranceTable';
 import { FormGroup,Validators,FormBuilder } from "@angular/forms";
 import { TravelInsuranceDetailsService } from '../service/travelInsuranceDetails.service';
-
+import {formatDate} from '@angular/common';
 @Component({
   selector: 'app-travel-insurance',
   templateUrl: './travel-insurance.component.html',
@@ -15,7 +15,7 @@ export class TravelInsuranceComponent implements OnInit {
   register:TravelInsuranceTable;
   travelInsurance:any;
   submitted:boolean;
-  
+  userMobile:any;
   constructor(private registerService:TravelInsuranceDetailsService,private route:Router,private fb:FormBuilder) {
     this.register=new TravelInsuranceTable();
     this.registerForm = fb.group({
@@ -30,6 +30,7 @@ export class TravelInsuranceComponent implements OnInit {
       Insurance_Plan:['',[Validators.required]],
    });
    this.submitted=false;
+   this.userMobile=sessionStorage.getItem("userMobile");
   }
  
   ngOnInit(): void {
@@ -40,11 +41,15 @@ export class TravelInsuranceComponent implements OnInit {
   get f(){
     return this.registerForm.controls;
   }
-
+  getToday():string{
+    let date=new Date();
+    return formatDate(date, 'yyyy-MM-dd', 'en');
+  }
  
   InsertUser()
   {
     this.travelInsurance=this.registerForm.value;
+    
     this.registerService.fillTravelInsurance(this.registerForm.value).subscribe()
     alert("User registered");
     // console.log("Mobile : "+this.registerForm.value.Mobile_Number);

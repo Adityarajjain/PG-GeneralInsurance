@@ -14,6 +14,7 @@ export class TravelPolicyComponent  {
   policy:any;
   premium:number=NaN;
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private motorPolicy:MotorPolicyService){
+    console.log("data: "+data)
     this.motorPolicy.getTravelPolicy(data).subscribe((d:any)=>{this.policy=d});
     this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;})! ;
   }

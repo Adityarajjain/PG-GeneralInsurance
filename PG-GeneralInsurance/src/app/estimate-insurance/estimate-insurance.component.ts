@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MotorInsuranceDetailsService } from '../service/motorInsuranceDetails.service';
 import { VehiclelistService } from '../service/vehiclelist.service';
-
+import {formatDate} from '@angular/common';
 @Component({
   selector: 'app-estimate-insurance',
   templateUrl: './estimate-insurance.component.html',
@@ -33,7 +33,10 @@ export class EstimateInsuranceComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  getToday():string{
+    let date=new Date();
+    return formatDate(date, 'yyyy-MM-dd', 'en');
+  }
   CalculateInsurance(){
     this.motorInsService.getPremium(this.manufacturer,this.model,(document.getElementById("Purchase_Date")! as HTMLInputElement).value).subscribe((data:any)=>{this.premium_amt=data;return data});
   }

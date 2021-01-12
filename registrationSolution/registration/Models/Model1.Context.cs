@@ -621,5 +621,118 @@ namespace registration.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_Get_Policy_Travel_Approved_Result>("proc_Get_Policy_Travel_Approved", policy_idParameter);
         }
+    
+        public virtual ObjectResult<Proc_MakeRenewalOfPolicy4_Result> Proc_MakeRenewalOfPolicy4(Nullable<long> policyid, Nullable<double> amount, string plan, Nullable<int> year)
+        {
+            var policyidParameter = policyid.HasValue ?
+                new ObjectParameter("policyid", policyid) :
+                new ObjectParameter("policyid", typeof(long));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var planParameter = plan != null ?
+                new ObjectParameter("plan", plan) :
+                new ObjectParameter("plan", typeof(string));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proc_MakeRenewalOfPolicy4_Result>("Proc_MakeRenewalOfPolicy4", policyidParameter, amountParameter, planParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Proc_SelectExpiredPolicies5_Result> Proc_SelectExpiredPolicies5(string mob)
+        {
+            var mobParameter = mob != null ?
+                new ObjectParameter("mob", mob) :
+                new ObjectParameter("mob", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Proc_SelectExpiredPolicies5_Result>("Proc_SelectExpiredPolicies5", mobParameter);
+        }
+    
+        public virtual ObjectResult<proc_GetAll_Policy_Motor_Approved_Result> proc_GetAll_Policy_Motor_Approved()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAll_Policy_Motor_Approved_Result>("proc_GetAll_Policy_Motor_Approved");
+        }
+    
+        public virtual ObjectResult<proc_GetAll_Policy_Travel_Approved_Result> proc_GetAll_Policy_Travel_Approved()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAll_Policy_Travel_Approved_Result>("proc_GetAll_Policy_Travel_Approved");
+        }
+    
+        public virtual ObjectResult<proc_GetAllTravelClaim_Admin_New_Result> proc_GetAllTravelClaim_Admin_New()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_GetAllTravelClaim_Admin_New_Result>("proc_GetAllTravelClaim_Admin_New");
+        }
+    
+        public virtual int proc_ApproveMotorClaim_Admin_New(Nullable<long> claimid, Nullable<int> amt, string admin)
+        {
+            var claimidParameter = claimid.HasValue ?
+                new ObjectParameter("claimid", claimid) :
+                new ObjectParameter("claimid", typeof(long));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(int));
+    
+            var adminParameter = admin != null ?
+                new ObjectParameter("admin", admin) :
+                new ObjectParameter("admin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_ApproveMotorClaim_Admin_New", claimidParameter, amtParameter, adminParameter);
+        }
+    
+        public virtual int proc_ApproveTravelClaim_Admin_New(Nullable<long> claimid, Nullable<int> amt, string admin)
+        {
+            var claimidParameter = claimid.HasValue ?
+                new ObjectParameter("claimid", claimid) :
+                new ObjectParameter("claimid", typeof(long));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(int));
+    
+            var adminParameter = admin != null ?
+                new ObjectParameter("admin", admin) :
+                new ObjectParameter("admin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_ApproveTravelClaim_Admin_New", claimidParameter, amtParameter, adminParameter);
+        }
+    
+        public virtual int proc_RejectMotorClaim_New(Nullable<long> claimid, Nullable<int> amt, string admin)
+        {
+            var claimidParameter = claimid.HasValue ?
+                new ObjectParameter("claimid", claimid) :
+                new ObjectParameter("claimid", typeof(long));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(int));
+    
+            var adminParameter = admin != null ?
+                new ObjectParameter("admin", admin) :
+                new ObjectParameter("admin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_RejectMotorClaim_New", claimidParameter, amtParameter, adminParameter);
+        }
+    
+        public virtual int proc_RejectTravelClaim_New(Nullable<long> claimid, Nullable<int> amt, string admin)
+        {
+            var claimidParameter = claimid.HasValue ?
+                new ObjectParameter("claimid", claimid) :
+                new ObjectParameter("claimid", typeof(long));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(int));
+    
+            var adminParameter = admin != null ?
+                new ObjectParameter("admin", admin) :
+                new ObjectParameter("admin", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_RejectTravelClaim_New", claimidParameter, amtParameter, adminParameter);
+        }
     }
 }

@@ -41,16 +41,32 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
- 
+ errorMessage:string="";
   InsertUser()
   {
    
-    this.registerService.addUsers(this.registerForm.value).subscribe(data=>console.log(data))
-    alert("User registered");
-    console.log(this.registerForm.value);
-    this.route.navigateByUrl('/login')
+    this.registerService.addUsers(this.registerForm.value).subscribe(
+      (data:any) => {    
+        console.log(JSON.stringify(data.Message));  
+              if(data.Message=="Welcome")    
+              { 
+                alert("User registered");
+                this.route.navigateByUrl('/login')
+              }    
+              else{    
+                console.log(data);
+                this.errorMessage ="Mobile Number Already Exists";  
+              }    
+            },    
+            error => {    
+              this.errorMessage ="Mobile Number Already Exists";     
+            }); 
+    
+    
+    // console.log(this.registerForm.value);
+  
   }
- 
+  
 }
 
 

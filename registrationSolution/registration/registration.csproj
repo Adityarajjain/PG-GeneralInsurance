@@ -110,9 +110,12 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AllMotorApprovedController.cs" />
+    <Compile Include="Controllers\AllTravelApprovedController.cs" />
     <Compile Include="Controllers\CalcPremiumController.cs" />
     <Compile Include="Controllers\ClaimController.cs" />
     <Compile Include="Controllers\DisplayPrevInsController.cs" />
+    <Compile Include="Controllers\ForgetPasswordController.cs" />
     <Compile Include="Controllers\MotorClaimAdminController.cs" />
     <Compile Include="Controllers\MotorClaimDashboardController.cs" />
     <Compile Include="Controllers\MotorInsuranceApprovalController.cs" />
@@ -163,6 +166,7 @@
     <Compile Include="Models\MotorInsuranceTable.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewPassword.cs" />
     <Compile Include="Models\proc_GetAllClaimsOfUser_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -184,6 +188,9 @@
     <Compile Include="Models\proc_GetAllTravelClaimsOfUser_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\proc_GetAllTravelClaim_Admin_New_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\proc_GetAllTravelClaim_Admin_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -197,6 +204,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\proc_GetAllTravelPoliciesOfUser_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proc_GetAll_Policy_Motor_Approved_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\proc_GetAll_Policy_Travel_Approved_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\proc_GetMotorPolicy_Result.cs">
@@ -224,6 +237,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Proc_MakeRenewalOfPolicy3_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Proc_MakeRenewalOfPolicy4_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Proc_SelectExpiredPolicies5_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Proc_ValidateExistingAuthGuard3_Result.cs">

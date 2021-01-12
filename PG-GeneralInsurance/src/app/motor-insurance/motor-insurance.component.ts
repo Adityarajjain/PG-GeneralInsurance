@@ -19,7 +19,7 @@ export class MotorInsuranceComponent implements OnInit {
   model:string;
   changePage:boolean;
   submitted:boolean;
-  motorInsurance:MotorInsuranceTable;
+  motorInsurance:any;
   mobile:string;
   userMobile:any;
   date= new Date();
@@ -75,9 +75,11 @@ export class MotorInsuranceComponent implements OnInit {
     this.Policy_Start_Date=formatDate(this.date, 'yyyy-MM-dd', 'en');
    
       this.date.setDate( this.date.getDate() + 365*tp );
-      this.Policy_End_Date=formatDate(this.date, 'yyyy-MM-dd', 'en');
-    
-   
+      this.Policy_End_Date=formatDate(this.date, 'yyyy-MM-dd', 'en');       
+  }
+  getToday():string{
+    this.date=new Date();
+    return formatDate(this.date, 'yyyy-MM-dd', 'en');
   }
   public applyMotorInsurance(motorForm:any){
     // console.log("motorForm: "+JSON.stringify(motorForm))
@@ -85,10 +87,10 @@ export class MotorInsuranceComponent implements OnInit {
      
      this.motorInsService.fillMotorInsurance(motorForm).subscribe(data=>console.log("DATA:  "+data));
      alert("Applied for the Insurance ");
-     
+     this.motorInsurance=motorForm;
     // //  this.policy_Id=this.motorInsService.getPolicyId().subscribe();
     // //  console.log("policy id: "+this.policy_Id);
-    // this.submitted=true;
+    this.submitted=true;
   }
 
 }

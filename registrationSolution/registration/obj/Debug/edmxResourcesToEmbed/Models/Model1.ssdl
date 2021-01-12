@@ -285,12 +285,22 @@
     <Parameter Name="amt" Type="int" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="proc_ApproveMotorClaim_Admin_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="claimid" Type="bigint" Mode="In" />
+    <Parameter Name="amt" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="proc_ApproveMotorInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyid" Type="bigint" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
   </Function>
   <Function Name="proc_ApproveTravelClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyid" Type="bigint" Mode="In" />
+    <Parameter Name="amt" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_ApproveTravelClaim_Admin_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="claimid" Type="bigint" Mode="In" />
     <Parameter Name="amt" Type="int" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
   </Function>
@@ -310,6 +320,8 @@
   <Function Name="proc_Get_Policy_Travel_Approved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policy_id" Type="bigint" Mode="In" />
   </Function>
+  <Function Name="proc_GetAll_Policy_Motor_Approved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAll_Policy_Travel_Approved" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="proc_GetAllClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mobile" Type="varchar" Mode="In" />
   </Function>
@@ -322,6 +334,7 @@
   </Function>
   <Function Name="proc_GetAllTravelClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="proc_GetAllTravelClaim_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="proc_GetAllTravelClaim_Admin_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="proc_GetAllTravelClaimsOfUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mobile" Type="varchar" Mode="In" />
   </Function>
@@ -354,8 +367,19 @@
     <Parameter Name="amount" Type="float" Mode="In" />
     <Parameter Name="year" Type="int" Mode="In" />
   </Function>
+  <Function Name="Proc_MakeRenewalOfPolicy4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policyid" Type="bigint" Mode="In" />
+    <Parameter Name="amount" Type="float" Mode="In" />
+    <Parameter Name="plan" Type="varchar" Mode="In" />
+    <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
   <Function Name="proc_RejectMotorClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyid" Type="bigint" Mode="In" />
+    <Parameter Name="amt" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_RejectMotorClaim_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="claimid" Type="bigint" Mode="In" />
     <Parameter Name="amt" Type="int" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
   </Function>
@@ -368,9 +392,17 @@
     <Parameter Name="amt" Type="int" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="proc_RejectTravelClaim_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="claimid" Type="bigint" Mode="In" />
+    <Parameter Name="amt" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="proc_RejectTravelInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="policyid" Type="bigint" Mode="In" />
     <Parameter Name="admin" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_SelectExpiredPolicies5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mob" Type="varchar" Mode="In" />
   </Function>
   <Function Name="Proc_ValidateExistingAuthGuard3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mob" Type="varchar" Mode="In" />
