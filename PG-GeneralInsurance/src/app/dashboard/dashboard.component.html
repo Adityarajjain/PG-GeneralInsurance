@@ -1,78 +1,119 @@
-
-<div><app-admin-header></app-admin-header></div>
 <div>
-       
-  <div class="row"> 
-  <div class="col-sm-12 btn btn-primary"> 
-          Welcome {{admin}}
-          <!-- <button class="btn btn-danger" (click)="logout()" style="margin-right: 1px; margin-left: 80%; border-radius: 50px;">Logout></button> -->
-  </div>  
-  
-  </div>  
-  </div>  
+  <app-admin-header></app-admin-header>
+</div>
+<div>
+
+  <div class="row">
+    <div class="col-sm-12 btn btn-primary">
+      Welcome {{admin}}
+      <!-- <button class="btn btn-danger" (click)="logout()" style="margin-right: 1px; margin-left: 80%; border-radius: 50px;">Logout></button> -->
+    </div>
+
+  </div>
+</div>
 
 
-<div >
-  <div class="content" role="main" style="margin-top: 5px;" >
-        <div class="card-container" style="text-align:center; margin-left: 75%;">
-          
-            <div class="card-container"><a class="card  " rel="noopener" routerLink="/motorinsuranceadmin" [skipLocationChange]=true>
-      
-            <span>Approve Motor Insurance</span>
-      
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
-          </a>
-          </div>
-          <br>
-          <div class="card-container"><a class="card " rel="noopener" routerLink="/travelinsuranceadmin" [skipLocationChange]=true>
-      
+<div>
+  <div class="background">
+    <div class="content" role="main" style="margin-top: 5px;">
+      <!-- <div class="card-container" style="text-align:center; margin-left: 75%;"> -->
+<br><br>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card-container"><a class="card  " rel="noopener" routerLink="/motorinsuranceadmin"
+                [skipLocationChange]=true>
+    
+                <span>Approve Motor Insurance</span>
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
+              </a>
+            </div>
+            </div>
+            <div class="col-sm">
+              <div class="card-container"><a class="card " rel="noopener" routerLink="/travelinsuranceadmin"
+                [skipLocationChange]=true>
+    
                 <span>Approve Travel Insurance</span>
-          
-                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
               </a>
-              </div>
-              <br>
-          <div class="card-container"><a class="card " rel="noopener" routerLink="/motorinsuranceclaim" [skipLocationChange]=true >
-      
-            <span>Approve MotorInsurance Claim</span>
-      
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
-          </a>
+            </div>
+            </div>
+            <div class="col-sm">
+              <div class="card-container"><a class="card " rel="noopener" routerLink="/motorinsuranceclaim"
+                [skipLocationChange]=true>
+    
+                <span>Approve MotorInsurance Claim</span>
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
+              </a>
+            </div>
+            </div>
           </div>
-          <br>
-          <div class="card-container"><a class="card " rel="noopener" routerLink="/travelinsuranceclaim" [skipLocationChange]=true >
-      
+          <br><br>
+          <div class="row">
+            <div class="col-sm">
+              <div class="card-container"><a class="card " rel="noopener" routerLink="/travelinsuranceclaim"
+                [skipLocationChange]=true>
+    
                 <span>Approve TravelInsurance Claim</span>
-          
-                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
               </a>
-              </div>
-              <br>
-              <div class="card-container"><a class="card " rel="noopener" routerLink="/allmotor" [skipLocationChange]=true >
-      
+            </div>
+            </div>
+            <div class="col-sm">
+              <div class="card-container"><a class="card " rel="noopener" routerLink="/allmotor" [skipLocationChange]=true>
+
                 <span>All Approved MotorInsurances</span>
-          
-                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
               </a>
-              </div>
-              <br>
-              <div class="card-container"><a class="card " rel="noopener" routerLink="/alltravel"  [skipLocationChange]=true>
-      
+            </div>
+            </div>
+            <div class="col-sm">
+              <div class="card-container"><a class="card " rel="noopener" routerLink="/alltravel" [skipLocationChange]=true>
+
                 <span>All Approved Travel Insurances</span>
-          
-                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+    
+                <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
               </a>
-              </div>
-          
+            </div>
+            </div>
+          </div>
         </div>
-        <div>
+
+
+
+
+
+    
+
+      <!-- </div> -->
+      <div>
         <!-- <router-outlet></router-outlet> -->
-        </div>
-        <!-- Footer -->
-        <footer>
-          
-        </footer>
-      
-        
-      
       </div>
+      <!-- Footer -->
+      <footer>
+
+      </footer>
+
+
+
+    </div>
+  </div>

@@ -17,8 +17,9 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService:RegisterService,private route:Router,private fb:FormBuilder) {
     this.register=new Register();
     this.registerForm = fb.group({
-      Mobile_Number:['', [Validators.required,Validators.minLength(10),Validators.pattern("[0-9]*")]],
-      Password:['',[Validators.required,Validators.minLength(8)]],
+     // Mobile_Number:['', [Validators.required,Validators.minLength(10),Validators.pattern("[0-9]*​")]], //Validators.minLength(10),
+     Mobile_Number:['', [Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern("[0-9]*")]], 
+     Password:['',[Validators.required,Validators.minLength(8)]],
       Name:['',[Validators.required,Validators.pattern('[a-zA-Z ]*')]],
       Email_Id:['',[Validators.required,Validators.email]],
       Gender:['',[Validators.required]],

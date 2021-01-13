@@ -1,4 +1,5 @@
 <div><app-header></app-header></div><br>
+<div class="container" style="height: 800px; display: inline-block;">
 <div class="container">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
@@ -18,10 +19,10 @@
         <select name="" id="" [(ngModel)]="choice" (change)="selectChange()">
             <!-- <option  selected>Select Reason </option> -->
             <option value="none" disabled selected="selected" value="selectoption">Select an Option </option>
-            <option value="accident">Accident</option>
-            <option value="naturalDisaster">Natural Disaster</option>
-            <option value="manMadeDisaster">Man Made Disaster</option>
-            <option value="theft">Theft</option>
+            <option value="Accident">Accident</option>
+            <option value="NaturalDisaster">Natural Disaster</option>
+            <option value="ManMadeDisaster">Man Made Disaster</option>
+            <option value="Theft">Theft</option>
         </select>
 
         <!-- Motor Claim Form For  Theft -->
@@ -35,7 +36,7 @@
             License_Copy,RC_Copy,Insurance_Copy,Authenticated_Letter_from_RTO)">
                         <div class="form-group">
                             <label for="Mobile_Number">Policy_Id </label>
-                            <input type="text" class="form-control" #Policy_Id [(ngModel)]="motorclaim.Policy_Id"
+                            <input type="number" class="form-control" #Policy_Id [(ngModel)]="motorclaim.Policy_Id"
                                 formControlName="Policy_Id" placeholder="Policy Id" />
                             <div *ngIf="ft.Policy_Id.touched && ft.Policy_Id.invalid" class="alert alert-danger">
                                 <strong> Policy ID
@@ -50,32 +51,32 @@
                                     invalid.</strong>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels"> Mobile Number: </label>
                             <input type="text" class="form-control" #Mobile_Number
                                 [(ngModel)]="motorclaim.Mobile_Number" formControlName="Mobile_Number"
-                                placeholder="Mobile Number" />
+                                placeholder="Mobile Number" [ngModel]="userMobile" />
                             <div *ngIf="ft. Mobile_Number.touched && ft. Mobile_Number.invalid"
                                 class="alert alert-danger">
                                 <strong>Mobile Number is invalid.</strong>
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels">Reason (As selected above): </label>
                             <input type="text" class="form-control" #Reason [(ngModel)]="motorclaim.Reason"
-                                formControlName="Reason" placeholder="Reason(Reason As selected above)" />
+                                formControlName="Reason" placeholder="Reason(Reason As selected above)" [ngModel]="choice" />
                             <div *ngIf="ft.Reason.touched && ft.Reason.invalid" class="alert alert-danger">
                                 <strong>Reason is
                                     invalid.</strong></div>
 
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels">Date Of Applying </label>
                             <input type="date" class="form-control" #Date_Of_Applying
                                 [(ngModel)]="motorclaim.Date_Of_Applying" formControlName="Date_Of_Applying"
-                                placeholder="Date Of Applying" />
+                                placeholder="Date Of Applying" [ngModel]="getToday()" hidden />
                             <div *ngIf="ft.Date_Of_Applying.touched && ft.Date_Of_Applying.invalid"
                                 class="alert alert-danger">
                                 <strong>Date Of Applying is invalid.</strong>
@@ -139,32 +140,32 @@
                                     invalid.</strong>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels"> Mobile Number: </label>
                             <input type="text" class="form-control" #Mobile_Number
                                 [(ngModel)]="motorclaim.Mobile_Number" formControlName="Mobile_Number"
-                                placeholder="Mobile Number" />
+                                placeholder="Mobile Number" [ngModel]="userMobile" />
                             <div *ngIf="f. Mobile_Number.touched && f. Mobile_Number.invalid"
                                 class="alert alert-danger">
                                 <strong>Mobile Number is invalid.</strong>
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels">Reason (As selected above): </label>
                             <input type="text" class="form-control" #Reason [(ngModel)]="motorclaim.Reason"
-                                formControlName="Reason" placeholder="Reason(Reason As selected above)" />
+                                formControlName="Reason" placeholder="Reason(Reason As selected above)" [ngModel]="choice"/>
                             <div *ngIf="f.Reason.touched && f.Reason.invalid" class="alert alert-danger"><strong>Reason
                                     is
                                     invalid.</strong></div>
 
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels">Date Of Applying </label>
-                            <input type="date" class="form-control" #Date_Of_Applying
+                            <input type="date" class="form-control" #Date_Of_Applying 
                                 [(ngModel)]="motorclaim.Date_Of_Applying" formControlName="Date_Of_Applying"
-                                placeholder="Date Of Applying" />
+                                placeholder="Date Of Applying" [ngModel]="getToday()"  />
                             <div *ngIf="f.Date_Of_Applying.touched && f.Date_Of_Applying.invalid"
                                 class="alert alert-danger">
                                 <strong>Date Of Applying is invalid.</strong>
@@ -262,10 +263,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels"> Mobile Number: </label>
                             <input type="text" class="form-control" #Mobile_Number formControlName="Mobile_Number"
-                                placeholder="Mobile Number" [(ngModel)]="travelclaim.Mobile_Number" />
+                                placeholder="Mobile Number" [(ngModel)]="travelclaim.Mobile_Number"  [ngModel]="userMobile"/>
                             <div *ngIf="g.Mobile_Number.touched && g.Mobile_Number.invalid" class="alert alert-danger">
                                 <strong>Mobile Number is invalid.</strong>
                             </div>
@@ -286,7 +287,7 @@
                 </div> -->
                         <br><br>
 
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" [disabled]="!travelClaimForm.valid" class="btn btn-info">Submit</button>
                     </form>
                     <br><br>
 
@@ -301,7 +302,7 @@
                 <h4 class="card-header bg-info " style="width: 800px;">Register Claim</h4>
                 <div class="card-body " style=" width: 800px ;">
 
-                    <form [formGroup]="travelClaimForm" (ngSubmit)="addTravelClaimAccident(Travel_Policy_Id,Ticket_Copy,
+                    <form [formGroup]="travelClaimFormForAccident" (ngSubmit)="addTravelClaimAccident(Travel_Policy_Id,Ticket_Copy,
             Reason_for_Claim,
             Mobile_Number)">
                         <div class="form-group">
@@ -323,11 +324,11 @@
                                     invalid.</strong>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" hidden>
                             <label class="fieldlabels"> Mobile Number: </label>
                             <input type="text" class="form-control" #Mobile_Number
                                 [(ngModel)]="travelclaim.Mobile_Number" formControlName="Mobile_Number"
-                                placeholder="Mobile Number" />
+                                placeholder="Mobile Number" [ngModel]="userMobile"/>
                             <div *ngIf="g.Mobile_Number.touched && g.Mobile_Number.invalid" class="alert alert-danger">
                                 <strong>Mobile Number is invalid.</strong>
                             </div>
@@ -338,7 +339,7 @@
                             [(ngModel)]="travelclaim.Ticket_Copy">
                         <br><br>
 
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" [disabled]="!travelClaimFormForAccident.valid" class="btn btn-info">Submit</button>
                     </form>
                     <br><br>
 
@@ -350,5 +351,6 @@
     </div>
     <!-- Travel Claim Tab Ends -->
 
+</div>
 </div>
 </div>

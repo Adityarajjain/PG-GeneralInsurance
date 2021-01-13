@@ -23,3 +23,20 @@ a{
     text-align: center;
     font-size: 40px;
   }
+
+  .background-color {
+    width: 100%;
+  
+   background-color: lightcyan;
+    background-size: cover;
+  
+    
+ }
+ footer{
+    margin-top: -2px;
+    background-color:darkcyan;
+    color: whitesmoke;
+    height: 80px;
+    align-items: center;
+    text-align: center;
+}

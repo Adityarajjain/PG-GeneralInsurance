@@ -16,18 +16,18 @@ export class EstimateInsuranceComponent implements OnInit {
   premium_amt:any;
   constructor(private vehiclelist:VehiclelistService,private motorInsService:MotorInsuranceDetailsService) { 
     this.model='';
-    this.premium_amt=NaN;
+    // this.premium_amt=NaN;
     this.vehiclelist.getManufacturers().forEach((element:any) => {
       this.manufacturers.push(element);
     });
   }
   getCars(manu:string){
     this.models=[];
-    console.log(this.manufacturer);
+    console.log(this.manufacturer!);
     // this.vehiclelist.getModels(manu).forEach((element:any) => {
     //   this.models.push(element);
     // });
-    this.vehiclelist.getModels(this.manufacturer).forEach((element:any) => {
+    this.vehiclelist.getModels(this.manufacturer!).forEach((element:any) => {
       this.models.push(element);
     });
   }

@@ -14,6 +14,7 @@
       <th class="tbl2"> Mobile Number </th>   
       <th class="tbl2"> Insurance Plan</th> 
       <th class="tb12">Approve</th>
+      <th class="tbl2">Reject</th>
     </tr>  
     <tr *ngFor="let travelinsurance of travelinsurances">            
       <td class="tbl2" #pid value="travelinsurance.Policy_Id">{{travelinsurance.Policy_id}}</td>  
@@ -27,7 +28,7 @@
       <td class="tbl2">{{travelinsurance.Any_Medical_Condition}}</td>
       <td class="tbl2">{{travelinsurance.Mobile_Number}}</td>    
       <td class="tbl2">{{travelinsurance.Insurance_Plan }}</td>    
-      <td><input type="submit" (click)="onSubmit(travelinsurance.Policy_id)" value="Approve"></td>
-      <td><input type="submit" (click)="onReject(travelinsurance.Policy_id)" value="Reject"></td>
+      <td><input type="submit" class="btn btn-success" (click)="onSubmit(travelinsurance.Policy_id)" value="Approve"></td>
+      <td><input type="submit" class="btn btn-danger" (click)="onReject(travelinsurance.Policy_id)" value="Reject"></td>
     </tr>  
 </table>

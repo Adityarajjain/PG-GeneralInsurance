@@ -745,5 +745,7 @@
     <FunctionImportMapping FunctionImportName="proc_ApproveTravelClaim_Admin_New" FunctionName="GeneralInsuranceFinalModel.Store.proc_ApproveTravelClaim_Admin_New" />
     <FunctionImportMapping FunctionImportName="proc_RejectMotorClaim_New" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectMotorClaim_New" />
     <FunctionImportMapping FunctionImportName="proc_RejectTravelClaim_New" FunctionName="GeneralInsuranceFinalModel.Store.proc_RejectTravelClaim_New" />
+    <FunctionImportMapping FunctionImportName="proc_GetManufacturers_2W" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetManufacturers_2W" />
+    <FunctionImportMapping FunctionImportName="proc_GetManufacturers_4W" FunctionName="GeneralInsuranceFinalModel.Store.proc_GetManufacturers_4W" />
   </EntityContainerMapping>
 </Mapping>

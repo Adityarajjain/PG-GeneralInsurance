@@ -43,13 +43,17 @@
         <tr><td></td></tr>
         
         <tr>
-            <td colspan="4" style="text-align: center;">Premium Amount(in Rs) :{{premium_amt}}</td>            
+            <td colspan="4" style="text-align: center;">Premium Amount(in Rs) :<strong>{{premium_amt}}</strong></td>            
         </tr>
         <tr>
             <td colspan="4">
-               Enter Card Number : &nbsp; <input type="text"/>
+               Enter Card Number : &nbsp; <input type="text" placeholder="Enter Card Number" minlength="16" required/>
             </td>
         </tr>
+        <tr>
+            <td>Enter CVV:</td>
+            <td><input type="text" placeholder="xxx" minlength="3" required></td>
+          </tr>
         <tr>
             <td colspan="4"  ><button style="text-align: center;width: 100%;" class="btn btn-success" (click)="doTransaction()" routerLink="/home">Pay</button></td>            
         </tr>

@@ -544,6 +544,8 @@
       <Parameter Name="amt" Mode="In" Type="Int32" />
       <Parameter Name="admin" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="proc_GetManufacturers_2W" ReturnType="Collection(String)" />
+    <FunctionImport Name="proc_GetManufacturers_4W" ReturnType="Collection(String)" />
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />

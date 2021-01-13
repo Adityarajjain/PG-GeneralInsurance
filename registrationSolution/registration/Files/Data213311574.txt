@@ -1,0 +1,28 @@
+For Calculating Premium:
+
+Own Damage premium = IDV X [Premium Rate (decided by insurer)]
+
+Formula to calculate IDV:
+
+IDV = Showroom price of your car – depreciation value as per (IRDAI)
+
+
+IDV= 688305 - .10*688305
+
+
+Premium rate = 3%
+
+Estimation Form:
+
+Manufacture
+Model_Name
+Purchase Date
+Insurance Plan
+
+IDV=v-20%*v
+Premium=IDV*3%
+				
+
+		
+
+							

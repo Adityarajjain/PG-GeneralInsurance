@@ -51,7 +51,7 @@ export class TravelInsuranceComponent implements OnInit {
     this.travelInsurance=this.registerForm.value;
     
     this.registerService.fillTravelInsurance(this.registerForm.value).subscribe()
-    alert("User registered");
+    alert("Applied for travel insurance");
     // console.log("Mobile : "+this.registerForm.value.Mobile_Number);
     this.submitted=true;
     

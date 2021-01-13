@@ -86,9 +86,10 @@ const routes:Routes=[
   {path:"allmotor",component:AllmotorapprovedComponent},
   {path:"alltravel",component:AlltravelapprovedComponent},
   {path:"forgetpassword",component:ForgetpasswordComponent},
-  {path:"ResetPassword/:id/:token", component:ResetComponent},
+  {path:"ResetPassword", component:ResetComponent},
   {path:"FAQ",component:FaqComponent},
-  {path:"aboutus",component:AboutusComponent}
+  {path:"aboutus",component:AboutusComponent},
+  {path:"contact",component:ContactComponent}
 ]
 
 @NgModule({

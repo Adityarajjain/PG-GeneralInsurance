@@ -18,6 +18,21 @@ namespace registration.Controllers
         {
             List<proc_GetAllMotorClaim_Admin_Result> listmotorclaims = new List<proc_GetAllMotorClaim_Admin_Result>();
             listmotorclaims = entities.proc_GetAllMotorClaim_Admin().ToList();
+            foreach (var item in listmotorclaims)
+            {
+                item.Insurance_Copy = "Uploaded";
+                item.RC_Copy = "Uploaded";
+                item.License_Copy = "Uploaded";
+                if (!item.Authenticated_Letter_from_RTO.Equals("Not required"))
+                {
+                    item.Authenticated_Letter_from_RTO = "Uploaded";
+                    item.Bill_Copy = "Not Required";
+                }
+                else
+                {
+                    item.Bill_Copy = "Uploaded";
+                }
+            }
             return listmotorclaims;
         }
         [HttpPut]

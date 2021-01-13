@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 using System.Web.Mail;
 
 
-namespace AdminGeneralInsuranceWebApi.Controllers
+namespace registration.Controllers
 {
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class ForgetPasswordController : ApiController
@@ -34,7 +34,7 @@ namespace AdminGeneralInsuranceWebApi.Controllers
                 message.Subject = "Testing Mail";
                 message.IsBodyHtml = true;
 
-                message.Body = "Reseting <a href='http:/localhost:4200/ResetPassword?id=" + student.Mobile_Number + "&token=" + token + "' >Click!</a>";
+                message.Body = "Reseting <a href='http://localhost:4200/ResetPassword?id=" + student.Mobile_Number + "&token=" + token + "' >Click!</a>";
                 //message.Body = "Reseting <a href='www.google.com' >Click!</a>";
                 SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
                  {

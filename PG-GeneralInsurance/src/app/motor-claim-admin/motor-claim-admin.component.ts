@@ -14,6 +14,7 @@ import { MotorclaimService } from '../service/motorclaim.service';
 // })
 export class MotorClaimAdminComponent implements OnInit {
   motorclaims:any; 
+  default_amt=0;
    admin=sessionStorage.getItem('adminUsername')!;
   constructor(private motorclaimservice:MotorclaimService) { 
 

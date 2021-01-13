@@ -1,4 +1,6 @@
 <div><app-admin-header></app-admin-header></div><br>
+<div class="container" style="margin:0 0 0 0">
+    <div class="">
 <h3 align="center">Approval Page for Pending Motor Insurance</h3>
 <table class="table">
     <tr ngclass="btn-primary">
@@ -10,7 +12,7 @@
         <th class="tbl2">RTA Name </th>
         <th class="tbl2">Engine Number</th>
         <th class="tbl2">Chassis Number</th>
-        <th class="tbl2">Year Of Manufacture</th>
+        <!-- <th class="tbl2">Year Of Manufacture</th> -->
         <th class="tbl2">Purchase Date </th>
         <th class="tbl2"> Mobile Number </th>
         <th class="tbl2">Insurance Plan</th>
@@ -18,6 +20,7 @@
         <th class="tbl2"> Policy Start Date </th>
         <th class="tbl2">Policy End Date</th>
         <th class="tbl2">Approve</th>
+        <th class="tbl2">Reject</th>
 
 
     </tr>
@@ -31,7 +34,7 @@
         <td class="tbl2">{{motorinsurance. RTA_Name}}</td>
         <td class="tbl2">{{motorinsurance.Engine_Number }}</td>
         <td class="tbl2">{{motorinsurance.Chassis_Number}}</td>
-        <td class="tbl2">{{motorinsurance. Year_Of_Manufacture }}</td>
+        <!-- <td class="tbl2">{{motorinsurance. Year_Of_Manufacture }}</td> -->
         <td class="tbl2">{{motorinsurance. Purchase_Date | date }}</td>
         <td class="tbl2">{{motorinsurance. Mobile_Number}}</td>
         <td class="tbl2">{{motorinsurance.Insurance_Plan}}</td>
@@ -40,13 +43,15 @@
         <td class="tbl2">{{motorinsurance. Policy_End_Date| date }}</td>
 
         <td class="tbl2">
-            <button type="button" class="btn btn-info" (click)="onSubmit(motorinsurance.Policy_Id)">Approve</button>
+            <button type="button" class="btn btn-success" (click)="onSubmit(motorinsurance.Policy_Id)" [routerLink]="['/motorinsuranceadmin']" [skipLocationChange]="true" >Approve</button>
         </td>
         
         <td class="tbl2">
-            <button type="button" class="btn btn-info" (click)="onReject(motorinsurance.Policy_Id)">Reject</button>
+            <button type="button" class="btn btn-danger" (click)="onReject(motorinsurance.Policy_Id)" [routerLink]="['/motorinsuranceadmin']" [skipLocationChange]="true" >Reject</button>
         </td>
 
     </tr>
 
 </table>
+</div>
+</div>

@@ -44,15 +44,18 @@ export class MotorInsuranceComponent implements OnInit {
   }
 
   getManu(wheels:any){
+    this.manufacturers=[];
     if(wheels==4){
    this.vehiclelist.getManufacturers().forEach((element:any) => {
      this.manufacturers.push(element);
    });
  }
- else if(wheels=2){
-   console.log('2 wheels');
- }
+ else if(wheels==2){
+  this.vehiclelist.getManufacturers_2W().forEach((element:any) => {
+    this.manufacturers.push(element);
+ });
   }
+}
 
 
   getCars(manu:string){

@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -33,8 +34,8 @@ export class ClaiminsuranceComponent implements OnInit {
   travelClaimForm: FormGroup = new FormGroup({});
   travelClaimFormForTheft: FormGroup = new FormGroup({});
   travelclaim: Travelclaim
-
-
+  userMobile=sessionStorage.getItem("userMobile");
+  travelClaimFormForAccident: FormGroup = new FormGroup({​​}​​);
   //travel Claim
   fileToUpload: File | any;
   fileToUpload2: File | any;
@@ -47,8 +48,9 @@ export class ClaiminsuranceComponent implements OnInit {
   rtoUpload:File|any;
   motorclaim: Motorclaim;
 
+  reason:any;
 
-  constructor(private httpclient: HttpClient, private claimService: ClaimService, private route: Router, private fb: FormBuilder) {
+  constructor(private httpclient: HttpClient,private router:Router, private claimService: ClaimService, private route: Router, private fb: FormBuilder) {
     this.travelclaim = new Travelclaim();
     this.motorclaim = new Motorclaim();
     //Motor Claim
@@ -96,9 +98,26 @@ export class ClaiminsuranceComponent implements OnInit {
       Complaint_Copy: ['', Validators.required]
     });
 
+    this.travelClaimFormForAccident = fb.group({​​
+
+      Travel_Policy_Id: ['', [Validators.required, Validators.pattern("[0-9]*")]],
+
+      Ticket_Copy: ['', Validators.required],
+
+      Reason_for_Claim: ['', [Validators.required]],
+
+      Mobile_Number: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]*")]],
+
+     
+
+    }​​);
 
   }
-
+  getToday():string{
+    let date=new Date();
+    return formatDate(date, 'yyyy-MM-dd', 'en');
+  }
+ 
   ngOnInit(): void {
 
 
@@ -130,6 +149,7 @@ export class ClaiminsuranceComponent implements OnInit {
     alert("Claim Accepted");
     console.log(this.motorClaimForm.value);
     this.motorClaimForm.reset();
+    this.router.navigateByUrl('/home');
   }
   addClaimForTheft(Policy_Id:any,Name:any,Mobile_Number:any,Reason:any,Date_Of_Applying:any,
     License_Copy:any,RC_Copy:any,Insurance_Copy:any,Authenticated_Letter_from_RTO:any) {
@@ -138,6 +158,7 @@ export class ClaiminsuranceComponent implements OnInit {
     alert("Claim Accepted");
     console.log(this.motorClaimFormForTheft.value);
     this.motorClaimFormForTheft.reset();
+    this.router.navigateByUrl('/home');
   }
   onSelectLicence(event:any)
   {
@@ -194,6 +215,7 @@ export class ClaiminsuranceComponent implements OnInit {
     alert("Claim Accepted");
     console.log(this.travelClaimForm.value);
     this.travelClaimForm.reset();
+    this.router.navigateByUrl('/home');
   }
   onSelectFile(event: any) {
     this.fileToUpload = event.target.files[0];
@@ -214,7 +236,9 @@ export class ClaiminsuranceComponent implements OnInit {
       Mobile_Number.value).subscribe(data => console.log(data))
     alert("Claim Accepted");
     console.log(this.travelClaimForm.value);
-    this.travelClaimForm.reset();
+
+    this.travelClaimFormForAccident.reset();
+    this.router.navigateByUrl('/home');
   }
 
 }

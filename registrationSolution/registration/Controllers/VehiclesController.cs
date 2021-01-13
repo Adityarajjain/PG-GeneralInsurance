@@ -14,9 +14,16 @@ namespace registration.Controllers
     {
         GeneralInsuranceFinalEntities_ entities = new GeneralInsuranceFinalEntities_();
         [HttpGet]
-        public List<string> GetManufacturers()
+        [Route("api/Vehicles/GetManufacturers_4W")]
+        public List<string> GetManufacturers_4W()
         {
-            return entities.proc_GetManufacturers().ToList();
+            return entities.proc_GetManufacturers_4W().ToList();
+        }
+        [HttpGet]
+        [Route("api/Vehicles/GetManufacturers_2W")]
+        public List<string> GetManufacturers_2W()
+        {
+            return entities.proc_GetManufacturers_2W().ToList();
         }
         [HttpGet]
         public List<string> GetCarsOfManufacturer(string manu)

@@ -18,6 +18,15 @@ namespace registration.Controllers
         {
             List<proc_GetAllTravelClaim_Admin_Result> listtravelclaims = new List<proc_GetAllTravelClaim_Admin_Result>();
             listtravelclaims = entities.proc_GetAllTravelClaim_Admin().ToList();
+            foreach (var item in listtravelclaims)
+            {
+                item.Ticket_Copy = "Uploaded";
+                if(!item.Complaint_Copy.Equals("Not Required"))
+                {
+                    item.Complaint_Copy = "Uploaded";
+                }
+
+            }
             return listtravelclaims;
         }
         [HttpPut]

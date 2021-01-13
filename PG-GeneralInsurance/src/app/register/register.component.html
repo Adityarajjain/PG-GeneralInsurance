@@ -1,20 +1,40 @@
 <div><app-header></app-header></div>
-<br><br>
+
+<div class="background-color">
+    <br><br>
 <div class="container" style="margin-left: 18%;">
 <h4 class="card-header bg-info " style="width: 800px;">Register As A New User</h4>
 <div class="card-body " style=" width: 800px ;">
   
     <form [formGroup]="registerForm" (ngSubmit)="InsertUser()">
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="Mobile_Number">Mobile Number: </label>
-            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number"   />
+            <input type="text" class="form-control" formControlName="Mobile_Number"   placeholder="Mobile Number"  />
             <div *ngIf="f.Mobile_Number.touched && f.Mobile_Number.invalid" class="alert alert-danger">Mobile Number required</div>
+            
             <div>  
                 <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success" align="left"> 
                   {{errorMessage}}  
               </p>
           </div>  
              
+        </div> -->
+        <div class="form-group">
+
+            <label for="Mobile_Number">Mobile Number: </label>
+
+            <input type="text" class="form-control" formControlName="Mobile_Number"  placeholder="Mobile Number"   />
+
+            <div *ngIf="f.Mobile_Number.touched && f.Mobile_Number.invalid" class="alert alert-danger">Mobile Number required</div>
+
+            <div>  
+                <p style="color:#E92626;font-size:20px;font-weight:normal" Class="success" align="left"> 
+                  {{errorMessage}}  
+              </p>
+          </div>
+
+             
+
         </div>
         <div class="form-group">
             <label>Password: </label>
@@ -90,8 +110,10 @@
 
 </div>
 </div><br><br>
-
-
+</div>
+<!-- <footer >
+    <span style="margin-left: 37%;">© 2020 Copyright Larsen and Toubro Infotech</span>
+  </footer> -->
 
 
 

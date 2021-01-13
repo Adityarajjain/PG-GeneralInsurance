@@ -1,6 +1,6 @@
 <!-- <nav class="navbar navbar-dark bg-dark">   -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">The General Insurance</a>
+    <nav class="navbar navbar-expand-lg nav-color ">
+      <img src="../assets/General Insurance.jpg" class="navbar-brand" style="height: 70px;width:180px"/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,8 +8,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav my-2 my-lg-0" style="margin-left: 30%;">
             
-              <a class="nav-link" routerLink="/admin/dashboard" [skipLocationChange]=true>Admin HomePage</a>
-              <a class="nav-link" routerLink="/home" (click)="logoutClicked()" *ngIf="isAdminLoggedIn">Logout</a>
+              <a class="nav-link nav-font" routerLink="/admin/dashboard" [skipLocationChange]=true>Admin HomePage</a>
+              <a class="nav-link nav-font" routerLink="/home" (click)="logoutClicked()" *ngIf="isAdminLoggedIn">Logout</a>
           </div>
         </div>
       </nav>

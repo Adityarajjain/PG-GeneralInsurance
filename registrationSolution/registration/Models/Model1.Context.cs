@@ -734,5 +734,15 @@ namespace registration.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_RejectTravelClaim_New", claimidParameter, amtParameter, adminParameter);
         }
+    
+        public virtual ObjectResult<string> proc_GetManufacturers_2W()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("proc_GetManufacturers_2W");
+        }
+    
+        public virtual ObjectResult<string> proc_GetManufacturers_4W()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("proc_GetManufacturers_4W");
+        }
     }
 }

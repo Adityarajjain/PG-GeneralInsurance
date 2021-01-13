@@ -13,9 +13,15 @@ export class TravelPolicyComponent  {
 
   policy:any;
   premium:number=NaN;
+  Pending:boolean;
   constructor(@Inject(MAT_DIALOG_DATA) public data:any, private motorPolicy:MotorPolicyService){
     console.log("data: "+data)
-    this.motorPolicy.getTravelPolicy(data).subscribe((d:any)=>{this.policy=d});
+    this.Pending=false;
+    this.motorPolicy.getTravelPolicy(data).subscribe((d:any)=>{this.policy=d;
+      if(d!=null)
+      this.Pending = false;
+   else
+    this.Pending = true});
     this.motorPolicy.getTransaction(data).subscribe((p:any)=>{ this.premium=p;})! ;
   }
 

@@ -9,6 +9,7 @@ import { TravelclaimService } from '../service/travelclaim.service';
 export class TravelinsuranceclaimComponent implements OnInit {
   travelclaims:any; 
    amt:number=0;
+   default_amt=0;
    admin=sessionStorage.getItem('adminUsername')!;
   constructor(private travelclaim:TravelclaimService) { 
     this.travelclaim.getAllTravelClaim().subscribe((m: any)=>{this.travelclaims=m;}) 
